@@ -137,10 +137,10 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
     };
     vm.getUsers = function () {
         vm.user = UserService.getUsers();
-        for(i in vm.users){
-            delete vm.users[i].password
-            delete vm.users[i].comments
-        }
+        // for(i in vm.users){
+            // delete vm.users[i].password
+            // delete vm.users[i].comments
+        // }
     };
 
 
@@ -334,17 +334,23 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
             localStorage.setItem('goodsToBuy', JSON.stringify(vm.tray));
         }
         else {
-            vm.userLoggedIn = JSON.parse(localStorage.getItem('user'))
+            vm.tray = JSON.parse(localStorage.getItem('goodsToBuy'))
         }
-        if (vm.userLoggedIn == null) {
+
+
+
+        vm.userLoggedIn=JSON.parse(localStorage.getItem('user'))
+        if (vm.userLoggedIn.name == null) {
             vm.userLoggedIn = {};
             vm.logInButton = true
             localStorage.setItem('user', JSON.stringify(vm.userLoggedIn));
+            vm.detailsOfOrder()
         }
         else {
             vm.userLoggedIn = JSON.parse(localStorage.getItem('user'))
             vm.logInButton = false
             vm.logOutButton = true
+            vm.detailsOfOrder()
         }
 
     };
@@ -369,6 +375,12 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
 
 
 //goods To Tray from details
+    vm.detailsOfOrder=function () {
+        vm.order=vm.userLoggedIn
+        vm.order.archive=false
+
+
+    }
     vm.ByGoods2 = function (goods) {
 
         vm.tray = JSON.parse(localStorage.getItem('goodsToBuy'));
@@ -463,6 +475,7 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
     //BUY GOODS
     vm.checkLoggedUser = function () {
         vm.userLoggedIn = JSON.parse(localStorage.getItem('user'))
+        console.log(vm.userLoggedIn);
     }
     vm.ByGoods = function (goods) {
 
@@ -489,8 +502,8 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
 
     vm.confirmOrder = function () {
         vm.checkLoggedUser()
-        if (vm.userLoggedIn.name == null) {
-            vm.alert = true
+        if (vm.userLoggedIn.name==undefined) {
+            vm.alertConfirmation = true
             vm.alertMessage = 'для здійснення покупки необхідно авторизуватися'
         }else{
 
@@ -502,7 +515,9 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
             vm.tray = []
             localStorage.setItem('goodsToBuy', JSON.stringify(vm.tray))
 
+            vm.alertConfirmation = true
 
+            // location.href="#/catalogue"
         }
     }
 

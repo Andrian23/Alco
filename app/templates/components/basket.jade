@@ -6,14 +6,11 @@ div.basket_conteiner
 
     div.modal_alert(ng-show='alertConfirmation')
         h2 Ваше замовлення успішно відправлене, очікуйте на підтвердження
-        input.log(type='button' value='ОК' ng-click='alertConfirmation=!alertConfirmation; my.userAutoUpdate()')
+        a(href="#/catalogue")
+            input.log(type='button' value='ОК' ng-click='alertConfirmation=!alertConfirmation')
 
 
-    //div.modal_alert(ng-show='my.userUpdate')
-    //    h2 ви ввели нові відомості про доставку,
-    //    h4 бажаєте оновити Ваш профіль?
-    //    input.log( type='button' value='так' ng-click='my.autoUpdate()')
-    //    input.log( type='button' value='ні' ng-click='my.userUpdate=!my.userUpdate')
+
 
     img.basket_img2(src='../img/shape-2.png')
     div.basket_part1
@@ -84,4 +81,4 @@ div.basket_conteiner
         input.basket_input.small(type='text' placeholder='Під’їзд' ng-model='my.order.address.entrance')
         input.basket_input.small(type='text' placeholder='Поверх' ng-model='my.order.address.stair')
         textarea.basket_input.textarea(type='textarea' placeholder='Додаткові побажання' ng-model='my.order.comments')
-        input.basket_button(type='button' value='підтвердити замовлення' ng-click='my.confirmOrder()')
+        input.basket_button(type='button' value='підтвердити замовлення' ng-click='my.confirmOrder();my.init(); alertConfirmation=true')
