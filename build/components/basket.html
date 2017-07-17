@@ -1,0 +1,33 @@
+<div class="basket_conteiner"><h3>Твоя корзина</h3><div ng-show="my.alert" class="modal_alert"><h2>{{my.alertMessage}}</h2><input type="button" value="УВІЙТИ" ng-click="my.alert=!my.alert" class="log"/></div><div ng-show="alertConfirmation" class="modal_alert"><h2>Ваше замовлення успішно відправлене, очікуйте на підтвердження</h2><input type="button" value="ОК" ng-click="alertConfirmation=!alertConfirmation; my.userAutoUpdate()" class="log"/></div><!--div.modal_alert(ng-show='my.userUpdate')--><!--    h2 ви ввели нові відомості про доставку,--><!--    h4 бажаєте оновити Ваш профіль?--><!--    input.log( type='button' value='так' ng-click='my.autoUpdate()')--><!--    input.log( type='button' value='ні' ng-click='my.userUpdate=!my.userUpdate')--><img src="../img/shape-2.png" class="basket_img2"/><div class="basket_part1"><div class="basket_part1_section_left"><div class="basket_part1_section_left_s"><div ng-repeat="unit in my.tray" class="basket_part1_section_left_order"><img ng-src="{{unit.image}}" class="basket_img"/><h4>{{unit.name}}<p>{{unit.volume}}</p></h4><input type="button" ng-click="my.minus1(unit.id)" class="minus"/><p class="text_butt">{{unit.count}}</p><input type="button" ng-click="my.plus1(unit.id)" class="plus"/><p class="price">{{unit.price}} грн</p><img src="../img/cancel.png" ng-click="my.delete_order(unit.id)" alt="видалити товар" class="basket_cancel"/></div></div><div class="basket_part1_section_left_e"><p class="together">Разом</p><P class="price2">{{my.totalSum}} грн</P></div></div><div class="basket_part1_section_delyvery"><div class="basket_part1_section_delyvery_header"><img src="../img/delivery-truck.png"/><h4>Lorem ipsum dolor sit amet</h4></div><div class="basket_part1_section_delyvery_content"><p>Lorem ipsum dolor sit amet, consectetuer
+adipiscing elit. Aenean commodo ligula
+eget dolor. Aenean massa.
+Cum sociis natoque penatibus et magnis
+dis parturient montes, nascetur ridiculus
+mus. Donec quam felis, ultricies nec,
+pellentesque eu, pretium quis, sem.
+Nulla consequat massa quis enim.
+Donec pede justo, fringilla vel, aliquet
+nec, vulputate eget, arcu. In enim justo,
+rhoncus ut, imperdiet a, venenatis vitae,
+justo. Nullam dictum felis eu pede mollis
+pretium. Integer tincidunt. Cras dapibus.
+Vivamus elementum semper nisi.
+Aenean vulputate eleifend tellus.
+Aenean leo ligula, porttitor eu, consequat
+vitae, eleifend ac, enim. Aliquam lorem
+ante, dapibus in, viverra quis, feugiat
+a, tellus. Phasellus viverra nulla ut
+metus varius laoreet. Quisque rutrum.
+Aenean imperdiet. Etiam ultricies nisi
+vel augue. Curabitur ullamcorper
+ultricies nisi.Lorem ipsum dolor sit amet,
+consectetuer adipiscing elit.
+Aenean commodo ligula eget dolor. Aenean massa.
+Cum sociis natoque penatibus et magnis
+dis parturient montes, nascetur
+ridiculus mus. Donec quam felis,
+ultricies nec, pellentesque eu,
+pretium quis, sem. Nulla consequat
+massa quis enim. Donec pede justo,
+fringilla vel, aliquet nec, vulputate
+eget, arcu. In enim justo, rhoncus ut.</p></div></div></div><a name="orderForm"></a><h3>Деталі оплати</h3><img src="../img/shape-2.png" class="basket_img2"/><div class="basket_details"><input type="text" placeholder="Ім’я" ng-model="my.order.name" class="basket_input"/><input type="text" placeholder="Прізвище" ng-model="my.order.sname" class="basket_input"/><input type="text" placeholder="+380 999 99 99 99" ng-model="my.order.phone" class="basket_input"/><input type="text" placeholder="E-mail" ng-model="my.order.email" class="basket_input"/><input type="text" placeholder="Вулиця" ng-model="my.order.address.street" class="basket_input"/><input type="text" placeholder="Будинок" ng-model="my.order.address.house" class="basket_input small"/><input type="text" placeholder="Квартира" ng-model="my.order.address.flat" class="basket_input small"/><input type="text" placeholder="Під’їзд" ng-model="my.order.address.entrance" class="basket_input small"/><input type="text" placeholder="Поверх" ng-model="my.order.address.stair" class="basket_input small"/><textarea type="textarea" placeholder="Додаткові побажання" ng-model="my.order.comments" class="basket_input textarea"></textarea><input type="button" value="підтвердити замовлення" ng-click="my.confirmOrder()" class="basket_button"/></div></div>

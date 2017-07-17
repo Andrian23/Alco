@@ -1,0 +1,427 @@
+div.admin_container
+    div.admin_navigation
+
+
+    //modal delete goods
+    div.modal_delete(ng-show='ad.delCommodity')
+        h2 ви впевнені, що хочете видалити:
+        br
+        h4 {{ad.commodityToDel.category}}
+        br
+        h3 {{ad.commodityToDel.name}}
+        h4 {{ad.commodityToDel.brand}}
+        br
+        h4 {{ad.commodityToDel.volume/1000}}л
+        h4 {{ad.commodityToDel.country}}
+        h4 {{ad.commodityToDel.price}}грн
+        br
+        div
+            input.categories_input_buttons(type='button' value='ТАК' ng-click='ad.deleteCommodity()')
+            input.categories_input_buttons(type='button' value='НІ' ng-click='ad.cancelDelete()')
+
+    //modal delete orders
+    div.modal_delete(ng-show='ad.delOrder')
+        h2 ви впевнені,
+        h3 що хочете видалити замовлення від:
+        br
+        h2 {{ad.orderToDel.name}}  {{ad.orderToDel.sname}}
+        br
+        h3 на суму {{ad.sumOrder}} грн.
+        br
+
+
+        div
+            input.categories_input_buttons(type='button' value='ТАК' ng-click='ad.deleteOrder()')
+            input.categories_input_buttons(type='button' value='НІ' ng-click='ad.cancelDeleteOrder()')
+    //modal delete users
+    div.modal_delete(ng-show='ad.delUser')
+        h2 ви впевнені,
+        h3 що хочете видалити користувача:
+        br
+        h2 {{ad.userToDel.name}}  {{ad.userToDel.sname}}
+        br
+        br
+
+
+        div
+            input.categories_input_buttons(type='button' value='ТАК' ng-click='ad.deleteUser()')
+            input.categories_input_buttons(type='button' value='НІ' ng-click='ad.cancelDeleteUser()')
+    //modal confirm order
+    div.modal_delete(ng-show='ad.confOrder')
+        h2 ви впевнені,
+        h3 що хочете підтвердити замовлення від:
+        br
+        h2 {{ad.orderToDel.name}}  {{ad.orderToDel.sname}}
+        br
+        h3 на суму {{ad.sumOrder}} грн.
+        br
+
+
+        div
+            input.categories_input_buttons(type='button' value='ТАК' ng-click='ad.confirmOrder()')
+            input.categories_input_buttons(type='button' value='НІ' ng-click='ad.cancelConfirmation()')
+
+
+
+    //add new category
+    div.modal_delete(ng-show='ad.addCat')
+        h2 Створити нову категорію,
+        input.editInput(type='text' placeholder='назва категорії' ng-model='ad.newCategory.name')
+        br
+        div
+            input.categories_input_buttons(type='button' value='ТАК' ng-click='ad.addCategory();ad.addCat=!ad.addCat')
+            input.categories_input_buttons(type='button' value='НІ' ng-click='ad.addCat=!ad.addCat')
+
+
+    //add new user
+    div.modal_delete.addUser(ng-show='ad.addUser')
+        h2 Створити нового користувача,
+        label ім'я 
+            input.editInput(type='text' placeholder="ім'я користувача" ng-model='ad.newUser.name')
+        label ім'я
+            input.editInput(type='text' placeholder='прізвище користувача' ng-model='ad.newUser.sname')
+        label телефон
+            input.editInput(type='text' placeholder='+380123456789 ' ng-model='ad.newUser.phone')
+        label e-mail
+            input.editInput(type='text' placeholder='e-mail користувача' ng-model='ad.newUser.email')
+        label пароль
+            input.editInput(type='text' placeholder='пароль користувача' ng-model='ad.newUser.password')
+        br
+        label дата народження
+        div.selected-field
+            select.registation_select.admSelect(ng-model='ad.newUser.birthday.day' ng-options='x for x in my.days')
+                option(value='' disabled selected) дд
+            select.registation_select.admSelect(ng-model='ad.newUser.birthday.month' ng-options='x for x in my.month')
+                option(value='' disabled selected) мм
+            select.registation_select.admSelect(ng-model='ad.newUser.birthday.year' ng-options='x for x in my.year')
+                option(value='' disabled selected) рррр
+        br
+        h3 адреса
+        label
+            input.editInput(type='text' placeholder='вулиця' ng-model='ad.newUser.address.street')
+            br
+        div.selected-field#admAddUser
+
+                input.editInput(type='number' placeholder='буд.' ng-model='ad.newUser.address.house')
+                input.editInput(type='number' placeholder='кв' ng-model='ad.newUser.address.flat')
+                input.editInput(type='number' placeholder='поверх' ng-model='ad.newUser.address.stair')
+                input.editInput(type='number' placeholder='підїзд' ng-model='ad.newUser.entrance')
+        br
+        textarea(placeholder='коментарі' ng-model='ad.newUser.comments')
+        br
+
+        div
+            input.categories_input_buttons(type='button' value='зберегти' ng-click='ad.addNewUser();ad.addUser=!ad.addUser')
+            input.categories_input_buttons(type='button' value='скасувати' ng-click='ad.addUser=!ad.addUser')
+
+
+    //Edit user
+    div.modal_delete.addUser(ng-show='ad.edUser')
+        h2 редагувати дані користувача,
+        label ім'я
+            input.editInput(type='text' placeholder="ім'я користувача"  ng-model='ad.userEdited.name')
+        label ім'я
+            input.editInput(type='text' placeholder='прізвище користувача'  ng-model='ad.userEdited.sname')
+        label телефон
+            input.editInput(type='text' placeholder='+380123456789 '   ng-model='ad.userEdited.phone')
+        label e-mail
+            input.editInput(type='text' placeholder='e-mail користувача'   ng-model='ad.userEdited.email')
+        label пароль
+            input.editInput(type='text' placeholder='пароль користувача'  ng-model='ad.userEdited.password')
+        br
+        label дата народження
+        div.selected-field
+            input.registation_select.admSelect(type='number' min=0 max=31 ng-model='ad.userEdited.birthday.day'  )
+            input.registation_select.admSelect(type='number' min=0 max=12 ng-model='ad.userEdited.birthday.month')
+            input.registation_select.admSelect(type='number' min=0 max=2017 ng-model='ad.userEdited.birthday.year')
+        br
+        h3 адреса
+        label
+            input.editInput(type='text' placeholder='вулиця'   ng-model='ad.userEdited.address.street')
+            br
+        div.selected-field#admAddUser
+
+                input.editInput(type='text' placeholder='буд.'   ng-model='ad.userEdited.address.house')
+                input.editInput(type='text' placeholder='кв'   ng-model='ad.userEdited.address.flat')
+                input.editInput(type='text' placeholder='поверх'   ng-model='ad.userEdited.address.stair')
+                input.editInput(type='text' placeholder='підїзд'   ng-model='ad.userEdited.address.entrance')
+        br
+        textarea(placeholder='коментарі'  ng-model='ad.userEdited.comments')
+        br
+
+        div
+            input.categories_input_buttons.userEdit(type='button' value='зберегти' ng-click='ad.editUser(ad.userEdited);ad.edUser=!ad.edUser')
+            input.categories_input_buttons.userEdit(type='button' value='скасувати' ng-click='ad.cancelEditUser(); ad.edUser=false')
+
+
+    //modal edit goods
+    div.modal_delete#modal_edit(ng-show='ad.editCom')
+        h2 Ви редагуєте: {{ad.commodityToE.name}}
+        div.edit_modal
+            label категорія
+                br
+                select.registation_select.admSelect(ng-model='ad.compodityToE.category' required=true ng-options='x for x in ad.category')
+                    option(value='' disabled selected) категорія
+            label назва
+                input(type='text' ng-model='ad.commodityToE.name')
+            label бренд
+                input(type='text' ng-model='ad.commodityToE.brand' )
+            label країна
+                input(type='text' ng-model='ad.commodityToE.country'  )
+            label міцність(&deg)
+                input(type='text' ng-model='ad.commodityToE.strength'  )
+
+            label об'єм(мл)
+                input(type='text' ng-model='ad.commodityToE.volume'  )
+            label ціна в грн
+                input(type='text' ng-model='ad.commodityToE.price'  )
+            label зображення
+                input(type='text' ng-model='ad.commodityToE.image')
+            label опис
+                textarea(type='text' ng-model='ad.commodityToE.description')
+
+        div
+            input.categories_input_buttons.editBut(type='button' value='зберегти' ng-click='ad.editCommodity()')
+            input.categories_input_buttons.editBut(type='button' value='скасувати' ng-click='ad.cancelEdit()')
+
+
+
+    //add new goods
+    div.modal_delete#modal_delete(ng-show='ad.addNewC')
+        h2 Додати новий товар
+        div.edit_modal
+            label категорія
+                br
+                select(ng-model='ad.newCommodity.category' required)
+                    option(value='' disabled selected) категорія
+                    option(ng-repeat='cat in ad.category') {{cat}}
+            label назва
+                input(type='text' placeholder='назва товару' ng-model='ad.newCommodity.name')
+            label бренд
+                input(type='text' placeholder='назва бренду' ng-model='ad.newCommodity.brand' )
+            label країна
+                input(type='text' placeholder='країна виробник' ng-model='ad.newCommodity.country'  )
+                //select(ng-model='ad.newCommodity.country' required)
+                    option(value='' disabled selected) країна
+                    option(ng-repeat='cat in ad.countries') {{cat}}
+
+            label міцність(&deg)
+                input(type='number' placeholder='міцність в градусах' min='0' max='100' ng-model='ad.newCommodity.strength'  )
+            label об'єм(мл)
+                input(type='number' min='0' placeholder="об'єм в мілілітрах" ng-model='ad.newCommodity.volume'  )
+            label ціна в грн
+                input(type='number' placeholder='вартість товару' min='0' ng-model='ad.newCommodity.price'  )
+            label зображення
+                input(type='text' ng-model='ad.newCommodity.image' )
+            label опис
+                textarea(type='text' placeholder='опис товару' ng-model='ad.newCommodity.description')
+
+        div
+            input.categories_input_buttons.editBut(type='button' value='добавити' ng-click='ad.addCommodity()')
+            input.categories_input_buttons.editBut(type='button' value='очистити' ng-click='ad.cancelAdd()')
+            input.categories_input_buttons.editBut(type='button' value='закрити' ng-click='ad.addNewC=!ad.addNewC')
+
+
+
+    //modal edit category
+    div.modal_delete(ng-show='ad.editCategory')
+        h2 перейменування категорії {{ad.catToEdit}}:
+        br
+        input.editInput(type='text' ng-model='ad.newCategoryName')
+        br
+
+        br
+
+
+        div
+            input.categories_input_buttons(type='button' value='ТАК' ng-click='ad.renameCategory()')
+            input.categories_input_buttons(type='button' value='НІ' ng-click='ad.cancelRename()')
+
+
+    //modal delete category
+    div.modal_delete(ng-show='ad.delCat')
+        h2 ви впевнені,
+        h3 що хочете видалити категорію:xxx
+        br
+        h2 {{ad.orderToDel}}
+        br
+
+
+        div
+            input.categories_input_buttons(type='button' value='ТАК' ng-click='ad.deleteCategory()')
+            input.categories_input_buttons(type='button' value='НІ' ng-click='ad.cancelDeleteCategory()')
+    //admin navigation menu
+    div.admNav
+        input.categories_input_buttons(type='button' value='ТОВАРИ' ng-click=
+        'admGoods=true; ' +
+        'admCategories=false;' +
+        'ad.admOrders=false;' +
+        'admRequests=false')
+        input.categories_input_buttons(type='button' value='КАТЕГОРІЇ' ng-click=
+        'admCategories=true;' +
+        'ad.admOrders=false;' +
+        'admRequests=false;' +
+        'admGoods=false')
+        input.categories_input_buttons(type='button' value='ЗАМОВЛЕННЯ' ng-click=
+        'ad.admOrders=true;' +
+        'admCategories=false;' +
+        'admRequests=false;' +
+        'admGoods=false;' +
+        'ad.checkOrders()')
+        input.categories_input_buttons(type='button' value='користувачі' ng-click=
+        'admRequests=true;' +
+        'admCategories=false;' +
+        'ad.admOrders=false;' +
+        'admGoods=false;' +
+        'ad.checkUsers()')
+
+    //goods preview
+    div.admin_goods(ng-show='admGoods')
+        h2 ТОВАРИ
+        input.categories_input_search(type='button' value='додати новий товар' ng-click='ad.addNewC=!ad.addNewC')
+
+        div.buttons_line
+            input.categories_input_search(type='text' placeholder='пошук' ng-model='ad.admSearch')
+            input.categories_input_buttons(type='button' value='все' ng-click="ad.admSearch='';ad.filter( )")
+            input.categories_input_buttons(ng-repeat='cat in ad.category' type='button' value='{{cat}}' ng-click="ad.admSearch=''; ad.filter(cat)")
+
+
+        table
+
+            tr
+                th(ng-click='sort="category"; rev=!rev') категорія
+                th(ng-click='sort="name"; rev=!rev') назва
+                th(ng-click='sort="volume"; rev=!rev') об'м
+                th(ng-click='sort="strength"; rev=!rev') міцність
+                th(ng-click='sort="price"; rev=!rev') ціна
+                th(ng-click='sort="brand"; rev=!rev') бренд
+                th(ng-click='sort="country"; rev=!rev') країна
+                th(ng-click='sort="promo"; rev=!rev') промо
+                th() зображення
+                th() дії
+                th() опис
+
+            tr(ng-repeat='g in ad.goods|orderBy:sort:rev|filter:ad.categoryFilter|filter:ad.admSearch' )
+                td() {{g.category}}
+                td() {{g.name}}
+                td() {{g.volume/1000}} л
+
+                td() {{g.strength}}&deg;
+                td() {{g.price}}
+                    | грн
+                td() {{g.brand}}
+                td() {{g.country}}
+                td() {{g.promo}}
+                td()
+                    img(src='{{g.image}}')
+                td
+                    input.action_button(type='button' value='редагувати' ng-click="ad.commodityToEdit(g)")
+                    input.action_button(type='button' value='видалити' ng-click="ad.commodityToDelete(g)")
+                    input.action_button(type='button' value='промо' ng-click='ad.goPromo(g.id)')
+                td#description() {{g.description}}
+
+
+
+
+
+
+
+
+    //categories
+    div.categories_goods(ng-show='admCategories')
+        h3 категорії
+        table.tableCategory
+            tr
+                th категорія
+                th
+                    input.categories_input_buttons(type='button' value='додати категорію' ng-click='ad.addCat=!ad.addCat')
+            tr(ng-repeat='c in ad.category')
+                td() {{c}}
+                td
+                    input.categories_input_buttons(type='button' value='редагувати'  ng-click='ad.preEditCategory(c)')
+                    input.categories_input_buttons(type='button' value='видалити'  ng-click='ad.preDeleteCategory(c)')
+
+
+
+
+
+    //orders
+    div.admin_orders(ng-show='ad.admOrders')
+        h3 замовлення
+        div.ordersNav
+            input.categories_input_buttons(type='button' value='всі' ng-click='ad.orderConfirmation=""')
+            input.categories_input_buttons#newOrders( type='button' value='нові'  ng-click='ad.orderConfirmation="false"')
+            input.categories_input_buttons(type='button' value='підтвердженні' ng-click='ad.orderConfirmation="true"')
+        div.tablesOrder
+
+            table.ordersTable(ng-repeat='order in ad.orders| filter:ad.orderConfirmation')
+                tr
+                    th {{order.archive}}
+                    th(colspan=3) {{order.name}} {{order.sname}}
+                tr
+                    td(colspan=4) тел.{{order.phone}} e-mail {{order.email}}
+                tr
+                    td(colspan=4) вул.{{order.address.street}}, {{order.address.house}}, кв.{{order.address.flat}}
+                tr
+                    td(colspan=4) підїзд {{order.address.entrance}}, поверх {{order.address.stair}}
+                tr
+                    th(colspan=4) замовлення
+                tr
+                    th ID товару
+                    th назва товару
+                    th кількість
+                    th вартість
+
+                tr(ng-repeat='og in order.goodsOrdered')
+                    td {{og.id}}
+                    td {{og.name}}
+                    td {{og.count}}
+                    td {{og.count*og.price}} грн
+                tr
+                    td(colspan=4) {{order.comments}}
+                tr
+                    td(colspan=4)
+                        input.categories_input_buttons(type='button' value='підтвердити' ng-click=
+                        'ad.preConfirmOrder(order)')
+                        input.categories_input_buttons(type='button' value='відмінити' ng-click=
+                        'ad.preDeleteOrder(order)')
+                        input.categories_input_buttons(type='button' value='повернути' ng-click=
+                        'ad.redoOrder(order.id)')
+    //users
+    div.admin_orders(ng-show='admRequests')
+        h2 користувачі
+        input.categories_input_buttons.user_button(type='button' value="добавити нового користувача" ng-click='ad.addUser=!ad.addUser')
+        div.ordersNav
+            input.categories_input_buttons(type='button' value='всі' ng-click='ad.userConfirmed=""')
+            input.categories_input_buttons#newUsers(type='button' value='нові'  ng-click='ad.userConfirmed="false"')
+            input.categories_input_buttons(type='button' value='підтвердженні' ng-click='ad.userConfirmed="true"')
+        table
+            tr
+                th ім'я
+                th прізвище
+                th телефон
+                th e-mail
+                th дата народження
+                th адреса
+                th коментарі
+                th підтвердження
+            tr(ng-repeat="u in ad.users| filter:ad.userConfirmed" id='user_conf {{u.id}}')
+                td {{u.name}}
+                td {{u.sname}}
+                td {{u.phone}}
+                td {{u.email}}
+                td {{u.birthday.day}}/{{u.birthday.month}}/{{u.birthday.year}}
+                td вул.{{u.address.street}}, {{u.address.house}}, кв.{{u.address.flat}} , поверх{{u.address.stair}}, підїзд {{u.address.entrance}}
+                td {{u.comments}}
+
+                td.users_table_button
+                    input.categories_input_buttons.user_button(type='button' value='підтвердити' ng-click='ad.confirmUser(u)')
+                    input.categories_input_buttons.user_button(type='button' value='видалити' ng-click='ad.userToDelete(u)')
+                    input.categories_input_buttons.user_button(type='button' value='редагувати' ng-click='ad.preEditUser(u)')
+
+
+
+
+
+
+

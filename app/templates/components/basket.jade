@@ -1,0 +1,87 @@
+div.basket_conteiner
+    h3 Твоя корзина
+    div.modal_alert(ng-show='my.alert')
+        h2 {{my.alertMessage}}
+        input.log( type='button' value='УВІЙТИ' ng-click='my.alert=!my.alert')
+
+    div.modal_alert(ng-show='alertConfirmation')
+        h2 Ваше замовлення успішно відправлене, очікуйте на підтвердження
+        input.log(type='button' value='ОК' ng-click='alertConfirmation=!alertConfirmation; my.userAutoUpdate()')
+
+
+    //div.modal_alert(ng-show='my.userUpdate')
+    //    h2 ви ввели нові відомості про доставку,
+    //    h4 бажаєте оновити Ваш профіль?
+    //    input.log( type='button' value='так' ng-click='my.autoUpdate()')
+    //    input.log( type='button' value='ні' ng-click='my.userUpdate=!my.userUpdate')
+
+    img.basket_img2(src='../img/shape-2.png')
+    div.basket_part1
+        div.basket_part1_section_left
+            div.basket_part1_section_left_s
+                div.basket_part1_section_left_order(ng-repeat='unit in my.tray')
+                    img.basket_img(ng-src='{{unit.image}}')
+                    h4 {{unit.name}}
+                        p {{unit.volume}}
+                    input.minus(type='button' ng-click='my.minus1(unit.id)')
+                    p.text_butt {{unit.count}}
+                    input.plus(type='button' ng-click='my.plus1(unit.id)')
+                    p.price {{unit.price}} грн
+                    img.basket_cancel(src='../img/cancel.png' ng-click='my.delete_order(unit.id)' alt='видалити товар')
+            div.basket_part1_section_left_e
+                p.together Разом
+                P.price2 {{my.totalSum}} грн
+        div.basket_part1_section_delyvery
+            .basket_part1_section_delyvery_header
+                img(src='../img/delivery-truck.png')
+                h4 Lorem ipsum dolor sit amet
+            .basket_part1_section_delyvery_content
+                p Lorem ipsum dolor sit amet, consectetuer
+                    |adipiscing elit. Aenean commodo ligula
+                    |eget dolor. Aenean massa.
+                    |Cum sociis natoque penatibus et magnis
+                    |dis parturient montes, nascetur ridiculus
+                    |mus. Donec quam felis, ultricies nec,
+                    |pellentesque eu, pretium quis, sem.
+                    |Nulla consequat massa quis enim.
+                    |Donec pede justo, fringilla vel, aliquet
+                    |nec, vulputate eget, arcu. In enim justo,
+                    |rhoncus ut, imperdiet a, venenatis vitae,
+                    |justo. Nullam dictum felis eu pede mollis
+                    |pretium. Integer tincidunt. Cras dapibus.
+                    |Vivamus elementum semper nisi.
+                    |Aenean vulputate eleifend tellus.
+                    |Aenean leo ligula, porttitor eu, consequat
+                    |vitae, eleifend ac, enim. Aliquam lorem
+                    |ante, dapibus in, viverra quis, feugiat
+                    |a, tellus. Phasellus viverra nulla ut
+                    |metus varius laoreet. Quisque rutrum.
+                    |Aenean imperdiet. Etiam ultricies nisi
+                    |vel augue. Curabitur ullamcorper
+                    |ultricies nisi.Lorem ipsum dolor sit amet,
+                    |consectetuer adipiscing elit.
+                    |Aenean commodo ligula eget dolor. Aenean massa.
+                    |Cum sociis natoque penatibus et magnis
+                    |dis parturient montes, nascetur
+                    |ridiculus mus. Donec quam felis,
+                    |ultricies nec, pellentesque eu,
+                    |pretium quis, sem. Nulla consequat
+                    |massa quis enim. Donec pede justo,
+                    |fringilla vel, aliquet nec, vulputate
+                    |eget, arcu. In enim justo, rhoncus ut.
+    a(name='orderForm')
+
+    h3 Деталі оплати
+    img.basket_img2(src='../img/shape-2.png')
+    div.basket_details
+        input.basket_input(type='text' placeholder='Ім’я' ng-model='my.order.name')
+        input.basket_input(type='text' placeholder='Прізвище' ng-model='my.order.sname')
+        input.basket_input(type='text' placeholder='+380 999 99 99 99' ng-model='my.order.phone')
+        input.basket_input(type='text' placeholder='E-mail' ng-model='my.order.email')
+        input.basket_input(type='text' placeholder='Вулиця' ng-model='my.order.address.street')
+        input.basket_input.small(type='text' placeholder='Будинок' ng-model='my.order.address.house')
+        input.basket_input.small(type='text' placeholder='Квартира' ng-model='my.order.address.flat')
+        input.basket_input.small(type='text' placeholder='Під’їзд' ng-model='my.order.address.entrance')
+        input.basket_input.small(type='text' placeholder='Поверх' ng-model='my.order.address.stair')
+        textarea.basket_input.textarea(type='textarea' placeholder='Додаткові побажання' ng-model='my.order.comments')
+        input.basket_button(type='button' value='підтвердити замовлення' ng-click='my.confirmOrder()')

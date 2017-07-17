@@ -1,0 +1,122 @@
+div.catalogue_conteiner
+    h2 Категорії
+    img.catalog_img1(src='../img/shape-7.png')
+    div.category
+
+        input#category-02.category-selector-2(type='radio', name='radio-set' ng-click='my.filterByCategory("beer");vm.startingItem=0')
+        label.category-label-2(for='category-02') Пиво
+
+        input#category-03.category-selector-3(type='radio', name='radio-set' ng-click='my.filterByCategory("wine");vm.startingItem=0' )
+        label.category-label-3(for='category-03' ) Вино
+
+        input#category-04.category-selector-4(type='radio', name='radio-set'  ng-click='my.filterByCategory("vodka");vm.startingItem="0"')
+        label.category-label-4(for='category-04' ) Горілка
+
+        input#category-05.category-selector-5(type='radio', name='radio-set'  ng-click='my.filterByCategory("whiskey");vm.startingItem=0')
+        label.category-label-5(for='category-05') віскі
+
+        input#category-06.category-selector-6(type='radio', name='radio-set'  ng-click='my.filterByCategory("rom");vm.startingItem=0')
+        label.category-label-6(for='category-06') ром
+
+        input#category-07.category-selector-7(type='radio', name='radio-set'  ng-click='my.filterByCategory("tequila");vm.startingItem="0"')
+        label.category-label-6(for='category-07') текіла
+
+        input#category-08.category-selector-7(type='radio', name='radio-set'  ng-click='my.filterByCategory("others");vm.startingItem=0')
+        label.category-label-6(for='category-08') інше
+
+
+    div.catalogue.box
+        div.catalogue_filter
+            div.catalogue_filter_head
+                img(src='../img/controls.png')
+                p Фільтрація
+            div.catalogue_filter_sort.filter
+                div.catalogue_filter_sort_part1(ng-click="sortingAZ=!sortingAZ;")
+                    img(src='../img/sort.png')
+                    p Сортувати
+                    input.filter_hide(type='button' value='Show/Hide')
+                div.catalogue_filter_sort_check(ng-show='sortingAZ')
+                    form.ckeck
+
+                        label
+                            input.radiobox(type='radio' name='sort3' ng-click='my.sortGoods("name")')
+                            |  A-Z
+                        br
+                        label
+                            input.radiobox(type='radio' name='sort3'  ng-click='my.sortGoods("price")')
+                            |  По ціні від 0-9
+                        br
+                        label
+                            input.radiobox(type='radio' name='sort3'  ng-click='my.sortGoods("-price")')
+                            |  По ціні від 9-0
+            div.catalogue_filter_pice.filter
+                div.catalogue_filter_price_part1(ng-click="filterP=!filterP;")
+                    img(src='../img/wallet.png')
+                    p Ціна
+                    input.filter_hide(type='button', value='Show/Hide')
+                div.catalogue_filter_price2(ng-show='filterP')
+                    span  Від {{my.lower_price_bound}} до {{my.upper_price_bound}}
+                    slider(floor='{{my.lp}}', ceiling='{{my.hp}}', ng-model-low='my.lower_price_bound', ng-model-high='my.upper_price_bound')
+            div.catalogue_filter_volume.filter
+                div.catalogue_filter_volume_part1(ng-click="filterV=!filterV;")
+                    img(src='../img/measuring-cup.png')
+                    p Об’єм
+                    input.filter_hide(type='button' value='Show/Hide')
+                form.ckeck(ng-show='filterV')
+                    label(ng-repeat='volume in my.volume| orderBy:volume')
+                        input(type='checkbox' ng-click='my.includeVolume(volume)')
+                        |  {{volume/1000}}
+                        br
+
+            //filter by
+            div.catalogue_filter_volume.filter
+                div.catalogue_filter_volume_part1(ng-click="filterS=!filterS;")
+                    img(src='../img/thermometer.png')
+                    p Міцність
+                    input.filter_hide(type='button' value='Show/Hide')
+                form.ckeck(ng-show='filterS')
+                    label(ng-repeat='strength in my.strength| orderBy:strength')
+                        input(type='checkbox' ng-click='my.includeStrength(strength)' )
+                        |  {{strength}}
+                        br
+
+            div.catalogue_filter_volume.filter
+                div.catalogue_filter_volume_part1(ng-click="filterB=!filterB;")
+                    img(src='../img/real-estate.png')
+                    p Бренд
+                    input.filter_hide(type='button' value='Show/Hide')
+                form.ckeck(ng-show='filterB')
+                    label(ng-repeat='brand in my.brand| orderBy:brand')
+                        input(type='checkbox', ng-click='my.includeBrand(brand)')
+                        |  {{brand}}
+                        br
+
+            div.catalogue_filter_volume.filter
+                div.catalogue_filter_volume_part1(ng-click="filterC=!filterC;")
+                    img(src='../img/flag.png')
+                    p Країна
+                    input.filter_hide(type='button' value='Show/Hide')
+                form.ckeck(ng-show='filterC')
+                    label(ng-repeat='country in my.state')
+                        input(type='checkbox', ng-click='my.includeCountry(country)')
+                        |  {{country}}
+                        br
+
+
+
+        div.catalogue_goods
+            div.catalogue_goods_object(ng-repeat='goods in my.goods|filter:my.filter| filter:my.volumeFilter|filter:my.brandFilter|filter:my.countryFilter|filter:my.strengthFilter|filter:my.priceRange|orderBy:my.myOrderBy | startFrom: my.startingItem| limitTo: my.itemsPerPage'   )
+                a(href='#/details' )
+                    img.image(src='{{goods.image}}' ng-click='my.detail_of_goods(goods)')
+                h4 {{goods.name}}
+                p {{goods.volume}}ml
+                p.price_goods {{goods.price}} грн
+                input.to_basket(type='button' value='В корзину' ng-click='my.ByGoods(goods)' ng-model='my.CountGood')
+
+    div.catalogue_goods_paginnation
+        input.pageNum( type='button' ng-repeat='p in my.pages' value='{{p}}' ng-click='my.goToPage(p)')
+
+        //input(type='button' value='назад' ng-disabled='my.firstPage()' ng-click='my.pageBack()')
+        //span {{my.currentPage+1}} з {{my.numberOfPages()}}
+        //input(type='button' value='вперед' ng-disabled='my.lastPage()' ng-click='my.pageForward()')
+        //span {{my.page_count=(my.goods|filter:my.myfilter).length}}

@@ -1,0 +1,44 @@
+div.conteiner_details
+    h3 HOME / {{my.goodsDetails.category}} / {{my.goodsDetails.name}}
+    div.modal_alert(ng-show='my.alert')
+        h2 {{my.alertMessage}}
+        input.log(ng-show='my.logInButton' type='button' value='ОК' ng-click='my.alert=!my.alert')
+    div.details
+        div.details_img
+            img(src="{{my.goodsDetails.image}}")
+
+        div.details_content
+            h2 {{my.goodsDetails.name}}
+            br
+
+            p {{my.goodsDetails.description}}
+            div.details_description
+                div.details_description_part
+                    p Категорія
+                    p.part_text {{my.goodsDetails.category}}
+                div.details_description_part
+                    p Бренд
+                    p.part_text {{my.goodsDetails.brand}}
+                div.details_description_part
+                    p Країна
+                    p.part_text {{my.goodsDetails.country}}
+                div.details_description_part
+                    p Об'єм
+                    p.part_text {{my.goodsDetails.volume/1000}} л
+                div.details_description_part
+                    p Міцність
+                    p.part_text {{my.goodsDetails.strength}} &deg
+                div.details_description_part
+                    p ціна
+                    p.part_text {{my.goodsDetails.price}} грн
+
+            div.details_input
+                div.details_input-left
+                    //input.minus(type='button' ng-click='my.minus2(my.detorder)')
+                    input.minus(type='button' ng-click='my.minus2()')
+                    p.text_butt {{my.goodsDetails.count}}
+                    //input.plus(type='button' ng-click='my.plus2(my.detorder)')
+                    input.plus(type='button' ng-click='my.plus2()')
+                p.price {{my.goodsDetails.price*my.goodsDetails.count}} грн
+            input.details_button(type='button' value='в корзину' ng-click='my.ByGoods2(my.goodsDetails)')
+
