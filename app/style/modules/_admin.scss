@@ -3,6 +3,7 @@
   color: #c0c8ca;
   font-size: 16px;
   box-sizing: border-box;
+  padding:20px;
 }
 
 .admin_goods {
@@ -201,7 +202,7 @@ margin-left:-50%;
 }
 
 .ordersTable{
-  width:500px;
+  width:450px;
   margin:10px;
   th{
     text-transform: uppercase ;
@@ -232,11 +233,15 @@ margin-left:-50%;
 
 .user_button{
   width:30%;
+  padding: 5px !important;
   font-size:13px;
 }
 .users_table_button{
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  input{
+    width:40%;
+  }
 }
 
 .addUser{
@@ -269,4 +274,13 @@ margin-left:-50%;
 .userEdit{
   height:50px !important;
   padding-left:10%;
+}
+#falseorder{
+  background: red;
+}
+#trueorder{
+  background: black;
+}
+#trueuserbut{
+  display: none;
 }

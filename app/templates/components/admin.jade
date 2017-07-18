@@ -176,7 +176,7 @@ div.admin_container
             label ціна в грн
                 input(type='text' ng-model='ad.commodityToE.price'  )
             label зображення
-                input(type='text' ng-model='ad.commodityToE.image')
+                input(type='file' ng-model='ad.commodityToE.image' base-sixty-four-input )
             label опис
                 textarea(type='text' ng-model='ad.commodityToE.description')
 
@@ -212,7 +212,7 @@ div.admin_container
             label ціна в грн
                 input(type='number' placeholder='вартість товару' min='0' ng-model='ad.newCommodity.price'  )
             label зображення
-                input(type='text' ng-model='ad.newCommodity.image' )
+                input(type='file' ng-model='ad.newCommodity.image' base-sixty-four-input )
             label опис
                 textarea(type='text' placeholder='опис товару' ng-model='ad.newCommodity.description')
 
@@ -356,7 +356,7 @@ div.admin_container
 
             table.ordersTable(ng-repeat='order in ad.orders| filter:ad.orderConfirmation')
                 tr
-                    th {{order.archive}}
+                    th(id='{{order.archive}}order') {{order.totalOrderSum}} грн
                     th(colspan=3) {{order.name}} {{order.sname}}
                 tr
                     td(colspan=4) тел.{{order.phone}} e-mail {{order.email}}
@@ -415,7 +415,7 @@ div.admin_container
                 td {{u.comments}}
 
                 td.users_table_button
-                    input.categories_input_buttons.user_button(type='button' value='підтвердити' ng-click='ad.confirmUser(u)')
+                    input.categories_input_buttons.user_button(type='button' id='{{u.confirmed}}userbut' value='підтвердити' ng-click='ad.confirmUser(u)')
                     input.categories_input_buttons.user_button(type='button' value='видалити' ng-click='ad.userToDelete(u)')
                     input.categories_input_buttons.user_button(type='button' value='редагувати' ng-click='ad.preEditUser(u)')
 
