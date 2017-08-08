@@ -1,0 +1,58 @@
+.banner {
+
+  margin-top: 10px;
+  width: 100%;
+  height: 550px ;
+  padding-top: 10px;
+  color: white;
+  box-sizing: border-box !important;
+@include pc_1024{
+  margin-top: 60px;
+}
+  @include tablet{
+    height:300px;
+    margin:0;
+    padding:0;
+  }
+
+  .main_banner {
+    @include tablet{
+      height:300px;
+    }
+    @include mobile {
+      height: 300px;
+
+    }
+    height: 560px;
+  }
+  .slick-list {
+
+    height: 550px;
+    background-repeat: no-repeat !important;
+    @include pc_l{
+      height: 460px
+    }
+    @include pc_1024{
+    }
+    @include tablet{
+      height:300px;
+
+    }
+  }
+
+  .slick-dots li button:before {
+    font-size: 35px;
+  }
+  .banner .main_banner {
+
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: right !important;
+    //background-position: top;
+  ;@include pc_l{
+    height: 460px;}
+  }
+
+
+
+}

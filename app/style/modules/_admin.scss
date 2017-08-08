@@ -61,7 +61,7 @@ table {
     img {
       height: 75px;
     }
-    img:hover {
+    .table_image:hover {
       position: absolute;
       height: 400px;
     }
@@ -283,4 +283,13 @@ margin-left:-50%;
 }
 #trueuserbut{
   display: none;
+}
+.table_banner{
+  height:210px;
+  img{
+    height:200px;
+  }
+}
+.banner_add{
+  top: 37%
 }

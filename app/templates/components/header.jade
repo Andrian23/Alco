@@ -12,9 +12,12 @@ div#header_container
                 a(href="#/main.html#delivery" target="_self") Доставка
             li
                 a(href="#footer.html#contacts" target="_self") Контакти
+        div.phone
+            span +38 (093)888 23 23
         div#nav_log
             a.humburger(href='#' ng-click='my.openNav()')
                 img(src='../img/burger.png')
+
         input.log(ng-show='my.logInButton' type='button' value='Увійти' ng-click='my.ShowSignIn=!my.ShowSignIn')
         input.log(ng-show='my.logOutButton' type='button' value='Вийти' ng-click='my.logOut()')
 

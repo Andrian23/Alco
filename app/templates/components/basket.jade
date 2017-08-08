@@ -16,18 +16,73 @@ div.basket_conteiner
     div.basket_part1
         div.basket_part1_section_left
             div.basket_part1_section_left_s
-                div.basket_part1_section_left_order(ng-repeat='unit in my.tray')
-                    img.basket_img(ng-src='{{unit.image}}')
-                    h4 {{unit.name}}
-                        p {{unit.volume}}
-                    input.minus(type='button' ng-click='my.minus1(unit.id)')
-                    p.text_butt {{unit.count}}
-                    input.plus(type='button' ng-click='my.plus1(unit.id)')
-                    p.price {{unit.price}} грн
-                    img.basket_cancel(src='../img/cancel.png' ng-click='my.delete_order(unit.id)' alt='видалити товар')
-            div.basket_part1_section_left_e
-                p.together Разом
-                P.price2 {{my.totalSum}} грн
+                table.basket_table.notInMobile
+                    tr.basket_table_head
+                        th товар
+                        th опис
+                        th ціна за одиницю
+                        th кількість
+                        th вартість
+                        th видалити
+
+                    tr.basket_table_body(ng-repeat='unit in my.tray')
+                        td
+                            img.basket_img(ng-src='{{unit.image}}')
+                        td {{unit.name}} {{unit.volume/1000}}л
+                        td {{unit.price}} грн
+                        td.basket_buttons_field
+                            input.basket_minus(type='button' ng-click='my.minus1(unit.id)' value='-')
+                            p.basket_text_butt {{unit.count}}
+                            input.basket_plus(type='button' ng-click='my.plus1(unit.id)' value='+')
+
+                        td {{unit.count*unit.price}} грн
+                        td
+                            img.basket_cancel(src='../img/cancel.png' ng-click='my.delete_order(unit.id)' alt='видалити товар')
+
+
+                    tr.basket_footer
+                        td(colspan=4) загальна вартість
+                        td(colspan=2) {{my.totalSum}} грн
+
+                table.basket_table.mobileOnly
+                    tr.basket_table_head
+                        th товар
+                        th опис
+                        th кількість
+                        th вартість
+
+
+                    tr.basket_table_body(ng-repeat='unit in my.tray')
+                        td
+                            img.basket_img(ng-src='{{unit.image}}')
+                        td {{unit.name}} {{unit.volume/1000}} ({{unit.price}} грн}})
+                        td.basket_buttons_field
+                            input.basket_minus(type='button' ng-click='my.minus1(unit.id)' value='-')
+                            p.basket_text_butt {{unit.count}}
+                            input.basket_plus(type='button' ng-click='my.plus1(unit.id)' value='+')
+                            img.basket_cancel(src='../img/cancel.png' ng-click='my.delete_order(unit.id)' alt='видалити товар')
+
+                        td {{unit.count*unit.price}}
+
+
+                    tr.basket_footer
+                        td(colspan=3) загальна вартість
+                        td() {{my.totalSum}} грн
+
+
+
+                //div.basket_part1_section_left_order(ng-repeat='unit in my.tray')
+                //    img.basket_img(ng-src='{{unit.image}}')
+                //    h4 {{unit.name}}
+                //        p {{unit.volume}}
+                //    input.minus(type='button' ng-click='my.minus1(unit.id)')
+                //    p.text_butt {{unit.count}}
+                //    input.plus(type='button' ng-click='my.plus1(unit.id)')
+                //    p.price {{unit.price}} грн
+                //    img.basket_cancel(src='../img/cancel.png' ng-click='my.delete_order(unit.id)' alt='видалити товар')
+            //div.basket_part1_section_left_e
+            //    p.together Разом
+            //    P.price2 {{my.totalSum}} грн
         div.basket_part1_section_delyvery
             .basket_part1_section_delyvery_header
                 img(src='../img/delivery-truck.png')

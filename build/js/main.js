@@ -34,17 +34,16 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
     var vm = this;
     vm.show_registration = false;
     vm.show_sign_in = false;
-
     vm.selectdays = '';
     vm.selectmonth = '';
     vm.selectyear = '';
-    vm.month = [1,2,3,4,5,6,7,8,9,10,11,12];
-    vm.days = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
+    vm.month = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+    vm.days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
     vm.year = [];
     vm.NewUser = [];
     vm.ConfirmOrder = [];
     vm.Orders = [];
-    vm.order = {}
+    vm.order = {};
     vm.detorder = [];
     vm.CountGood = 'В корзині немає товарів';
     vm.items = [];
@@ -53,64 +52,64 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
     vm.show_basket = false;
     vm.show_map = false;
     vm.tray = [];
-    vm.users = UserService.getUsers()
+    vm.users = UserService.getUsers();
     vm.user = {};
-    vm.catCat=null
+    vm.catCat = null;
     vm.alertMessage = 'для здійснення покупки необхідно авторизуватися';
+    vm.banners = [];
+    vm.discount = 0.5;
 
+    vm.start = function () {
+        vm.GoodsDB=UserService.getGoodsFromDB();
+        vm.getGoods();
 
-
-    vm.start=function(){
-        UserService.getGoodsFromDB()
-        vm.getGoods()
-        vm.length=vm.goods.length
-        vm.categoryToStart=JSON.parse(sessionStorage.getItem('category'))
-        sessionStorage.clear()
+        vm.length = vm.goods.length;
+        vm.categoryToStart = JSON.parse(sessionStorage.getItem('category'))
+        sessionStorage.clear();
         console.log(vm.categoryToStart);
-        if(vm.categoryToStart!=null||vm.categoryToStart!=undefined){
+        if (vm.categoryToStart != null || vm.categoryToStart != undefined) {
 
             vm.filterByCategory(vm.categoryToStart)
-            }
-
-
         }
 
 
+    };
 
-
-    vm.catFromMain=function (x) {
-        vm.cat={}
-        vm.cat.cat=x
-        sessionStorage.setItem('category', JSON.stringify(x))
+    vm.catFromMain = function (x) {
+        vm.cat = {};
+        vm.cat.cat = x;
+        sessionStorage.setItem('category', JSON.stringify(x));
         console.log(JSON.parse(sessionStorage.getItem('category')));
 
-    }
+    };
     vm.getDates = function () {
         for (var i = 2017; i >= 1920; i--) {
             vm.year.push(i.toString())
         }
-    }
-    
-    
+    };
 
-//registration and logIn
+
+//**********************************************************************************************registration and logIn
 
     vm.register = function (newUser) {
-        vm.newUser = newUser
+        vm.newUser = newUser;
         vm.newUser.confirmed = false
 
         vm.show_registration = !vm.show_registration
         UserService.addUser(vm.newUser)
-    }
+    };
 
     vm.logIn = function () {
         for (i in vm.users) {
             if (vm.user.email == vm.users[i].email && vm.user.password == vm.users[i].password) {
                 delete vm.user[i].password
+                vm.getGoods()
+
                 localStorage.setItem('user', JSON.stringify(vm.users[i]))
                 vm.ShowSignIn = !vm.ShowSignIn
                 vm.logInButton = false
                 vm.logOutButton = true
+
             }
         }
 
@@ -121,31 +120,35 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
         vm.logOutButton = false
         vm.userLoggedIn = {};
         localStorage.setItem('user', JSON.stringify(vm.userLoggedIn));
-    }
+        vm.getGoods()
+
+    };
 
     vm.openNav = function () {
         document.getElementById("mySidenav").style.width = "350px";
-    }
+    };
     vm.closeNav = function () {
         document.getElementById("mySidenav").style.width = "0";
-    }
+    };
 
-//get goods
+//************************************************************************************************************get goods
 
     vm.getGoods = function () {
-        vm.goods = UserService.getGoods();
+        vm.goods = vm.GoodsDB;
+
+        console.log(vm.goods);
         vm.pagination()
     };
     vm.getUsers = function () {
         vm.user = UserService.getUsers();
         // for(i in vm.users){
-            // delete vm.users[i].password
-            // delete vm.users[i].comments
+        // delete vm.users[i].password
+        // delete vm.users[i].comments
         // }
     };
 
 
-// FILTERS AND SORTERS
+// **********************************************************************************************FILTERS AND SORTERS
     vm.search1 = function (el) {
         if (vm.search != '')
             return true
@@ -185,24 +188,24 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
 
     }
 
-//filters by category
+//**********************************************************************************************filters by category
 
-    vm.filterByCategory=function(x){
-        vm.categoryToStart=''
+    vm.filterByCategory = function (x) {
+        vm.categoryToStart = ''
 
-       vm.goods=UserService.getByCategory(x)
+        vm.goods = UserService.getByCategory(x)
         vm.FiltersPrepare()
         vm.pagination()
     }
 
-// filtering by PRICE
+// **********************************************************************************************filtering by PRICE
     vm.priceRange = function (goods) {
         return (parseInt(goods['price']) >= vm.lower_price_bound && parseInt(goods['price']) <= vm.upper_price_bound);
     };
     vm.sortGoods = function (y) {
         vm.myOrderBy = y;
     }
-// filtering by VOLUME
+// **********************************************************************************************filtering by VOLUME
 
     vm.volumeIncludes = []
     vm.includeVolume = function (volume) {
@@ -221,7 +224,7 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
         return volume;
     };
 
-// filtering by BRAND
+// **********************************************************************************************filtering by BRAND
 
     vm.brandIncludes = []
     vm.includeBrand = function (brand) {
@@ -240,7 +243,7 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
         return brand;
     };
 
-// filtering by COUNTRY
+// ************************************************************************************************filtering by COUNTRY
 
     vm.countryIncludes = []
     vm.includeCountry = function (country) {
@@ -259,7 +262,7 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
         return country;
     };
 
-// filtering by STRENGTH
+//********************************************************************************************** filtering by STRENGTH
 
     vm.strengthIncludes = []
     vm.includeStrength = function (strength) {
@@ -282,7 +285,7 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
     };
 
 
-//goods details
+//*********************************************************************************************************goods details
     vm.goodsDetails = JSON.parse(sessionStorage.getItem('commodity'))
     vm.detail_of_goods = function (commodity) {
         vm.goodsDetails = commodity
@@ -290,6 +293,16 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
         sessionStorage.setItem("commodity", JSON.stringify(vm.goodsDetails))
 
 
+    }
+    vm.detail_of_goods_banner = function (id) {
+        for (i in vm.goods) {
+            if (vm.goods[i].id === id) {
+                vm.goodsDetails = vm.goods[i]
+                vm.goodsDetails.count = 1
+                sessionStorage.setItem("commodity", JSON.stringify(vm.goodsDetails))
+            }
+        }
+        window.location.href = '#/details'
     }
     vm.detailsOfSearch = function (x) {
         if (location.href.includes("details")) {
@@ -300,7 +313,7 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
             sessionStorage.setItem("commodity", JSON.stringify(vm.goodsDetails))
             window.location.href = '#/details'
             my.searchResults = false
-            my.search=''
+            my.search = ''
         } else {
 
             vm.goodsDetails = x
@@ -308,7 +321,7 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
             sessionStorage.setItem("commodity", JSON.stringify(vm.goodsDetails))
             window.location.href = '#/details'
             my.searchResults = false
-            my.search=''
+            my.search = ''
 
         }
 
@@ -326,7 +339,7 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
     }
 
 
-//LOCAL STORAGE
+//********************************************************************************************************LOCAL STORAGE
     vm.localStore = function () {
         //traycheck
         vm.tray = JSON.parse(localStorage.getItem('goodsToBuy'))
@@ -339,9 +352,8 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
         }
 
 
-
-        vm.userLoggedIn=JSON.parse(localStorage.getItem('user'))
-        if (vm.userLoggedIn.name == null) {
+        vm.userLoggedIn = JSON.parse(localStorage.getItem('user'))
+        if (vm.userLoggedIn == null) {
             vm.userLoggedIn = {};
             vm.logInButton = true
             localStorage.setItem('user', JSON.stringify(vm.userLoggedIn));
@@ -351,13 +363,28 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
             vm.userLoggedIn = JSON.parse(localStorage.getItem('user'))
             vm.logInButton = false
             vm.logOutButton = true
+
             vm.detailsOfOrder()
         }
 
+        if (vm.priceType == undefined) {
+            if(vm.userLoggedIn.name==undefined){
+              vm.priceType=undefined
+
+            }
+            else{
+                vm.discount=0.5
+
+                for (i in vm.goods) {
+                    vm.goods[i].price = vm.goods[i].price * vm.discount
+                }
+                vm.priceType = true
+            }
+        }
     };
 
 
-//TRAY
+//*****************************************************************************************************************TRAY
     vm.trayCheck = function () {
         vm.tray = JSON.parse(localStorage.getItem('goodsToBuy'))
         for (i in vm.tray) {
@@ -375,10 +402,10 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
     }
 
 
-//goods To Tray from details
-    vm.detailsOfOrder=function () {
-        vm.order=vm.userLoggedIn
-        vm.order.archive=false
+//**********************************************************************************************goods To Tray from details
+    vm.detailsOfOrder = function () {
+        vm.order = vm.userLoggedIn
+        vm.order.archive = false
 
 
     }
@@ -408,6 +435,7 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
         for (i in vm.tray) {
             if (vm.tray[i].id === id) {
                 vm.tray[i].count += 1
+
             }
         }
         localStorage.setItem('goodsToBuy', JSON.stringify(vm.tray))
@@ -435,45 +463,8 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
             }
         }
     };
-    // vm.userAutoUpdate = function () {
-    //     if (vm.order.name != vm.userLoggedIn.name ||
-    //         vm.order.sname != vm.userLoggedIn.sname ||
-    //         vm.order.phone != vm.userLoggedIn.phone ||
-    //         vm.order.address.street != vm.userLoggedIn.address.street ||
-    //         vm.order.address.house != vm.userLoggedIn.address.house ||
-    //         vm.order.address.flat != vm.userLoggedIn.address.flat ||
-    //         vm.order.address.stair != vm.userLoggedIn.address.stair ||
-    //         vm.order.address.entrance != vm.userLoggedIn.address.entrance) {
-    //         vm.userUpdate = true
-    //     }
-    // }
-    // vm.autoUpdate = function () {
-    //     vm.upUser = {
-    //         address:{}
-    //     }
-    //     if (vm.order.name != null)
-    //         vm.upUser.id = vm.userLoggedIn.id
-    //     if (vm.order.name != null)
-    //         vm.upUser.name = vm.order.name
-    //     if (vm.order.sname != null)
-    //         vm.upUser.sname = vm.order.sname
-    //     if (vm.order.phone != null)
-    //         vm.upUser.phone = vm.order.phone
-    //     if (vm.order.address.street != null)
-    //         vm.upUser.address.street = vm.order.address.street
-    //     if (vm.order.address.house != null)
-    //         vm.upUser.address.house = vm.order.address.house
-    //     if (vm.order.address.flat != null)
-    //         vm.upUser.address.flat = vm.order.address.flat
-    //     if (vm.order.address.stair != null)
-    //         vm.upUser.address.stair = vm.order.address.stair
-    //     if (vm.order.address.entrance != null)
-    //         vm.upUser.address.entrance = vm.order.address.entrance
-    //     console.log(vm.upUser);
-    //     UserService.updateUser(vm.upUser)
-    // }
 
-    //BUY GOODS
+    //**********************************************************************************************BUY GOODS
     vm.checkLoggedUser = function () {
         vm.userLoggedIn = JSON.parse(localStorage.getItem('user'))
         console.log(vm.userLoggedIn);
@@ -503,10 +494,10 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
 
     vm.confirmOrder = function () {
         vm.checkLoggedUser()
-        if (vm.userLoggedIn.name==undefined) {
+        if (vm.userLoggedIn.name == undefined) {
             vm.alertConfirmation = true
             vm.alertMessage = 'для здійснення покупки необхідно авторизуватися'
-        }else{
+        } else {
 
             vm.order.goodsOrdered = vm.tray
             console.log(vm.order);
@@ -523,7 +514,7 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
     }
 
 
-//pagination
+//**********************************************************************************************pagination
     vm.startingItem = 0
     vm.goToPage = function (x) {
         vm.startingItem = x * vm.itemsPerPage - vm.itemsPerPage;
@@ -545,7 +536,7 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
     };
 
 
-//carousele on main page
+//**********************************************************************************************carousele on main page
     vm.goodsForSlider1 = function () {
         vm.number = []
         for (i in vm.goods) {
@@ -562,6 +553,15 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
             }
         }
     }
+    // vm.goodsForSlider3 = function () {
+    //     vm.number3 = []
+    //     for (i in vm.goods) {
+    //         if (i % 3 == 0) {
+    //             vm.number2.push(vm.goods[i])
+    //         }
+    //     }
+    // }
+
     vm.slickConfigLoaded = true;
     vm.updateNumber = function () {
         vm.slickConfigLoaded = false;
@@ -572,15 +572,16 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
         });
     };
     vm.slickConfig = {
-        autoplay: true,
+        autoplay: false,
         infinite: true,
         autoplaySpeed: 1500,
         slidesToShow: 5,
         slidesToScroll: 1,
-        mobileFirst:false,
-        rtl:false,
+        mobileFirst: false,
+        rtl: false,
         method: {}
     };
+
     vm.slickConfigLoaded2 = true;
     vm.updateNumber2 = function () {
         vm.slickConfigLoaded2 = false;
@@ -593,30 +594,63 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
     vm.slickConfig2 = {
         autoplay: true,
         infinite: true,
-        autoplaySpeed: 1500,
+        autoplaySpeed: 0,
         slidesToShow: 5,
         slidesToScroll: 1,
         arrows: false,
         // centerMode: true,
 
-        // speed: 2000,
+        speed: 2000,
         method: {}
     };
 
 
+    //******************************************************************************************************main BANNER
+    vm.slickConfig1Loaded = true;
+    vm.updateNumber1 = function () {
+        vm.slickConfig1Loaded = false;
+        // vm.number1[2] = '123';
+        vm.number1.push(Math.floor((Math.random() * 10) + 100));
+        $timeout(function () {
+            vm.slickConfig1Loaded = true;
+        }, 5);
+    };
+    vm.slickCurrentIndex = 0;
+    vm.slickConfig1 = {
+        dots: true,
+        autoplay: false,
+        // autoplay: true,
+        adaptiveHeight:true,
+        initialSlide: 0,
+        slidesToShow: 1,
+        itemsDesktop : [780,1],
+        slidesPerRow:1,
+        swipeToSlide:true,
+        slidesToScroll: 1,
+        infinite: true,
+        buttons: true,
+        autoplaySpeed: 1000,
+        variableWidth:false,
+        // fade:true,
+
+        mobileFirst:true,
+        method: {},
+        event: {}
+    };
+
     // vm.getGoods();
     // vm.getGoods()
     vm.init = function () {
+        vm.number1 = UserService.getBanners();
         vm.start()
         // vm.checkCatalogue()
-        vm.getDates()
         vm.localStore()
+        vm.getDates()
         vm.trayCheck()
         vm.goodsForSlider1()
         vm.goodsForSlider2()
         vm.FiltersPrepare()
         vm.getUsers();
-
 
 
     }
@@ -631,81 +665,66 @@ app.controller('adminCtrl', ['UserService', function (UserService) {
     vm.orders = [];
 
     vm.orderToDel = {};
-    vm.userConfirmed=true;
-    vm.admOrders=true
+    vm.userConfirmed = true;
+    vm.admOrders = true
     vm.id = 0;
-    vm.newCategory={name:''}
-    vm.addCat=false
-    vm.newCommodity={}
-    vm.newCategory={}
-    vm.newUser={}
+    vm.newCategory = {name: ''}
+    vm.addCat = false
+    vm.newCommodity = {}
+    vm.newCategory = {}
+    vm.newUser = {}
     // vm.userEdited={}
-    vm.countries=["Афганістан", "Албанія", "Алжир", "Американське Самоа", "Андорра", "Ангола", "Ангілья", "Антарктида", "Антигуа і Барбуда", "Аргентина", "Вірменія", "Аруба" , "Австралія", "Австрія", "Азербайджан", "Багамські острови", "Бахрейн", "Бангладеш", "Барбадос", "Білорусь", "Бельгія", "Беліз", "Бенін", "Бермудські острови", "Бутан", "Болівія", "Боснія і Герцеговина", "Ботсвана", "Буве-Айленд", "Бразилія", "Британські території Індійського океану", "Бруней ", "Болгарія", "Буркіна-Фасо", "Бурунді", "Камбоджа", "Камерун", "Канада", "Кабо-Верде", "Кайманові острови", "Центральноафриканська республіка", "Чад", "Чилі", "Китай", "Різдвяний острів", "Кокосові острови"," Хорватія (Гравця) ","Острови Кука ","Коста-Ріка "," Кот-дІвуар "," Куба "," Кіпр ","Чеська Республіка", "Данія", "Джибуті", "Домініка", "Домініканська Республіка", "Східний Тимор", "Еквадор", "Єгипет", "Сальвадор", "Екваторіальна Гвінея", "Еритрея", "Естонія", "Ефіопія", "Фолклендські (Мальвінські) острови", "Фарерські острови", "Фіджі", "Фінляндія", "Франція", "Французький митрополит" , "Французька Гвіана", "Французька Полінезія", "Французькі Південні Території", "Габон", "Гамбія", "Грузія", "Німеччина", "Гана", "Гібралтар", "Греція", "Гренландія", "Гренада", "Гваделупа", "Гуам", "Гватемала", "Гвінея", "Гондурас", "Гонконг", "Угорщина", "Ісландія", "Гвінея-Бісау", "Гвінея-Бісау", "Гайана", "Гаїті", "Острова Херд і Мак-Дональд", "Святий Престол" , "Індія", "Індонезія", "Іран (Ісламська Республіка)", "Ірак", "Ірландія", "Ізраїль", "Італія", "Ямайка", "Японія", "Йорданія", "Казахстан","Кенія", "Кірібаті", "Корея, Народно-Демократична Республіка", "Республіка Корея", "Кувейт", "Киргизстан", "Лаос", "Народна Демократична Республіка", "Латвія", "Ліван", "Лесото", "Ліберія", "Лівійська Арабська Джамахірія", "Ліхтенштейн", "Литва", "Люксембург", "Макау", "Македонія, колишня Югославська Республіка", "Мадагаскар", "Малаві", "Малайзія", "Мальдіви", "Малі", "Мальта", "Маршаллові Острови", "Мартініка", "Мавританія", "Маврикій", "Майотта", "Мексика", "Мікронезія, Федеративні держави", "Республіка Молдова", "Монако", "Монголія", "Монтсеррат", "Марокко", "Мозамбік", "М'янма", "Намібія", "Науру", "Непал", "Нідерланди", "Нідерландські Антильські острови", "Нова Каледонія", "Нова Зеландія", "Нікарагуа", "Нігер", "Нігерія", "Ніуе", "Острів Норфолк", "Північні Маріанські острови", "Норвегія", "Оман", "Пакистан" , "Палау", "Панама", "Папуа-Нова Гвінея", "Парагвай", "Перу", "Філіппіни", "Піткейр", "Польща", "Португалія", "Пуерто-Рико", "Катар", "Реюньйон"," Румунія ", "Російська Федерація"," Руанда ", "Сент Кітс і Невіс", "Сент-Люсія", " Сент-Вінсент і Гренадіни", "Самоа ", "Сан-Марино", "Сан-Томе і Принсіпі", "Саудівська Аравія", "Сенегал ", "Сейшельські острови", "Сьєрра-Леоне ", "Сінгапур ", "Словаччина", "Словенія", "Соломонові Острови", "Сомалі", "Південна Африка ", "Південна Джорджія та Південно-Сандвічеві Острови", "Іспанія ", "Шрі-Ланка","Св. Олени", "Сен-П'єр і Мікелон", "Судан", "Сурінам", "Свальбард", "острови Ян-Маєн", "Свазіленд", "Швеція", "Швейцарія", "Сирійська Арабська Республіка", "Тайвань, провінція Китаю", "Таджикистан", "Танзанія", "Об'єднана Республіка", "Таїланд", "Того", "Токелау", "Тонга", "Тринідад і Тобаго", "Туніс", "Туреччина", "Туркменістан", "Турки і Кайкос", "Тувалу", "Уганда", "Україна", "Об'єднаний араб Емірати ", " Великобританія ", "США ", "Малі віддалені острови Сполучені Штати ", " Уругвай ", " Узбекистан ", " Вануату ", " Венесуела ", "В'єтнам ", "Британські віргінські острови ", "Віргінські острови (США) ", "Острови Уолліс і Футуна ", "Західна Сахара ", "Ємен ", "Югославія ", "Замбія ", "Зімбабве"];
-    vm.getOrders = function () {
-        vm.orders = UserService.getOrders()
-        for(i in vm.orders){
-            vm.orders[i].totalOrderSum=0
-            for(j in vm.orders[i].goodsOrdered){
-                vm.orders[i].totalOrderSum+=vm.orders[i].goodsOrdered[j].price*vm.orders[i].goodsOrdered[j].count
+    vm.countries = ["Афганістан", "Албанія", "Алжир", "Американське Самоа", "Андорра", "Ангола", "Ангілья", "Антарктида", "Антигуа і Барбуда", "Аргентина", "Вірменія", "Аруба", "Австралія", "Австрія", "Азербайджан", "Багамські острови", "Бахрейн", "Бангладеш", "Барбадос", "Білорусь", "Бельгія", "Беліз", "Бенін", "Бермудські острови", "Бутан", "Болівія", "Боснія і Герцеговина", "Ботсвана", "Буве-Айленд", "Бразилія", "Британські території Індійського океану", "Бруней ", "Болгарія", "Буркіна-Фасо", "Бурунді", "Камбоджа", "Камерун", "Канада", "Кабо-Верде", "Кайманові острови", "Центральноафриканська республіка", "Чад", "Чилі", "Китай", "Різдвяний острів", "Кокосові острови", " Хорватія (Гравця) ", "Острови Кука ", "Коста-Ріка ", " Кот-дІвуар ", " Куба ", " Кіпр ", "Чеська Республіка", "Данія", "Джибуті", "Домініка", "Домініканська Республіка", "Східний Тимор", "Еквадор", "Єгипет", "Сальвадор", "Екваторіальна Гвінея", "Еритрея", "Естонія", "Ефіопія", "Фолклендські (Мальвінські) острови", "Фарерські острови", "Фіджі", "Фінляндія", "Франція", "Французький митрополит", "Французька Гвіана", "Французька Полінезія", "Французькі Південні Території", "Габон", "Гамбія", "Грузія", "Німеччина", "Гана", "Гібралтар", "Греція", "Гренландія", "Гренада", "Гваделупа", "Гуам", "Гватемала", "Гвінея", "Гондурас", "Гонконг", "Угорщина", "Ісландія", "Гвінея-Бісау", "Гвінея-Бісау", "Гайана", "Гаїті", "Острова Херд і Мак-Дональд", "Святий Престол", "Індія", "Індонезія", "Іран (Ісламська Республіка)", "Ірак", "Ірландія", "Ізраїль", "Італія", "Ямайка", "Японія", "Йорданія", "Казахстан", "Кенія", "Кірібаті", "Корея, Народно-Демократична Республіка", "Республіка Корея", "Кувейт", "Киргизстан", "Лаос", "Народна Демократична Республіка", "Латвія", "Ліван", "Лесото", "Ліберія", "Лівійська Арабська Джамахірія", "Ліхтенштейн", "Литва", "Люксембург", "Макау", "Македонія, колишня Югославська Республіка", "Мадагаскар", "Малаві", "Малайзія", "Мальдіви", "Малі", "Мальта", "Маршаллові Острови", "Мартініка", "Мавританія", "Маврикій", "Майотта", "Мексика", "Мікронезія, Федеративні держави", "Республіка Молдова", "Монако", "Монголія", "Монтсеррат", "Марокко", "Мозамбік", "М'янма", "Намібія", "Науру", "Непал", "Нідерланди", "Нідерландські Антильські острови", "Нова Каледонія", "Нова Зеландія", "Нікарагуа", "Нігер", "Нігерія", "Ніуе", "Острів Норфолк", "Північні Маріанські острови", "Норвегія", "Оман", "Пакистан", "Палау", "Панама", "Папуа-Нова Гвінея", "Парагвай", "Перу", "Філіппіни", "Піткейр", "Польща", "Португалія", "Пуерто-Рико", "Катар", "Реюньйон", " Румунія ", "Російська Федерація", " Руанда ", "Сент Кітс і Невіс", "Сент-Люсія", " Сент-Вінсент і Гренадіни", "Самоа ", "Сан-Марино", "Сан-Томе і Принсіпі", "Саудівська Аравія", "Сенегал ", "Сейшельські острови", "Сьєрра-Леоне ", "Сінгапур ", "Словаччина", "Словенія", "Соломонові Острови", "Сомалі", "Південна Африка ", "Південна Джорджія та Південно-Сандвічеві Острови", "Іспанія ", "Шрі-Ланка", "Св. Олени", "Сен-П'єр і Мікелон", "Судан", "Сурінам", "Свальбард", "острови Ян-Маєн", "Свазіленд", "Швеція", "Швейцарія", "Сирійська Арабська Республіка", "Тайвань, провінція Китаю", "Таджикистан", "Танзанія", "Об'єднана Республіка", "Таїланд", "Того", "Токелау", "Тонга", "Тринідад і Тобаго", "Туніс", "Туреччина", "Туркменістан", "Турки і Кайкос", "Тувалу", "Уганда", "Україна", "Об'єднаний араб Емірати ", " Великобританія ", "США ", "Малі віддалені острови Сполучені Штати ", " Уругвай ", " Узбекистан ", " Вануату ", " Венесуела ", "В'єтнам ", "Британські віргінські острови ", "Віргінські острови (США) ", "Острови Уолліс і Футуна ", "Західна Сахара ", "Ємен ", "Югославія ", "Замбія ", "Зімбабве"];
 
-            }
-            console.log(vm.orders[i].totalOrderSum);
-        }
-
-    };
-vm.getCategories=function () {
-    vm.category=UserService.getCategories()
-}
 
 // vm.onLoad = function (e, reader, file, fileList, fileOjects, fileObj) {
 //     alert('this is handler for file reader onload event!');
 
 // }
-//USERS
-    vm.getUsers=function () {
-        vm.users=UserService.getUsers()
+//USERS************************************************************************************************************USERS
+    vm.getUsers = function () {
+        vm.users = UserService.getUsers()
     }
 
 
-    //вс2740ет
-    vm.addNewUser=function () {
+    vm.addNewUser = function () {
         vm.newUser.confirmed = false
         UserService.addUser(vm.newUser)
-        vm.newUser={}
+        vm.newUser = {}
         vm.getUsers()
 
     }
-    vm.preEditUser=function (userToEdit) {
-        vm.userEdited=userToEdit
-        vm.edUser=true
+    vm.preEditUser = function (userToEdit) {
+        vm.userEdited = userToEdit
+        vm.edUser = true
     }
-    vm.editUser=function () {
+    vm.editUser = function () {
         UserService.editUser(vm.userEdited)
         vm.getUsers()
-        vm.userEdited={}
+        vm.userEdited = {}
         console.log(vm.userEdited);
     }
-    vm.cancelEditUser=function () {
-        vm.userToEd={}
-        vm.userEdited={}
+    vm.cancelEditUser = function () {
+        vm.userToEd = {}
+        vm.userEdited = {}
 
     }
-    vm.checkUsers=function () {
-        for(i in vm.users){
-            if(vm.users[i].confirmed==false){
-                vm.userConfirmed=false
-                document.getElementById('newUsers').style.background='red'
+    vm.checkUsers = function () {
+        for (i in vm.users) {
+            if (vm.users[i].confirmed == false) {
+                vm.userConfirmed = false
+                document.getElementById('newUsers').style.background = 'red'
                 break
-            }else{
-                document.getElementById('newUsers').style.background='darkgray'
+            } else {
+                document.getElementById('newUsers').style.background = 'darkgray'
 
             }
         }
     }
-    vm.confirmUser=function(u){
-        for(i in vm.users){
-            if(vm.users[i].id==u.id){
-                vm.users[i].confirmed=true
+    vm.confirmUser = function (u) {
+        for (i in vm.users) {
+            if (vm.users[i].id == u.id) {
+                vm.users[i].confirmed = true
             }
         }
         vm.checkUsers()
@@ -729,19 +748,29 @@ vm.getCategories=function () {
     };
 
 
+//ORDERS**********************************************************************************************************ORDERS
+    vm.getOrders = function () {
+        vm.orders = UserService.getOrders()
+        for (i in vm.orders) {
+            vm.orders[i].totalOrderSum = 0
+            for (j in vm.orders[i].goodsOrdered) {
+                vm.orders[i].totalOrderSum += vm.orders[i].goodsOrdered[j].price * vm.orders[i].goodsOrdered[j].count
 
+            }
+            console.log(vm.orders[i].totalOrderSum);
+        }
 
+    };
+    vm.checkOrders = function () {
+        for (i in vm.orders) {
+            if (vm.orders[i].archive == false) {
+                vm.orderConfirmation = false
 
-    vm.checkOrders=function () {
-        for(i in vm.orders){
-            if(vm.orders[i].archive==false){
-                vm.orderConfirmation=false
-
-                document.getElementById('newOrders').style.background='red'
+                document.getElementById('newOrders').style.background = 'red'
                 break
 
-            }else{
-                document.getElementById('newOrders').style.background='darkgray'
+            } else {
+                document.getElementById('newOrders').style.background = 'darkgray'
 
             }
         }
@@ -797,7 +826,8 @@ vm.getCategories=function () {
         for (i in order.goodsOrdered) {
             vm.sumOrder += order.goodsOrdered[i].count * order.goodsOrdered[i].price
 
-        };
+        }
+        ;
 
     };
     vm.deleteOrder = function () {
@@ -806,9 +836,11 @@ vm.getCategories=function () {
             if (vm.orders[i].id == vm.id) {
                 vm.orders.splice(i, 1)
 
-            };
+            }
+            ;
 
-        };
+        }
+        ;
         vm.id = '';
         vm.delOrder = !vm.delOrder;
         vm.orderToDel = {};
@@ -821,7 +853,10 @@ vm.getCategories=function () {
     };
 
 
-
+//CATEGORY*****************************************************************************************************CATEGORY
+    vm.getCategories = function () {
+        vm.category = UserService.getCategories()
+    }
     vm.preDeleteCategory = function (c) {
         vm.orderToDel = c;
         vm.delCat = !vm.delCat
@@ -834,8 +869,10 @@ vm.getCategories=function () {
             if (vm.category[i] == vm.orderToDel) {
                 vm.category.splice[i, 1];
                 break;
-            };
-        };
+            }
+            ;
+        }
+        ;
         vm.orderToDel = {};
         vm.delCat = !vm.delCat;
     };
@@ -849,25 +886,27 @@ vm.getCategories=function () {
 
     vm.renameCategory = function () {
         UserService.editCategory(vm.newCategoryName)
-        vm.newCategoryName='';
+        vm.newCategoryName = '';
     };
 
 
-    vm.cancelRename=function () {
+    vm.cancelRename = function () {
         vm.editCategory = !vm.editCategory
-        vm.catToEdit=''
+        vm.catToEdit = ''
     }
 
-    vm.addCategory=function () {
+    vm.addCategory = function () {
 
-    UserService.addCategory(vm.newCategory.name)
+        UserService.addCategory(vm.newCategory.name)
         vm.getCategories()
-}
+    }
 
+//GOODS**********************************************************************************************************GOODS
 
     //get goods
 
     vm.getGoods = function () {
+        vm.banners = UserService.getBanners()
         vm.goods = UserService.getGoods();
 
         vm.onlyUnique = function (value, index, self) {
@@ -922,7 +961,7 @@ vm.getCategories=function () {
     vm.editCommodity = function () {
         vm.editCom = false;
         UserService.editGoods(vm.commodityToE);
-        vm.commodityToE={}
+        vm.commodityToE = {}
 
     };
     vm.goPromo = function (id) {
@@ -933,24 +972,34 @@ vm.getCategories=function () {
                     vm.goods[i].promo = false
                 } else {
                     vm.goods[i].promo = true
-                };
+                }
+                ;
 
-            };
-        };
+            }
+            ;
+        }
+        ;
     };
 
 
     //add commodity
-    vm.addCommodity=function () {
+    vm.addCommodity = function () {
         // console.log(vm.newCommodity);
         UserService.addGoods(vm.newCommodity)
         console.log(vm.newCommodity);
-        vm.newCommodity={}
+        vm.newCommodity = {}
         vm.getGoods()
     }
-    vm.cancelAdd=function () {
-        vm.newCommodity={}
+    vm.cancelAdd = function () {
+        vm.newCommodity = {}
 
+    }
+    vm.addBanner = function () {
+
+        UserService.addBanner(vm.newBanner)
+        console.log(vm.newBanner);
+        vm.newBanner = {}
+        vm.getGoods()
     }
 
     vm.init = function () {
@@ -968,6 +1017,29 @@ vm.getCategories=function () {
 
 app.factory("UserService", function ($http) {
     return {
+        banners: [
+            {
+                id: 1,
+                image:'../img/111.png',
+                product_id: 2
+
+            },{
+                id: 3,
+                image:'../img/jameson.jpg',
+                product_id: 14,
+
+            },{
+                id: 2,
+                image:'../img/about.png',
+                product_id: 25
+
+            },{
+                id: 4,
+                image:'../img/111.jpg',
+                product_id: 13
+
+            }
+        ],
         goodsDB: [
             {
                 id: 1,
@@ -978,6 +1050,7 @@ app.factory("UserService", function ($http) {
                 strength: 3,
                 volume: 750,
                 price: "60",
+                priceReg:55,
                 image: '../img/im-1.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фаДуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фаДуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
                 , promo: false
@@ -1564,10 +1637,9 @@ app.factory("UserService", function ($http) {
         ],
         category: [],
         goodsBeer: [],
-        getGoodsFromDB:function(){
-            this.goods=this.goodsDB
+        getGoodsFromDB: function () {
+            return this.goodsDB
         },
-
 
 
         getOrders: function () {
@@ -1577,12 +1649,15 @@ app.factory("UserService", function ($http) {
             this.orders.push(order)
         },
         getGoods: function () {
-            return this.goods
+            return this.goodsDB
         }
 
         ,
         addGoods: function (newGoods) {
             this.goods.push(newGoods)
+        },
+        addBanner: function (newBanners) {
+            this.banners.push(newBanners)
         },
 
         getDetails: function (x) {
@@ -1611,11 +1686,11 @@ app.factory("UserService", function ($http) {
             }
         }
         ,
-        getCategories:function(){
-          for(i in this.goods){
-              this.category.push(this.goods[i].category)
-          }
-          return this.category
+        getCategories: function () {
+            for (i in this.goods) {
+                this.category.push(this.goods[i].category)
+            }
+            return this.category
         },
 
         getUsers: function () {
@@ -1624,12 +1699,15 @@ app.factory("UserService", function ($http) {
         addUser: function (newUser) {
             this.users.push(newUser)
         },
-        editUser:function (eu) {
-          for(i in this.users){
-              if(eu.email==this.users[i].email){
-                  this.users[i]=eu
-              }
-          }
+        editUser: function (eu) {
+            for (i in this.users) {
+                if (eu.email == this.users[i].email) {
+                    this.users[i] = eu
+                }
+            }
+        },
+        getBanners:function(){
+            return this.banners
         },
 
         deleteGoods: function (g) {
@@ -1674,7 +1752,7 @@ app.factory("UserService", function ($http) {
         }
         ,
 
-        editComodity: function (g) {
+        editCommodity: function (g) {
             var str = JSON.stringify(g);
             $http.put('https://furniture123.herokuapp.com/api/order', str)
         },

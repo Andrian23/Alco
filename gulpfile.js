@@ -30,12 +30,12 @@ gulp.task('jsLibs', function () {
 
 //compile  less code
 gulp.task('styles', function() {
-    return gulp.src('./app/style/**/*.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(rename({
-            suffix: '.min',
-            prefix: ''
-        }))
+        return gulp.src('./app/style/**/*.scss')
+            .pipe(sass().on('error', sass.logError))
+            .pipe(rename({
+                suffix: '.min',
+                prefix: ''
+            }))
         .pipe(autoprefixer({
             browsers: ['last 15 versions'],
             cascade: false

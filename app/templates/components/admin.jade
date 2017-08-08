@@ -256,26 +256,78 @@ div.admin_container
         'admGoods=true; ' +
         'admCategories=false;' +
         'ad.admOrders=false;' +
+        'admBanners=false' +
         'admRequests=false')
         input.categories_input_buttons(type='button' value='КАТЕГОРІЇ' ng-click=
         'admCategories=true;' +
         'ad.admOrders=false;' +
         'admRequests=false;' +
+        'admBanners=false' +
         'admGoods=false')
         input.categories_input_buttons(type='button' value='ЗАМОВЛЕННЯ' ng-click=
         'ad.admOrders=true;' +
         'admCategories=false;' +
         'admRequests=false;' +
         'admGoods=false;' +
+        'admBanners=false' +
         'ad.checkOrders()')
         input.categories_input_buttons(type='button' value='користувачі' ng-click=
         'admRequests=true;' +
         'admCategories=false;' +
         'ad.admOrders=false;' +
         'admGoods=false;' +
+        'admBanners=false' +
         'ad.checkUsers()')
+        input.categories_input_buttons(type='button' value='банери' ng-click='admRequests=false;' +
+        'admCategories=false;' +
+        'ad.admOrders=false;' +
+        'admGoods=false;' +
+        'admBanners=true'
+        )
 
-    //goods preview
+    //banners
+    div.admin_goods.banners_admin(ng-show='admBanners')
+        h2 ТОВАРИ
+        input.categories_input_search(type='button' value='додати новий БАНЕР' ng-click='ad.addNewBanner=!ad.addNewBanner')
+
+        table
+            tr
+                th зображення
+                th id товару
+                th дії
+            tr.table_banner(ng-repeat='b in ad.banners')
+                td
+                    img(src='{{b.image}}')
+                td {{b.product_id}}
+                td
+                    input.categories_input_buttons(type='button' value='все' ng-click="ad.admSearch='';ad.filter( )")
+                    input.categories_input_buttons(type='button' value='все' ng-click="ad.admSearch='';ad.filter( )")
+                    input.categories_input_buttons(type='button' value='все' ng-click="ad.admSearch='';ad.filter( )")
+        div.content.banner.banner_admin
+
+
+    //add banner
+    div.modal_delete#modal_delete(ng-show='ad.addNewBanner')
+        h2 Додати новий Банер
+        div.edit_modal.banner_add
+            label товар
+                br
+                select(ng-model='ad.newBanner.goods_id' required)
+                    option(value='' disabled selected) товар
+                    option(ng-repeat='commodity in ad.goods track by commodity.id') {{commodity.name}}
+            br
+            label зображення()
+                input(type='file' ng-model='ad.newBanner.image' base-sixty-four-input )
+
+        div
+            input.categories_input_buttons.editBut(type='button' value='добавити' ng-click='ad.addBanner()')
+            input.categories_input_buttons.editBut(type='button' value='очистити' ng-click='ad.cancelAddB()')
+            input.categories_input_buttons.editBut(type='button' value='закрити' ng-click='ad.addNewBanner=!ad.addNewBanner')
+
+
+
+
+    //goods previw    *****************************************
     div.admin_goods(ng-show='admGoods')
         h2 ТОВАРИ
         input.categories_input_search(type='button' value='додати новий товар' ng-click='ad.addNewC=!ad.addNewC')
@@ -313,12 +365,13 @@ div.admin_container
                 td() {{g.country}}
                 td() {{g.promo}}
                 td()
-                    img(src='{{g.image}}')
+                    img.table_image(src='{{g.image}}')
                 td
                     input.action_button(type='button' value='редагувати' ng-click="ad.commodityToEdit(g)")
                     input.action_button(type='button' value='видалити' ng-click="ad.commodityToDelete(g)")
                     input.action_button(type='button' value='промо' ng-click='ad.goPromo(g.id)')
                 td#description() {{g.description}}
+
 
 
 
@@ -418,6 +471,7 @@ div.admin_container
                     input.categories_input_buttons.user_button(type='button' id='{{u.confirmed}}userbut' value='підтвердити' ng-click='ad.confirmUser(u)')
                     input.categories_input_buttons.user_button(type='button' value='видалити' ng-click='ad.userToDelete(u)')
                     input.categories_input_buttons.user_button(type='button' value='редагувати' ng-click='ad.preEditUser(u)')
+
 
 
 

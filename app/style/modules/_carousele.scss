@@ -35,7 +35,8 @@
 
 .slick-list {
   @include mobile {
-    height: 130px !important;;
+    height: 170px !important;;
+    overflow: visible;
   }
   @include tablet {
     height: 130px !important;;
@@ -155,7 +156,7 @@
   @include mobile {
     width: 120%;
     height: 40px;
-    margin-top: 135px;
+    margin-top: 170px;
     padding-top: 10px;
     font-size: 15px;
     box-sizing: border-box;
@@ -167,7 +168,7 @@
     //box-sizing: border-box;
     width: 120%;
     height: 40px;
-    margin-top: 180px;
+    margin-top: 207px;
     padding-top: 10px;
     font-size: 15px;
     box-sizing: border-box;
@@ -217,7 +218,7 @@
   @include tablet {
     margin-top: -80px;
     width: 10%;
-    height: 440px;
+    height: 327px;
 
   }
 

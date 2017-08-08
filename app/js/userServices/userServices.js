@@ -1,5 +1,28 @@
 app.factory("UserService", function ($http) {
     return {
+        banners: [
+            {
+                id: 1,
+                image:'../img/111.png',
+                product_id: 2
+
+            },{
+                id: 3,
+                image:'../img/jameson.jpg',
+                product_id: 14,
+
+            },{
+                id: 2,
+                image:'../img/about.png',
+                product_id: 25
+
+            },{
+                id: 4,
+                image:'../img/111.jpg',
+                product_id: 13
+
+            }
+        ],
         goodsDB: [
             {
                 id: 1,
@@ -10,6 +33,7 @@ app.factory("UserService", function ($http) {
                 strength: 3,
                 volume: 750,
                 price: "60",
+                priceReg:55,
                 image: '../img/im-1.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фаДуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фаДуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
                 , promo: false
@@ -596,10 +620,9 @@ app.factory("UserService", function ($http) {
         ],
         category: [],
         goodsBeer: [],
-        getGoodsFromDB:function(){
-            this.goods=this.goodsDB
+        getGoodsFromDB: function () {
+            return this.goodsDB
         },
-
 
 
         getOrders: function () {
@@ -609,12 +632,15 @@ app.factory("UserService", function ($http) {
             this.orders.push(order)
         },
         getGoods: function () {
-            return this.goods
+            return this.goodsDB
         }
 
         ,
         addGoods: function (newGoods) {
             this.goods.push(newGoods)
+        },
+        addBanner: function (newBanners) {
+            this.banners.push(newBanners)
         },
 
         getDetails: function (x) {
@@ -643,11 +669,11 @@ app.factory("UserService", function ($http) {
             }
         }
         ,
-        getCategories:function(){
-          for(i in this.goods){
-              this.category.push(this.goods[i].category)
-          }
-          return this.category
+        getCategories: function () {
+            for (i in this.goods) {
+                this.category.push(this.goods[i].category)
+            }
+            return this.category
         },
 
         getUsers: function () {
@@ -656,12 +682,15 @@ app.factory("UserService", function ($http) {
         addUser: function (newUser) {
             this.users.push(newUser)
         },
-        editUser:function (eu) {
-          for(i in this.users){
-              if(eu.email==this.users[i].email){
-                  this.users[i]=eu
-              }
-          }
+        editUser: function (eu) {
+            for (i in this.users) {
+                if (eu.email == this.users[i].email) {
+                    this.users[i] = eu
+                }
+            }
+        },
+        getBanners:function(){
+            return this.banners
         },
 
         deleteGoods: function (g) {
@@ -706,7 +735,7 @@ app.factory("UserService", function ($http) {
         }
         ,
 
-        editComodity: function (g) {
+        editCommodity: function (g) {
             var str = JSON.stringify(g);
             $http.put('https://furniture123.herokuapp.com/api/order', str)
         },
