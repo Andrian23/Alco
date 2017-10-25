@@ -12,6 +12,8 @@ div.basket_conteiner
 
 
 
+
+
     img.basket_img2(src='../img/shape-2.png')
     div.basket_part1
         div.basket_part1_section_left
@@ -31,6 +33,7 @@ div.basket_conteiner
                         td {{unit.name}} {{unit.volume/1000}}л
                         td {{unit.price}} грн
                         td.basket_buttons_field
+                        
                             input.basket_minus(type='button' ng-click='my.minus1(unit.id)' value='-')
                             p.basket_text_butt {{unit.count}}
                             input.basket_plus(type='button' ng-click='my.plus1(unit.id)' value='+')
