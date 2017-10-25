@@ -20,21 +20,25 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
     vm.show_basket = false;
     vm.show_map = false;
     vm.tray = [];
-    vm.users = UserService.getUsers();
     vm.user = {};
     vm.catCat = null;
     vm.alertMessage = 'для здійснення покупки необхідно авторизуватися';
     vm.banners = [];
-    vm.discount = 0.5;
-
+    vm.discount = 1;
+    vm.wholesale = false;
+    vm.priceRegister = false;
+    vm.PriceCount = 0;
+    vm.userLoggedIn = {};
+    vm.discountSize=0.3
+    vm.wholeSaleNumb=6;
     vm.start = function () {
-        vm.GoodsDB=UserService.getGoodsFromDB();
+        vm.goodsDB = UserService.getGoodsFromDB();
         vm.getGoods();
 
-        vm.length = vm.goods.length;
-        vm.categoryToStart = JSON.parse(sessionStorage.getItem('category'))
-        sessionStorage.clear();
-        console.log(vm.categoryToStart);
+        vm.length = vm.goodsDB.length;
+        vm.categoryToStart = JSON.parse(localStorage.getItem('category'));
+        // localStorage.clear();
+
         if (vm.categoryToStart != null || vm.categoryToStart != undefined) {
 
             vm.filterByCategory(vm.categoryToStart)
@@ -42,12 +46,11 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
 
 
     };
-
     vm.catFromMain = function (x) {
         vm.cat = {};
         vm.cat.cat = x;
-        sessionStorage.setItem('category', JSON.stringify(x));
-        console.log(JSON.parse(sessionStorage.getItem('category')));
+        localStorage.setItem('category', JSON.stringify(x));
+
 
     };
     vm.getDates = function () {
@@ -61,67 +64,342 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
 
     vm.register = function (newUser) {
         vm.newUser = newUser;
-        vm.newUser.confirmed = false
+        vm.newUser.confirmed = false;
 
-        vm.show_registration = !vm.show_registration
+        vm.show_registration = !vm.show_registration;
         UserService.addUser(vm.newUser)
+    };
+    vm.getUsers = function () {
+        vm.users = UserService.getUsers();
+
+        // vm.loggedUserCheck()
     };
 
     vm.logIn = function () {
+        vm.users = UserService.getUsers();
         for (i in vm.users) {
             if (vm.user.email == vm.users[i].email && vm.user.password == vm.users[i].password) {
-                delete vm.user[i].password
+                vm.user = vm.users[i];
+                vm.users=[]
+                delete vm.user.password;
+                vm.discount = vm.discountSize;
                 vm.getGoods()
-
-                localStorage.setItem('user', JSON.stringify(vm.users[i]))
-                vm.ShowSignIn = !vm.ShowSignIn
-                vm.logInButton = false
-                vm.logOutButton = true
-
+                vm.logInButton = false;
+                vm.logOutButton = true;
+                localStorage.setItem('user', JSON.stringify(vm.user));
+                vm.ShowSignIn = !vm.ShowSignIn;
+                vm.logInButton = false;
+                vm.logOutButton = true;
+                vm.user = {};
+                break
             }
         }
+    };
+    vm.loggedUserCheck = function () {
+        vm.userLoggedIn = JSON.parse(localStorage.getItem('user'));
+        if (vm.userLoggedIn == null || vm.userLoggedIn==undefined) {
+            vm.userLoggedIn = {};
+            vm.logInButton = true
+            localStorage.setItem('user', JSON.stringify(vm.userLoggedIn));
+        }
+        else {
+            vm.logInButton = false;
+            vm.logOutButton=true
+                vm.discount=vm.discountSize
+        }
+        vm.registeredUserCheck()
 
 
-    }
+    };
     vm.logOut = function () {
-        vm.logInButton = true
-        vm.logOutButton = false
+        vm.logInButton = true;
+        vm.logOutButton = false;
         vm.userLoggedIn = {};
         localStorage.setItem('user', JSON.stringify(vm.userLoggedIn));
+        vm.PriceCount = 0;
+        vm.discount = 1;
         vm.getGoods()
 
     };
 
+    vm.registeredUserCheck = function () {
+        vm.userLoggedIn = JSON.parse(localStorage.getItem('user'))
+        if(typeof vm.userLoggedIn.name=="string"){
+            vm.logInButton = false;
+            vm.logOutButton = true;
+            vm.discount=vm.discountSize
+        }else{
+            vm.discount=1
+            vm.logInButton = true;
+            vm.logOutButton = false;
+        }
+
+    }
     vm.openNav = function () {
         document.getElementById("mySidenav").style.width = "350px";
     };
     vm.closeNav = function () {
         document.getElementById("mySidenav").style.width = "0";
     };
-
-//************************************************************************************************************get goods
-
+//***********************************************************************************************************get goods
     vm.getGoods = function () {
-        vm.goods = vm.GoodsDB;
+        vm.goods = vm.goodsDB;
+        for(i in vm.goods) {
+            vm.goods[i].priceC = vm.goods[i].price
+        }
 
-        console.log(vm.goods);
         vm.pagination()
     };
-    vm.getUsers = function () {
-        vm.user = UserService.getUsers();
-        // for(i in vm.users){
-        // delete vm.users[i].password
-        // delete vm.users[i].comments
-        // }
+//*********************************************************************************************************goods details
+    vm.goodsDetails = JSON.parse(localStorage.getItem('commodity'));
+    vm.detail_of_goods = function (commodity) {
+        vm.goodsDetails = commodity;
+        vm.goodsDetails.count = 1;
+        localStorage.setItem("commodity", JSON.stringify(vm.goodsDetails))
+
+
+    };
+    vm.detail_of_goods_banner = function (id) {
+        for (i in vm.goods) {
+            if (vm.goods[i].id === id) {
+                vm.goodsDetails = vm.goods[i];
+                vm.goodsDetails.count = 1;
+                localStorage.setItem("commodity", JSON.stringify(vm.goodsDetails))
+            }
+        }
+        ;
+        window.location.href = '#/details'
+    };
+    vm.detailsOfSearch = function (x) {
+        if (location.href.includes("details")) {
+            location.href = '#/catalogue';
+
+            vm.goodsDetails = x;
+            vm.goodsDetails.count = 1;
+            localStorage.setItem("commodity", JSON.stringify(vm.goodsDetails))
+            window.location.href = '#/details';
+            my.searchResults = false;
+            my.search = ''
+        } else {
+
+            vm.goodsDetails = x;
+            vm.goodsDetails.count = 1;
+            localStorage.setItem("commodity", JSON.stringify(vm.goodsDetails));
+            window.location.href = '#/details';
+            my.searchResults = false;
+            my.search = ''
+
+        }
+
+
+    };
+    vm.plus2 = function (count) {
+        vm.goodsDetails.count++
+        if(vm.goodsDetails.count>=vm.wholeSaleNumb){
+            vm.messageDiscount=true
+            vm.goodsDetails.price=vm.goodsDetails.price2
+        }else {
+            vm.goodsDetails.price = vm.goodsDetails.priceC
+            vm.messageDiscount = false
+        }
+    };
+    vm.minus2 = function (count) {
+        if (vm.goodsDetails.count > 1) {
+            vm.goodsDetails.count--;
+
+        }
+        if (vm.goodsDetails.count < 6) {
+            vm.messageDiscount=false
+            vm.goodsDetails.price=vm.goodsDetails.priceC
+        }
+
+    };
+    vm.detailsOfOrder = function () {
+        vm.order = vm.userLoggedIn
+        vm.order.archive = false
+
+
+    }
+    vm.ByGoods2 = function (goods) {
+
+        vm.tray = JSON.parse(localStorage.getItem('goodsToBuy'));
+
+        vm.tray.push(goods)
+        for (x in vm.tray) {
+            for (y in vm.tray) {
+                if (vm.tray[x].id == vm.tray[y].id && x != y) {
+                    vm.tray[x].count += vm.tray[y].count
+                    vm.tray.splice(y, 1)
+                    y = x
+                }
+            }
+
+        }
+        localStorage.setItem('goodsToBuy', JSON.stringify(vm.tray));
+
+        vm.trayCheck()
+        location.href = '#/catalogue'
+
+    };
+    vm.plus1 = function (id) {
+        for (i in vm.tray) {
+            if (vm.tray[i].id === id) {
+                vm.tray[i].count += 1
+                if(vm.tray[i].count>=vm.wholeSaleNumb){
+                    vm.tray[i].price=vm.tray[i].price2
+                }
+
+
+            }
+
+        }
+        localStorage.setItem('goodsToBuy', JSON.stringify(vm.tray))
+        vm.totalOrderSum()
+    }
+    vm.minus1 = function (id) {
+        for (i in vm.tray) {
+            if (vm.tray[i].id === id && vm.tray[i].count > 1) {
+                vm.tray[i].count -= 1
+                if(vm.tray[i].count<vm.wholeSaleNumb){
+                    vm.tray[i].price=vm.tray[i].priceC
+                    console.log(vm.tray[i])
+                }
+
+            }else if(vm.tray[i].id === id && vm.tray[i].count ==1){
+                alert()
+            }
+
+        }
+
+        localStorage.setItem('goodsToBuy', JSON.stringify(vm.tray))
+        vm.totalOrderSum()
+
+    }
+    vm.delete_order = function (id) {
+        for (i in vm.tray) {
+            if (vm.tray[i].id == id) {
+                vm.tray.splice(i, 1)
+                localStorage.setItem('goodsToBuy', JSON.stringify(vm.tray))
+                vm.totalOrderSum()
+            }
+        }
     };
 
+    //********************************************************************************************************LOCAL STORAGE
+    vm.localStore = function () {
+        //traycheck
+        vm.tray = JSON.parse(localStorage.getItem('goodsToBuy'));
+        if (vm.tray == null || vm.tray.length == 0) {
+            vm.tray = [];
+
+            localStorage.setItem('goodsToBuy', JSON.stringify(vm.tray));
+        }
+        else {
+            vm.tray = JSON.parse(localStorage.getItem('goodsToBuy'))
+        }
+        vm.commodity = JSON.parse(localStorage.getItem('commodity'));
+        if (vm.commodity == null || vm.commodity.length == 0) {
+            vm.commodity = [];
+
+            localStorage.setItem('commodity', JSON.stringify(vm.commodity));
+        }
+        else {
+            vm.commodity = JSON.parse(localStorage.getItem('commodity'))
+        }
+
+
+    };
+    vm.trayCheck = function () {
+        vm.tray = JSON.parse(localStorage.getItem('goodsToBuy'))
+        for (i in vm.tray) {
+            if (vm.tray[i].count == 0) {
+                vm.tray.splice(i, 1)
+            }
+        }
+        vm.totalOrderSum()
+    }
+
+//*****************************************************************************************************************TRAY
+
+    vm.totalOrderSum = function () {
+        vm.totalSum = 0
+        for (i in vm.tray) {
+            vm.totalSum += vm.tray[i].count * vm.tray[i].price
+        }
+    }
+//**********************************************************************************************goods To Tray from details
+
+    //**********************************************************************************************BUY GOODS
+
+    vm.ByGoods = function (goods) {
+
+        vm.GoodsB = goods
+        vm.GoodsB.count = 1
+        vm.tray = JSON.parse(localStorage.getItem('goodsToBuy'));
+
+        vm.tray.push(vm.GoodsB)
+
+        for (x in vm.tray) {
+            for (y in vm.tray) {
+                if (vm.tray[x].id == vm.tray[y].id && x != y) {
+                    vm.tray[x].count += vm.tray[y].count
+                    vm.tray.splice(y, 1)
+                    y = x
+                }
+            }
+
+        }
+        localStorage.setItem('goodsToBuy', JSON.stringify(vm.tray));
+
+        vm.trayCheck()
+    };
+    vm.confirmOrder = function () {
+        vm.checkLoggedUser()
+        if (vm.userLoggedIn.name == undefined) {
+            vm.alertConfirmation = true
+            vm.alertMessage = 'для здійснення покупки необхідно авторизуватися'
+        } else {
+
+            vm.order.goodsOrdered = vm.tray
+
+            vm.order.archive = false
+            UserService.addOrder(vm.order)
+
+            vm.tray = []
+            localStorage.setItem('goodsToBuy', JSON.stringify(vm.tray))
+
+            vm.alertConfirmation = true
+
+            // location.href="#/catalogue"
+        }
+    }
+
+
+//***********************************************************************************************************pagination
+    vm.startingItem = 0
+    vm.goToPage = function (x) {
+        vm.startingItem = x * vm.itemsPerPage - vm.itemsPerPage;
+    }
+    vm.pagination = function () {
+        vm.startingItem = 0
+        vm.pages = []
+        vm.currentPage = 0;
+        vm.itemsPerPage = 16;
+        vm.items = vm.page_count;
+        vm.num = Math.ceil(vm.goods.length / vm.itemsPerPage)
+        vm.page = 0
+        for (i = 1; i <= vm.num; i++)
+
+            vm.pages.push(i)
+
+
+    };
 
 // **********************************************************************************************FILTERS AND SORTERS
     vm.search1 = function (el) {
         if (vm.search != '')
             return true
-    }
-
+    };
 
     vm.FiltersPrepare = function () {
         vm.price = [];
@@ -129,42 +407,41 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
         vm.strength = [];
         vm.brand = [];
         vm.state = [];
-        vm.category = []
+        vm.category = [];
         vm.onlyUnique = function (value, index, self) {
             return self.indexOf(value) === index;
-        }
+        };
         for (i in vm.goods) {
-            vm.category.push(vm.goods[i].category)
-            vm.category = vm.category.filter(vm.onlyUnique)
-            vm.price.push(parseInt(vm.goods[i].price))
-            vm.price = vm.price.filter(vm.onlyUnique).sort()
-            vm.brand.push(vm.goods[i].brand)
-            vm.brand = vm.brand.filter(vm.onlyUnique)
-            vm.state.push(vm.goods[i].country)
-            vm.state = vm.state.filter(vm.onlyUnique)
-            vm.strength.push(vm.goods[i].strength)
-            vm.strength = vm.strength.filter(vm.onlyUnique)
-            vm.volume.push(parseInt(vm.goods[i].volume))
-            vm.volume = vm.volume.filter(vm.onlyUnique)
+            vm.category.push(vm.goods[i].category);
+            vm.category = vm.category.filter(vm.onlyUnique);
+            vm.price.push(parseInt(vm.goods[i].price));
+            vm.price = vm.price.filter(vm.onlyUnique).sort();
+            vm.brand.push(vm.goods[i].brand);
+            vm.brand = vm.brand.filter(vm.onlyUnique);
+            vm.state.push(vm.goods[i].country);
+            vm.state = vm.state.filter(vm.onlyUnique);
+            vm.strength.push(vm.goods[i].strength);
+            vm.strength = vm.strength.filter(vm.onlyUnique);
+            vm.volume.push(parseInt(vm.goods[i].volume));
+            vm.volume = vm.volume.filter(vm.onlyUnique);
         }
-
         vm.lower_price_bound = vm.price[0];
         vm.upper_price_bound = vm.price[vm.price.length - 1];
         vm.lp = vm.price[0]
         vm.hp = vm.price[vm.price.length - 1]
 
 
-    }
+    };
 
 //**********************************************************************************************filters by category
 
     vm.filterByCategory = function (x) {
-        vm.categoryToStart = ''
+        vm.categoryToStart = '';
 
-        vm.goods = UserService.getByCategory(x)
-        vm.FiltersPrepare()
+        vm.goods = UserService.getByCategory(x);
+        vm.FiltersPrepare();
         vm.pagination()
-    }
+    };
 
 // **********************************************************************************************filtering by PRICE
     vm.priceRange = function (goods) {
@@ -175,9 +452,9 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
     }
 // **********************************************************************************************filtering by VOLUME
 
-    vm.volumeIncludes = []
+    vm.volumeIncludes = [];
     vm.includeVolume = function (volume) {
-        var i = vm.volumeIncludes.indexOf(volume)
+        var i = vm.volumeIncludes.indexOf(volume);
         if (i > -1) {
             vm.volumeIncludes.splice(i, 1);
         } else {
@@ -251,285 +528,82 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
         }
         return strength;
     };
-
-
-//*********************************************************************************************************goods details
-    vm.goodsDetails = JSON.parse(sessionStorage.getItem('commodity'))
-    vm.detail_of_goods = function (commodity) {
-        vm.goodsDetails = commodity
-        vm.goodsDetails.count = 1
-        sessionStorage.setItem("commodity", JSON.stringify(vm.goodsDetails))
-
-
-    }
-    vm.detail_of_goods_banner = function (id) {
-        for (i in vm.goods) {
-            if (vm.goods[i].id === id) {
-                vm.goodsDetails = vm.goods[i]
-                vm.goodsDetails.count = 1
-                sessionStorage.setItem("commodity", JSON.stringify(vm.goodsDetails))
-            }
-        }
-        window.location.href = '#/details'
-    }
-    vm.detailsOfSearch = function (x) {
-        if (location.href.includes("details")) {
-            location.href = '#/catalogue'
-
-            vm.goodsDetails = x
-            vm.goodsDetails.count = 1
-            sessionStorage.setItem("commodity", JSON.stringify(vm.goodsDetails))
-            window.location.href = '#/details'
-            my.searchResults = false
-            my.search = ''
-        } else {
-
-            vm.goodsDetails = x
-            vm.goodsDetails.count = 1
-            sessionStorage.setItem("commodity", JSON.stringify(vm.goodsDetails))
-            window.location.href = '#/details'
-            my.searchResults = false
-            my.search = ''
-
-        }
-
-
-    }
-    vm.plus2 = function (count) {
-        vm.goodsDetails.count++
-        // ocalStorage.setItem('cOrderDetails', JSON.stringify(vm.check))
-    }
-    vm.minus2 = function (count) {
-        if (vm.goodsDetails.count > 1) {
-            vm.goodsDetails.count--;
-        }
-
-    }
-
-
-//********************************************************************************************************LOCAL STORAGE
-    vm.localStore = function () {
-        //traycheck
-        vm.tray = JSON.parse(localStorage.getItem('goodsToBuy'))
-        if (vm.tray == null || vm.tray.length == 0) {
-            vm.tray = [];
-            localStorage.setItem('goodsToBuy', JSON.stringify(vm.tray));
-        }
-        else {
-            vm.tray = JSON.parse(localStorage.getItem('goodsToBuy'))
-        }
-
-
-        vm.userLoggedIn = JSON.parse(localStorage.getItem('user'))
-        if (vm.userLoggedIn == null) {
-            vm.userLoggedIn = {};
-            vm.logInButton = true
-            localStorage.setItem('user', JSON.stringify(vm.userLoggedIn));
-            vm.detailsOfOrder()
-        }
-        else {
-            vm.userLoggedIn = JSON.parse(localStorage.getItem('user'))
-            vm.logInButton = false
-            vm.logOutButton = true
-
-            vm.detailsOfOrder()
-        }
-
-        if (vm.priceType == undefined) {
-            if(vm.userLoggedIn.name==undefined){
-              vm.priceType=undefined
-
-            }
-            else{
-                vm.discount=0.5
-
-                for (i in vm.goods) {
-                    vm.goods[i].price = vm.goods[i].price * vm.discount
-                }
-                vm.priceType = true
-            }
-        }
+    //******************************************************************************************************main BANNER
+    vm.slickConfig1Loaded = true;
+    vm.updateNumber1 = function () {
+        vm.slickConfig1Loaded = false;
+        // vm.number1[2] = '123';
+        vm.number1.push(Math.floor((Math.random() * 10) + 100));
+        $timeout(function () {
+            vm.slickConfig1Loaded = true;
+        }, 5);
     };
-
-
-//*****************************************************************************************************************TRAY
-    vm.trayCheck = function () {
-        vm.tray = JSON.parse(localStorage.getItem('goodsToBuy'))
-        for (i in vm.tray) {
-            if (vm.tray[i].count == 0) {
-                vm.tray.splice(i, 1)
-            }
-        }
-        vm.totalOrderSum()
-    }
-    vm.totalOrderSum = function () {
-        vm.totalSum = 0
-        for (i in vm.tray) {
-            vm.totalSum += vm.tray[i].count * vm.tray[i].price
-        }
-    }
-
-
-//**********************************************************************************************goods To Tray from details
-    vm.detailsOfOrder = function () {
-        vm.order = vm.userLoggedIn
-        vm.order.archive = false
-
-
-    }
-    vm.ByGoods2 = function (goods) {
-
-        vm.tray = JSON.parse(localStorage.getItem('goodsToBuy'));
-        console.log(vm.tray.length);
-        vm.tray.push(goods)
-        for (x in vm.tray) {
-            for (y in vm.tray) {
-                if (vm.tray[x].id == vm.tray[y].id && x != y) {
-                    vm.tray[x].count += vm.tray[y].count
-                    vm.tray.splice(y, 1)
-                    y = x
+    vm.slickCurrentIndex = 0;
+    vm.slickConfig1 = {
+        dots: true,
+        // autoplay: false,
+        autoplay: true,
+        adaptiveHeight: true,
+        initialSlide: 0,
+        slidesToShow: 1,
+        itemsDesktop: [780, 1],
+        slidesPerRow: 1,
+        swipeToSlide: true,
+        slidesToScroll: 1,
+        infinite: true,
+        buttons: true,
+        autoplaySpeed: 2000,
+        variableWidth: false,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 720,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 360,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
                 }
             }
-            console.log(vm.tray[x]);
-        }
-        localStorage.setItem('goodsToBuy', JSON.stringify(vm.tray));
-        console.log(JSON.parse(localStorage.getItem('goodsToBuy')));
-        vm.trayCheck()
-        location.href = '#/catalogue'
+        ],
+        // fade:true,
 
+        mobileFirst: true,
+        method: {},
+        event: {}
     };
-
-    vm.plus1 = function (id) {
-        for (i in vm.tray) {
-            if (vm.tray[i].id === id) {
-                vm.tray[i].count += 1
-
-            }
-        }
-        localStorage.setItem('goodsToBuy', JSON.stringify(vm.tray))
-        vm.totalOrderSum()
-    }
-
-    vm.minus1 = function (id) {
-        for (i in vm.tray) {
-            if (vm.tray[i].id === id && vm.tray[i].count > 0) {
-                vm.tray[i].count -= 1
-            }
-        }
-
-        localStorage.setItem('goodsToBuy', JSON.stringify(vm.tray))
-        vm.totalOrderSum()
-
-    }
-
-    vm.delete_order = function (id) {
-        for (i in vm.tray) {
-            if (vm.tray[i].id == id) {
-                vm.tray.splice(i, 1)
-                localStorage.setItem('goodsToBuy', JSON.stringify(vm.tray))
-                vm.totalOrderSum()
-            }
-        }
-    };
-
-    //**********************************************************************************************BUY GOODS
-    vm.checkLoggedUser = function () {
-        vm.userLoggedIn = JSON.parse(localStorage.getItem('user'))
-        console.log(vm.userLoggedIn);
-    }
-    vm.ByGoods = function (goods) {
-
-        vm.GoodsB = goods
-        vm.GoodsB.count = 1
-        vm.tray = JSON.parse(localStorage.getItem('goodsToBuy'));
-        console.log(vm.tray.length);
-        vm.tray.push(vm.GoodsB)
-
-        for (x in vm.tray) {
-            for (y in vm.tray) {
-                if (vm.tray[x].id == vm.tray[y].id && x != y) {
-                    vm.tray[x].count += vm.tray[y].count
-                    vm.tray.splice(y, 1)
-                    y = x
-                }
-            }
-            console.log(vm.tray[x]);
-        }
-        localStorage.setItem('goodsToBuy', JSON.stringify(vm.tray));
-        console.log(JSON.parse(localStorage.getItem('goodsToBuy')));
-        vm.trayCheck()
-    };
-
-    vm.confirmOrder = function () {
-        vm.checkLoggedUser()
-        if (vm.userLoggedIn.name == undefined) {
-            vm.alertConfirmation = true
-            vm.alertMessage = 'для здійснення покупки необхідно авторизуватися'
-        } else {
-
-            vm.order.goodsOrdered = vm.tray
-            console.log(vm.order);
-            vm.order.archive = false
-            UserService.addOrder(vm.order)
-
-            vm.tray = []
-            localStorage.setItem('goodsToBuy', JSON.stringify(vm.tray))
-
-            vm.alertConfirmation = true
-
-            // location.href="#/catalogue"
-        }
-    }
-
-
-//**********************************************************************************************pagination
-    vm.startingItem = 0
-    vm.goToPage = function (x) {
-        vm.startingItem = x * vm.itemsPerPage - vm.itemsPerPage;
-    }
-
-    vm.pagination = function () {
-        vm.startingItem = 0
-        vm.pages = []
-        vm.currentPage = 0;
-        vm.itemsPerPage = 16;
-        vm.items = vm.page_count;
-        vm.num = Math.ceil(vm.goods.length / vm.itemsPerPage)
-        vm.page = 0
-        for (i = 1; i <= vm.num; i++)
-
-            vm.pages.push(i)
-
-
-    };
-
 
 //**********************************************************************************************carousele on main page
     vm.goodsForSlider1 = function () {
-        vm.number = []
+        vm.number = vm.goodsDB
+
         for (i in vm.goods) {
-            if (i % 5 == 0) {
-                vm.number.push(vm.goods[i])
+
+            if (vm.goodsDB[i].promo == true && i % 2 == 0) {
+                vm.number.push(vm.goodsDB[i])
             }
+
         }
     }
     vm.goodsForSlider2 = function () {
         vm.number2 = []
-        for (i in vm.goods) {
-            if (i % 3 == 0) {
-                vm.number2.push(vm.goods[i])
+        for (i in vm.goodsDB) {
+            if (vm.goodsDB[i].promo == true && i % 2 == 1) {
+                vm.number2.push(vm.goodsDB[i])
             }
         }
     }
-    // vm.goodsForSlider3 = function () {
-    //     vm.number3 = []
-    //     for (i in vm.goods) {
-    //         if (i % 3 == 0) {
-    //             vm.number2.push(vm.goods[i])
-    //         }
-    //     }
-    // }
-
     vm.slickConfigLoaded = true;
     vm.updateNumber = function () {
         vm.slickConfigLoaded = false;
@@ -540,7 +614,7 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
         });
     };
     vm.slickConfig = {
-        autoplay: false,
+        autoplay: true,
         infinite: true,
         autoplaySpeed: 1500,
         slidesToShow: 5,
@@ -549,7 +623,6 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
         rtl: false,
         method: {}
     };
-
     vm.slickConfigLoaded2 = true;
     vm.updateNumber2 = function () {
         vm.slickConfigLoaded2 = false;
@@ -573,54 +646,20 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
     };
 
 
-    //******************************************************************************************************main BANNER
-    vm.slickConfig1Loaded = true;
-    vm.updateNumber1 = function () {
-        vm.slickConfig1Loaded = false;
-        // vm.number1[2] = '123';
-        vm.number1.push(Math.floor((Math.random() * 10) + 100));
-        $timeout(function () {
-            vm.slickConfig1Loaded = true;
-        }, 5);
-    };
-    vm.slickCurrentIndex = 0;
-    vm.slickConfig1 = {
-        dots: true,
-        autoplay: false,
-        // autoplay: true,
-        adaptiveHeight:true,
-        initialSlide: 0,
-        slidesToShow: 1,
-        itemsDesktop : [780,1],
-        slidesPerRow:1,
-        swipeToSlide:true,
-        slidesToScroll: 1,
-        infinite: true,
-        buttons: true,
-        autoplaySpeed: 1000,
-        variableWidth:false,
-        // fade:true,
-
-        mobileFirst:true,
-        method: {},
-        event: {}
-    };
-
-    // vm.getGoods();
-    // vm.getGoods()
     vm.init = function () {
-        vm.number1 = UserService.getBanners();
         vm.start()
-        // vm.checkCatalogue()
+
         vm.localStore()
+        vm.loggedUserCheck()
         vm.getDates()
         vm.trayCheck()
+        vm.number1 = UserService.getBanners();
         vm.goodsForSlider1()
         vm.goodsForSlider2()
         vm.FiltersPrepare()
-        vm.getUsers();
+        // vm.getUsers();
 
-
+        console.log(vm.discount);
     }
     vm.init();
 

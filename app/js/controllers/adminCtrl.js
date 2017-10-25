@@ -23,6 +23,23 @@ app.controller('adminCtrl', ['UserService', function (UserService) {
 //USERS************************************************************************************************************USERS
     vm.getUsers = function () {
         vm.users = UserService.getUsers()
+        vm.checkUsers()
+    }
+    vm.checkUsers = function () {
+        for (i in vm.users) {
+            if (vm.users[i].confirmed == false) {
+                // vm.orderConfirmation = false
+
+                document.getElementById('newUsers').style.background = 'red'
+                document.getElementById('newUsersB').style.background = 'red'
+                break
+
+            } else {
+                document.getElementById('newUsers').style.background = 'darkgray'
+                document.getElementById('newUsersB').style.background = 'darkgray'
+
+            }
+        }
     }
 
 
@@ -48,18 +65,7 @@ app.controller('adminCtrl', ['UserService', function (UserService) {
         vm.userEdited = {}
 
     }
-    vm.checkUsers = function () {
-        for (i in vm.users) {
-            if (vm.users[i].confirmed == false) {
-                vm.userConfirmed = false
-                document.getElementById('newUsers').style.background = 'red'
-                break
-            } else {
-                document.getElementById('newUsers').style.background = 'darkgray'
 
-            }
-        }
-    }
     vm.confirmUser = function (u) {
         for (i in vm.users) {
             if (vm.users[i].id == u.id) {
@@ -106,10 +112,12 @@ app.controller('adminCtrl', ['UserService', function (UserService) {
                 vm.orderConfirmation = false
 
                 document.getElementById('newOrders').style.background = 'red'
+                document.getElementById('newOrdersB').style.background = 'red'
                 break
 
             } else {
                 document.getElementById('newOrders').style.background = 'darkgray'
+                document.getElementById('newOrdersB').style.background = 'darkgray'
 
             }
         }
@@ -246,15 +254,17 @@ app.controller('adminCtrl', ['UserService', function (UserService) {
 
     vm.getGoods = function () {
         vm.banners = UserService.getBanners()
+
         vm.goods = UserService.getGoods();
 
-        vm.onlyUnique = function (value, index, self) {
-            return self.indexOf(value) === index;
-        }
-        for (i in vm.goods) {
-            vm.category.push(vm.goods[i].category)
-            vm.category = vm.category.filter(vm.onlyUnique)
-        }
+
+        // vm.onlyUnique = function (value, index, self) {
+        //     return self.indexOf(value) === index;
+        // }
+        // for (i in vm.goods) {
+        //     vm.category.push(vm.goods[i].category)
+        //     vm.category = vm.category.filter(vm.onlyUnique)
+        // }
 
     };
 
@@ -334,6 +344,7 @@ app.controller('adminCtrl', ['UserService', function (UserService) {
 
     }
     vm.addBanner = function () {
+        vm.newBanner.product_id=+vm.newBanner.product_id.split('_')[0]
 
         UserService.addBanner(vm.newBanner)
         console.log(vm.newBanner);

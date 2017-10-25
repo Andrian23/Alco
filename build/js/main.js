@@ -52,21 +52,25 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
     vm.show_basket = false;
     vm.show_map = false;
     vm.tray = [];
-    vm.users = UserService.getUsers();
     vm.user = {};
     vm.catCat = null;
     vm.alertMessage = 'для здійснення покупки необхідно авторизуватися';
     vm.banners = [];
-    vm.discount = 0.5;
-
+    vm.discount = 1;
+    vm.wholesale = false;
+    vm.priceRegister = false;
+    vm.PriceCount = 0;
+    vm.userLoggedIn = {};
+    vm.discountSize=0.3
+    vm.wholeSaleNumb=6;
     vm.start = function () {
-        vm.GoodsDB=UserService.getGoodsFromDB();
+        vm.goodsDB = UserService.getGoodsFromDB();
         vm.getGoods();
 
-        vm.length = vm.goods.length;
-        vm.categoryToStart = JSON.parse(sessionStorage.getItem('category'))
-        sessionStorage.clear();
-        console.log(vm.categoryToStart);
+        vm.length = vm.goodsDB.length;
+        vm.categoryToStart = JSON.parse(localStorage.getItem('category'));
+        // localStorage.clear();
+
         if (vm.categoryToStart != null || vm.categoryToStart != undefined) {
 
             vm.filterByCategory(vm.categoryToStart)
@@ -74,12 +78,11 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
 
 
     };
-
     vm.catFromMain = function (x) {
         vm.cat = {};
         vm.cat.cat = x;
-        sessionStorage.setItem('category', JSON.stringify(x));
-        console.log(JSON.parse(sessionStorage.getItem('category')));
+        localStorage.setItem('category', JSON.stringify(x));
+
 
     };
     vm.getDates = function () {
@@ -93,67 +96,342 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
 
     vm.register = function (newUser) {
         vm.newUser = newUser;
-        vm.newUser.confirmed = false
+        vm.newUser.confirmed = false;
 
-        vm.show_registration = !vm.show_registration
+        vm.show_registration = !vm.show_registration;
         UserService.addUser(vm.newUser)
+    };
+    vm.getUsers = function () {
+        vm.users = UserService.getUsers();
+
+        // vm.loggedUserCheck()
     };
 
     vm.logIn = function () {
+        vm.users = UserService.getUsers();
         for (i in vm.users) {
             if (vm.user.email == vm.users[i].email && vm.user.password == vm.users[i].password) {
-                delete vm.user[i].password
+                vm.user = vm.users[i];
+                vm.users=[]
+                delete vm.user.password;
+                vm.discount = vm.discountSize;
                 vm.getGoods()
-
-                localStorage.setItem('user', JSON.stringify(vm.users[i]))
-                vm.ShowSignIn = !vm.ShowSignIn
-                vm.logInButton = false
-                vm.logOutButton = true
-
+                vm.logInButton = false;
+                vm.logOutButton = true;
+                localStorage.setItem('user', JSON.stringify(vm.user));
+                vm.ShowSignIn = !vm.ShowSignIn;
+                vm.logInButton = false;
+                vm.logOutButton = true;
+                vm.user = {};
+                break
             }
         }
+    };
+    vm.loggedUserCheck = function () {
+        vm.userLoggedIn = JSON.parse(localStorage.getItem('user'));
+        if (vm.userLoggedIn == null || vm.userLoggedIn==undefined) {
+            vm.userLoggedIn = {};
+            vm.logInButton = true
+            localStorage.setItem('user', JSON.stringify(vm.userLoggedIn));
+        }
+        else {
+            vm.logInButton = false;
+            vm.logOutButton=true
+                vm.discount=vm.discountSize
+        }
+        vm.registeredUserCheck()
 
 
-    }
+    };
     vm.logOut = function () {
-        vm.logInButton = true
-        vm.logOutButton = false
+        vm.logInButton = true;
+        vm.logOutButton = false;
         vm.userLoggedIn = {};
         localStorage.setItem('user', JSON.stringify(vm.userLoggedIn));
+        vm.PriceCount = 0;
+        vm.discount = 1;
         vm.getGoods()
 
     };
 
+    vm.registeredUserCheck = function () {
+        vm.userLoggedIn = JSON.parse(localStorage.getItem('user'))
+        if(typeof vm.userLoggedIn.name=="string"){
+            vm.logInButton = false;
+            vm.logOutButton = true;
+            vm.discount=vm.discountSize
+        }else{
+            vm.discount=1
+            vm.logInButton = true;
+            vm.logOutButton = false;
+        }
+
+    }
     vm.openNav = function () {
         document.getElementById("mySidenav").style.width = "350px";
     };
     vm.closeNav = function () {
         document.getElementById("mySidenav").style.width = "0";
     };
-
-//************************************************************************************************************get goods
-
+//***********************************************************************************************************get goods
     vm.getGoods = function () {
-        vm.goods = vm.GoodsDB;
+        vm.goods = vm.goodsDB;
+        for(i in vm.goods) {
+            vm.goods[i].priceC = vm.goods[i].price
+        }
 
-        console.log(vm.goods);
         vm.pagination()
     };
-    vm.getUsers = function () {
-        vm.user = UserService.getUsers();
-        // for(i in vm.users){
-        // delete vm.users[i].password
-        // delete vm.users[i].comments
-        // }
+//*********************************************************************************************************goods details
+    vm.goodsDetails = JSON.parse(localStorage.getItem('commodity'));
+    vm.detail_of_goods = function (commodity) {
+        vm.goodsDetails = commodity;
+        vm.goodsDetails.count = 1;
+        localStorage.setItem("commodity", JSON.stringify(vm.goodsDetails))
+
+
+    };
+    vm.detail_of_goods_banner = function (id) {
+        for (i in vm.goods) {
+            if (vm.goods[i].id === id) {
+                vm.goodsDetails = vm.goods[i];
+                vm.goodsDetails.count = 1;
+                localStorage.setItem("commodity", JSON.stringify(vm.goodsDetails))
+            }
+        }
+        ;
+        window.location.href = '#/details'
+    };
+    vm.detailsOfSearch = function (x) {
+        if (location.href.includes("details")) {
+            location.href = '#/catalogue';
+
+            vm.goodsDetails = x;
+            vm.goodsDetails.count = 1;
+            localStorage.setItem("commodity", JSON.stringify(vm.goodsDetails))
+            window.location.href = '#/details';
+            my.searchResults = false;
+            my.search = ''
+        } else {
+
+            vm.goodsDetails = x;
+            vm.goodsDetails.count = 1;
+            localStorage.setItem("commodity", JSON.stringify(vm.goodsDetails));
+            window.location.href = '#/details';
+            my.searchResults = false;
+            my.search = ''
+
+        }
+
+
+    };
+    vm.plus2 = function (count) {
+        vm.goodsDetails.count++
+        if(vm.goodsDetails.count>=vm.wholeSaleNumb){
+            vm.messageDiscount=true
+            vm.goodsDetails.price=vm.goodsDetails.price2
+        }else {
+            vm.goodsDetails.price = vm.goodsDetails.priceC
+            vm.messageDiscount = false
+        }
+    };
+    vm.minus2 = function (count) {
+        if (vm.goodsDetails.count > 1) {
+            vm.goodsDetails.count--;
+
+        }
+        if (vm.goodsDetails.count < 6) {
+            vm.messageDiscount=false
+            vm.goodsDetails.price=vm.goodsDetails.priceC
+        }
+
+    };
+    vm.detailsOfOrder = function () {
+        vm.order = vm.userLoggedIn
+        vm.order.archive = false
+
+
+    }
+    vm.ByGoods2 = function (goods) {
+
+        vm.tray = JSON.parse(localStorage.getItem('goodsToBuy'));
+
+        vm.tray.push(goods)
+        for (x in vm.tray) {
+            for (y in vm.tray) {
+                if (vm.tray[x].id == vm.tray[y].id && x != y) {
+                    vm.tray[x].count += vm.tray[y].count
+                    vm.tray.splice(y, 1)
+                    y = x
+                }
+            }
+
+        }
+        localStorage.setItem('goodsToBuy', JSON.stringify(vm.tray));
+
+        vm.trayCheck()
+        location.href = '#/catalogue'
+
+    };
+    vm.plus1 = function (id) {
+        for (i in vm.tray) {
+            if (vm.tray[i].id === id) {
+                vm.tray[i].count += 1
+                if(vm.tray[i].count>=vm.wholeSaleNumb){
+                    vm.tray[i].price=vm.tray[i].price2
+                }
+
+
+            }
+
+        }
+        localStorage.setItem('goodsToBuy', JSON.stringify(vm.tray))
+        vm.totalOrderSum()
+    }
+    vm.minus1 = function (id) {
+        for (i in vm.tray) {
+            if (vm.tray[i].id === id && vm.tray[i].count > 1) {
+                vm.tray[i].count -= 1
+                if(vm.tray[i].count<vm.wholeSaleNumb){
+                    vm.tray[i].price=vm.tray[i].priceC
+                    console.log(vm.tray[i])
+                }
+
+            }else if(vm.tray[i].id === id && vm.tray[i].count ==1){
+                alert()
+            }
+
+        }
+
+        localStorage.setItem('goodsToBuy', JSON.stringify(vm.tray))
+        vm.totalOrderSum()
+
+    }
+    vm.delete_order = function (id) {
+        for (i in vm.tray) {
+            if (vm.tray[i].id == id) {
+                vm.tray.splice(i, 1)
+                localStorage.setItem('goodsToBuy', JSON.stringify(vm.tray))
+                vm.totalOrderSum()
+            }
+        }
     };
 
+    //********************************************************************************************************LOCAL STORAGE
+    vm.localStore = function () {
+        //traycheck
+        vm.tray = JSON.parse(localStorage.getItem('goodsToBuy'));
+        if (vm.tray == null || vm.tray.length == 0) {
+            vm.tray = [];
+
+            localStorage.setItem('goodsToBuy', JSON.stringify(vm.tray));
+        }
+        else {
+            vm.tray = JSON.parse(localStorage.getItem('goodsToBuy'))
+        }
+        vm.commodity = JSON.parse(localStorage.getItem('commodity'));
+        if (vm.commodity == null || vm.commodity.length == 0) {
+            vm.commodity = [];
+
+            localStorage.setItem('commodity', JSON.stringify(vm.commodity));
+        }
+        else {
+            vm.commodity = JSON.parse(localStorage.getItem('commodity'))
+        }
+
+
+    };
+    vm.trayCheck = function () {
+        vm.tray = JSON.parse(localStorage.getItem('goodsToBuy'))
+        for (i in vm.tray) {
+            if (vm.tray[i].count == 0) {
+                vm.tray.splice(i, 1)
+            }
+        }
+        vm.totalOrderSum()
+    }
+
+//*****************************************************************************************************************TRAY
+
+    vm.totalOrderSum = function () {
+        vm.totalSum = 0
+        for (i in vm.tray) {
+            vm.totalSum += vm.tray[i].count * vm.tray[i].price
+        }
+    }
+//**********************************************************************************************goods To Tray from details
+
+    //**********************************************************************************************BUY GOODS
+
+    vm.ByGoods = function (goods) {
+
+        vm.GoodsB = goods
+        vm.GoodsB.count = 1
+        vm.tray = JSON.parse(localStorage.getItem('goodsToBuy'));
+
+        vm.tray.push(vm.GoodsB)
+
+        for (x in vm.tray) {
+            for (y in vm.tray) {
+                if (vm.tray[x].id == vm.tray[y].id && x != y) {
+                    vm.tray[x].count += vm.tray[y].count
+                    vm.tray.splice(y, 1)
+                    y = x
+                }
+            }
+
+        }
+        localStorage.setItem('goodsToBuy', JSON.stringify(vm.tray));
+
+        vm.trayCheck()
+    };
+    vm.confirmOrder = function () {
+        vm.checkLoggedUser()
+        if (vm.userLoggedIn.name == undefined) {
+            vm.alertConfirmation = true
+            vm.alertMessage = 'для здійснення покупки необхідно авторизуватися'
+        } else {
+
+            vm.order.goodsOrdered = vm.tray
+
+            vm.order.archive = false
+            UserService.addOrder(vm.order)
+
+            vm.tray = []
+            localStorage.setItem('goodsToBuy', JSON.stringify(vm.tray))
+
+            vm.alertConfirmation = true
+
+            // location.href="#/catalogue"
+        }
+    }
+
+
+//***********************************************************************************************************pagination
+    vm.startingItem = 0
+    vm.goToPage = function (x) {
+        vm.startingItem = x * vm.itemsPerPage - vm.itemsPerPage;
+    }
+    vm.pagination = function () {
+        vm.startingItem = 0
+        vm.pages = []
+        vm.currentPage = 0;
+        vm.itemsPerPage = 16;
+        vm.items = vm.page_count;
+        vm.num = Math.ceil(vm.goods.length / vm.itemsPerPage)
+        vm.page = 0
+        for (i = 1; i <= vm.num; i++)
+
+            vm.pages.push(i)
+
+
+    };
 
 // **********************************************************************************************FILTERS AND SORTERS
     vm.search1 = function (el) {
         if (vm.search != '')
             return true
-    }
-
+    };
 
     vm.FiltersPrepare = function () {
         vm.price = [];
@@ -161,42 +439,41 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
         vm.strength = [];
         vm.brand = [];
         vm.state = [];
-        vm.category = []
+        vm.category = [];
         vm.onlyUnique = function (value, index, self) {
             return self.indexOf(value) === index;
-        }
+        };
         for (i in vm.goods) {
-            vm.category.push(vm.goods[i].category)
-            vm.category = vm.category.filter(vm.onlyUnique)
-            vm.price.push(parseInt(vm.goods[i].price))
-            vm.price = vm.price.filter(vm.onlyUnique).sort()
-            vm.brand.push(vm.goods[i].brand)
-            vm.brand = vm.brand.filter(vm.onlyUnique)
-            vm.state.push(vm.goods[i].country)
-            vm.state = vm.state.filter(vm.onlyUnique)
-            vm.strength.push(vm.goods[i].strength)
-            vm.strength = vm.strength.filter(vm.onlyUnique)
-            vm.volume.push(parseInt(vm.goods[i].volume))
-            vm.volume = vm.volume.filter(vm.onlyUnique)
+            vm.category.push(vm.goods[i].category);
+            vm.category = vm.category.filter(vm.onlyUnique);
+            vm.price.push(parseInt(vm.goods[i].price));
+            vm.price = vm.price.filter(vm.onlyUnique).sort();
+            vm.brand.push(vm.goods[i].brand);
+            vm.brand = vm.brand.filter(vm.onlyUnique);
+            vm.state.push(vm.goods[i].country);
+            vm.state = vm.state.filter(vm.onlyUnique);
+            vm.strength.push(vm.goods[i].strength);
+            vm.strength = vm.strength.filter(vm.onlyUnique);
+            vm.volume.push(parseInt(vm.goods[i].volume));
+            vm.volume = vm.volume.filter(vm.onlyUnique);
         }
-
         vm.lower_price_bound = vm.price[0];
         vm.upper_price_bound = vm.price[vm.price.length - 1];
         vm.lp = vm.price[0]
         vm.hp = vm.price[vm.price.length - 1]
 
 
-    }
+    };
 
 //**********************************************************************************************filters by category
 
     vm.filterByCategory = function (x) {
-        vm.categoryToStart = ''
+        vm.categoryToStart = '';
 
-        vm.goods = UserService.getByCategory(x)
-        vm.FiltersPrepare()
+        vm.goods = UserService.getByCategory(x);
+        vm.FiltersPrepare();
         vm.pagination()
-    }
+    };
 
 // **********************************************************************************************filtering by PRICE
     vm.priceRange = function (goods) {
@@ -207,9 +484,9 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
     }
 // **********************************************************************************************filtering by VOLUME
 
-    vm.volumeIncludes = []
+    vm.volumeIncludes = [];
     vm.includeVolume = function (volume) {
-        var i = vm.volumeIncludes.indexOf(volume)
+        var i = vm.volumeIncludes.indexOf(volume);
         if (i > -1) {
             vm.volumeIncludes.splice(i, 1);
         } else {
@@ -283,285 +560,82 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
         }
         return strength;
     };
-
-
-//*********************************************************************************************************goods details
-    vm.goodsDetails = JSON.parse(sessionStorage.getItem('commodity'))
-    vm.detail_of_goods = function (commodity) {
-        vm.goodsDetails = commodity
-        vm.goodsDetails.count = 1
-        sessionStorage.setItem("commodity", JSON.stringify(vm.goodsDetails))
-
-
-    }
-    vm.detail_of_goods_banner = function (id) {
-        for (i in vm.goods) {
-            if (vm.goods[i].id === id) {
-                vm.goodsDetails = vm.goods[i]
-                vm.goodsDetails.count = 1
-                sessionStorage.setItem("commodity", JSON.stringify(vm.goodsDetails))
-            }
-        }
-        window.location.href = '#/details'
-    }
-    vm.detailsOfSearch = function (x) {
-        if (location.href.includes("details")) {
-            location.href = '#/catalogue'
-
-            vm.goodsDetails = x
-            vm.goodsDetails.count = 1
-            sessionStorage.setItem("commodity", JSON.stringify(vm.goodsDetails))
-            window.location.href = '#/details'
-            my.searchResults = false
-            my.search = ''
-        } else {
-
-            vm.goodsDetails = x
-            vm.goodsDetails.count = 1
-            sessionStorage.setItem("commodity", JSON.stringify(vm.goodsDetails))
-            window.location.href = '#/details'
-            my.searchResults = false
-            my.search = ''
-
-        }
-
-
-    }
-    vm.plus2 = function (count) {
-        vm.goodsDetails.count++
-        // ocalStorage.setItem('cOrderDetails', JSON.stringify(vm.check))
-    }
-    vm.minus2 = function (count) {
-        if (vm.goodsDetails.count > 1) {
-            vm.goodsDetails.count--;
-        }
-
-    }
-
-
-//********************************************************************************************************LOCAL STORAGE
-    vm.localStore = function () {
-        //traycheck
-        vm.tray = JSON.parse(localStorage.getItem('goodsToBuy'))
-        if (vm.tray == null || vm.tray.length == 0) {
-            vm.tray = [];
-            localStorage.setItem('goodsToBuy', JSON.stringify(vm.tray));
-        }
-        else {
-            vm.tray = JSON.parse(localStorage.getItem('goodsToBuy'))
-        }
-
-
-        vm.userLoggedIn = JSON.parse(localStorage.getItem('user'))
-        if (vm.userLoggedIn == null) {
-            vm.userLoggedIn = {};
-            vm.logInButton = true
-            localStorage.setItem('user', JSON.stringify(vm.userLoggedIn));
-            vm.detailsOfOrder()
-        }
-        else {
-            vm.userLoggedIn = JSON.parse(localStorage.getItem('user'))
-            vm.logInButton = false
-            vm.logOutButton = true
-
-            vm.detailsOfOrder()
-        }
-
-        if (vm.priceType == undefined) {
-            if(vm.userLoggedIn.name==undefined){
-              vm.priceType=undefined
-
-            }
-            else{
-                vm.discount=0.5
-
-                for (i in vm.goods) {
-                    vm.goods[i].price = vm.goods[i].price * vm.discount
-                }
-                vm.priceType = true
-            }
-        }
+    //******************************************************************************************************main BANNER
+    vm.slickConfig1Loaded = true;
+    vm.updateNumber1 = function () {
+        vm.slickConfig1Loaded = false;
+        // vm.number1[2] = '123';
+        vm.number1.push(Math.floor((Math.random() * 10) + 100));
+        $timeout(function () {
+            vm.slickConfig1Loaded = true;
+        }, 5);
     };
-
-
-//*****************************************************************************************************************TRAY
-    vm.trayCheck = function () {
-        vm.tray = JSON.parse(localStorage.getItem('goodsToBuy'))
-        for (i in vm.tray) {
-            if (vm.tray[i].count == 0) {
-                vm.tray.splice(i, 1)
-            }
-        }
-        vm.totalOrderSum()
-    }
-    vm.totalOrderSum = function () {
-        vm.totalSum = 0
-        for (i in vm.tray) {
-            vm.totalSum += vm.tray[i].count * vm.tray[i].price
-        }
-    }
-
-
-//**********************************************************************************************goods To Tray from details
-    vm.detailsOfOrder = function () {
-        vm.order = vm.userLoggedIn
-        vm.order.archive = false
-
-
-    }
-    vm.ByGoods2 = function (goods) {
-
-        vm.tray = JSON.parse(localStorage.getItem('goodsToBuy'));
-        console.log(vm.tray.length);
-        vm.tray.push(goods)
-        for (x in vm.tray) {
-            for (y in vm.tray) {
-                if (vm.tray[x].id == vm.tray[y].id && x != y) {
-                    vm.tray[x].count += vm.tray[y].count
-                    vm.tray.splice(y, 1)
-                    y = x
+    vm.slickCurrentIndex = 0;
+    vm.slickConfig1 = {
+        dots: true,
+        // autoplay: false,
+        autoplay: true,
+        adaptiveHeight: true,
+        initialSlide: 0,
+        slidesToShow: 1,
+        itemsDesktop: [780, 1],
+        slidesPerRow: 1,
+        swipeToSlide: true,
+        slidesToScroll: 1,
+        infinite: true,
+        buttons: true,
+        autoplaySpeed: 2000,
+        variableWidth: false,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 720,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 360,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
                 }
             }
-            console.log(vm.tray[x]);
-        }
-        localStorage.setItem('goodsToBuy', JSON.stringify(vm.tray));
-        console.log(JSON.parse(localStorage.getItem('goodsToBuy')));
-        vm.trayCheck()
-        location.href = '#/catalogue'
+        ],
+        // fade:true,
 
+        mobileFirst: true,
+        method: {},
+        event: {}
     };
-
-    vm.plus1 = function (id) {
-        for (i in vm.tray) {
-            if (vm.tray[i].id === id) {
-                vm.tray[i].count += 1
-
-            }
-        }
-        localStorage.setItem('goodsToBuy', JSON.stringify(vm.tray))
-        vm.totalOrderSum()
-    }
-
-    vm.minus1 = function (id) {
-        for (i in vm.tray) {
-            if (vm.tray[i].id === id && vm.tray[i].count > 0) {
-                vm.tray[i].count -= 1
-            }
-        }
-
-        localStorage.setItem('goodsToBuy', JSON.stringify(vm.tray))
-        vm.totalOrderSum()
-
-    }
-
-    vm.delete_order = function (id) {
-        for (i in vm.tray) {
-            if (vm.tray[i].id == id) {
-                vm.tray.splice(i, 1)
-                localStorage.setItem('goodsToBuy', JSON.stringify(vm.tray))
-                vm.totalOrderSum()
-            }
-        }
-    };
-
-    //**********************************************************************************************BUY GOODS
-    vm.checkLoggedUser = function () {
-        vm.userLoggedIn = JSON.parse(localStorage.getItem('user'))
-        console.log(vm.userLoggedIn);
-    }
-    vm.ByGoods = function (goods) {
-
-        vm.GoodsB = goods
-        vm.GoodsB.count = 1
-        vm.tray = JSON.parse(localStorage.getItem('goodsToBuy'));
-        console.log(vm.tray.length);
-        vm.tray.push(vm.GoodsB)
-
-        for (x in vm.tray) {
-            for (y in vm.tray) {
-                if (vm.tray[x].id == vm.tray[y].id && x != y) {
-                    vm.tray[x].count += vm.tray[y].count
-                    vm.tray.splice(y, 1)
-                    y = x
-                }
-            }
-            console.log(vm.tray[x]);
-        }
-        localStorage.setItem('goodsToBuy', JSON.stringify(vm.tray));
-        console.log(JSON.parse(localStorage.getItem('goodsToBuy')));
-        vm.trayCheck()
-    };
-
-    vm.confirmOrder = function () {
-        vm.checkLoggedUser()
-        if (vm.userLoggedIn.name == undefined) {
-            vm.alertConfirmation = true
-            vm.alertMessage = 'для здійснення покупки необхідно авторизуватися'
-        } else {
-
-            vm.order.goodsOrdered = vm.tray
-            console.log(vm.order);
-            vm.order.archive = false
-            UserService.addOrder(vm.order)
-
-            vm.tray = []
-            localStorage.setItem('goodsToBuy', JSON.stringify(vm.tray))
-
-            vm.alertConfirmation = true
-
-            // location.href="#/catalogue"
-        }
-    }
-
-
-//**********************************************************************************************pagination
-    vm.startingItem = 0
-    vm.goToPage = function (x) {
-        vm.startingItem = x * vm.itemsPerPage - vm.itemsPerPage;
-    }
-
-    vm.pagination = function () {
-        vm.startingItem = 0
-        vm.pages = []
-        vm.currentPage = 0;
-        vm.itemsPerPage = 16;
-        vm.items = vm.page_count;
-        vm.num = Math.ceil(vm.goods.length / vm.itemsPerPage)
-        vm.page = 0
-        for (i = 1; i <= vm.num; i++)
-
-            vm.pages.push(i)
-
-
-    };
-
 
 //**********************************************************************************************carousele on main page
     vm.goodsForSlider1 = function () {
-        vm.number = []
+        vm.number = vm.goodsDB
+
         for (i in vm.goods) {
-            if (i % 5 == 0) {
-                vm.number.push(vm.goods[i])
+
+            if (vm.goodsDB[i].promo == true && i % 2 == 0) {
+                vm.number.push(vm.goodsDB[i])
             }
+
         }
     }
     vm.goodsForSlider2 = function () {
         vm.number2 = []
-        for (i in vm.goods) {
-            if (i % 3 == 0) {
-                vm.number2.push(vm.goods[i])
+        for (i in vm.goodsDB) {
+            if (vm.goodsDB[i].promo == true && i % 2 == 1) {
+                vm.number2.push(vm.goodsDB[i])
             }
         }
     }
-    // vm.goodsForSlider3 = function () {
-    //     vm.number3 = []
-    //     for (i in vm.goods) {
-    //         if (i % 3 == 0) {
-    //             vm.number2.push(vm.goods[i])
-    //         }
-    //     }
-    // }
-
     vm.slickConfigLoaded = true;
     vm.updateNumber = function () {
         vm.slickConfigLoaded = false;
@@ -572,7 +646,7 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
         });
     };
     vm.slickConfig = {
-        autoplay: false,
+        autoplay: true,
         infinite: true,
         autoplaySpeed: 1500,
         slidesToShow: 5,
@@ -581,7 +655,6 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
         rtl: false,
         method: {}
     };
-
     vm.slickConfigLoaded2 = true;
     vm.updateNumber2 = function () {
         vm.slickConfigLoaded2 = false;
@@ -605,54 +678,20 @@ app.controller('myCtrl', ['UserService', function (UserService, $timeout) {
     };
 
 
-    //******************************************************************************************************main BANNER
-    vm.slickConfig1Loaded = true;
-    vm.updateNumber1 = function () {
-        vm.slickConfig1Loaded = false;
-        // vm.number1[2] = '123';
-        vm.number1.push(Math.floor((Math.random() * 10) + 100));
-        $timeout(function () {
-            vm.slickConfig1Loaded = true;
-        }, 5);
-    };
-    vm.slickCurrentIndex = 0;
-    vm.slickConfig1 = {
-        dots: true,
-        autoplay: false,
-        // autoplay: true,
-        adaptiveHeight:true,
-        initialSlide: 0,
-        slidesToShow: 1,
-        itemsDesktop : [780,1],
-        slidesPerRow:1,
-        swipeToSlide:true,
-        slidesToScroll: 1,
-        infinite: true,
-        buttons: true,
-        autoplaySpeed: 1000,
-        variableWidth:false,
-        // fade:true,
-
-        mobileFirst:true,
-        method: {},
-        event: {}
-    };
-
-    // vm.getGoods();
-    // vm.getGoods()
     vm.init = function () {
-        vm.number1 = UserService.getBanners();
         vm.start()
-        // vm.checkCatalogue()
+
         vm.localStore()
+        vm.loggedUserCheck()
         vm.getDates()
         vm.trayCheck()
+        vm.number1 = UserService.getBanners();
         vm.goodsForSlider1()
         vm.goodsForSlider2()
         vm.FiltersPrepare()
-        vm.getUsers();
+        // vm.getUsers();
 
-
+        console.log(vm.discount);
     }
     vm.init();
 
@@ -684,6 +723,23 @@ app.controller('adminCtrl', ['UserService', function (UserService) {
 //USERS************************************************************************************************************USERS
     vm.getUsers = function () {
         vm.users = UserService.getUsers()
+        vm.checkUsers()
+    }
+    vm.checkUsers = function () {
+        for (i in vm.users) {
+            if (vm.users[i].confirmed == false) {
+                // vm.orderConfirmation = false
+
+                document.getElementById('newUsers').style.background = 'red'
+                document.getElementById('newUsersB').style.background = 'red'
+                break
+
+            } else {
+                document.getElementById('newUsers').style.background = 'darkgray'
+                document.getElementById('newUsersB').style.background = 'darkgray'
+
+            }
+        }
     }
 
 
@@ -709,18 +765,7 @@ app.controller('adminCtrl', ['UserService', function (UserService) {
         vm.userEdited = {}
 
     }
-    vm.checkUsers = function () {
-        for (i in vm.users) {
-            if (vm.users[i].confirmed == false) {
-                vm.userConfirmed = false
-                document.getElementById('newUsers').style.background = 'red'
-                break
-            } else {
-                document.getElementById('newUsers').style.background = 'darkgray'
 
-            }
-        }
-    }
     vm.confirmUser = function (u) {
         for (i in vm.users) {
             if (vm.users[i].id == u.id) {
@@ -767,10 +812,12 @@ app.controller('adminCtrl', ['UserService', function (UserService) {
                 vm.orderConfirmation = false
 
                 document.getElementById('newOrders').style.background = 'red'
+                document.getElementById('newOrdersB').style.background = 'red'
                 break
 
             } else {
                 document.getElementById('newOrders').style.background = 'darkgray'
+                document.getElementById('newOrdersB').style.background = 'darkgray'
 
             }
         }
@@ -907,15 +954,17 @@ app.controller('adminCtrl', ['UserService', function (UserService) {
 
     vm.getGoods = function () {
         vm.banners = UserService.getBanners()
+
         vm.goods = UserService.getGoods();
 
-        vm.onlyUnique = function (value, index, self) {
-            return self.indexOf(value) === index;
-        }
-        for (i in vm.goods) {
-            vm.category.push(vm.goods[i].category)
-            vm.category = vm.category.filter(vm.onlyUnique)
-        }
+
+        // vm.onlyUnique = function (value, index, self) {
+        //     return self.indexOf(value) === index;
+        // }
+        // for (i in vm.goods) {
+        //     vm.category.push(vm.goods[i].category)
+        //     vm.category = vm.category.filter(vm.onlyUnique)
+        // }
 
     };
 
@@ -995,6 +1044,7 @@ app.controller('adminCtrl', ['UserService', function (UserService) {
 
     }
     vm.addBanner = function () {
+        vm.newBanner.product_id=+vm.newBanner.product_id.split('_')[0]
 
         UserService.addBanner(vm.newBanner)
         console.log(vm.newBanner);
@@ -1020,22 +1070,22 @@ app.factory("UserService", function ($http) {
         banners: [
             {
                 id: 1,
-                image:'../img/111.png',
+                image: '../img/111.png',
                 product_id: 2
 
-            },{
+            }, {
                 id: 3,
-                image:'../img/jameson.jpg',
+                image: '../img/jameson.jpg',
                 product_id: 14,
 
-            },{
+            }, {
                 id: 2,
-                image:'../img/about.png',
+                image: '../img/about.png',
                 product_id: 25
 
-            },{
+            }, {
                 id: 4,
-                image:'../img/111.jpg',
+                image: '../img/111.jpg',
                 product_id: 13
 
             }
@@ -1049,8 +1099,7 @@ app.factory("UserService", function ($http) {
                 country: "Бельгія",
                 strength: 3,
                 volume: 750,
-                price: "60",
-                priceReg:55,
+                price: "60", price2: '1',
                 image: '../img/im-1.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фаДуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фаДуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
                 , promo: false
@@ -1063,46 +1112,49 @@ app.factory("UserService", function ($http) {
                 country: "Великобританія",
                 strength: 0,
                 volume: 500,
-                price: "50",
+                price: "50", price2: '49.60',
                 image: '../img/im-2.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
                 , promo: true
             },
             {
                 id: 3,
-                category: 'beer',
+                category: 'whiskey',
                 brand: 'Leffe',
                 name: "3",
                 country: "Ірландія",
                 strength: 2.5,
                 volume: 330,
-                price: "40",
+                price: "40", price2: '39.60',
                 image: '../img/im-3.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
+                , promo: true
             },
             {
                 id: 4,
-                category: 'beer',
+                category: 'whiskey',
                 brand: 'Lowenbrau',
                 name: "4",
                 country: "Мексика",
                 strength: 0.5,
                 volume: 250,
-                price: "30",
+                price: "30", price2: '39.60',
                 image: '../img/im-4.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
+                , promo: true
             },
             {
                 id: 5,
-                category: 'beer',
+                category: 'whiskey',
                 brand: 'Hoegaarden',
                 name: "5",
                 country: "Німеччина",
                 strength: 3,
                 volume: 750,
-                price: "60",
+                price: "60", price2: '59.60',
                 image: '../img/im-1.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
+                , promo: true
             },
             {
                 id: 6,
@@ -1112,9 +1164,10 @@ app.factory("UserService", function ($http) {
                 country: "Чехія",
                 strength: 0,
                 volume: 500,
-                price: "50",
+                price: "50", price2: '49.60',
                 image: '../img/im-2.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
+                , promo: true
             },
             {
                 id: 7,
@@ -1124,9 +1177,10 @@ app.factory("UserService", function ($http) {
                 country: "Німеччина",
                 strength: 0.5,
                 volume: 330,
-                price: "40",
+                price: "40", price2: '39.60',
                 image: '../img/im-3.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
+                , promo: true
             },
             {
                 id: 8,
@@ -1136,9 +1190,10 @@ app.factory("UserService", function ($http) {
                 country: "Чехія",
                 strength: 0.5,
                 volume: 250,
-                price: "30",
+                price: "30", price2: '39.60',
                 image: '../img/im-4.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
+                , promo: true
             },
             {
                 id: 9,
@@ -1148,9 +1203,10 @@ app.factory("UserService", function ($http) {
                 country: "Бельгія",
                 strength: 3,
                 volume: 750,
-                price: "60",
+                price: "60", price2: '59.60',
                 image: '../img/im-1.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
+                , promo: true
             },
             {
                 id: 10,
@@ -1160,9 +1216,10 @@ app.factory("UserService", function ($http) {
                 country: "Великобританія",
                 strength: 0,
                 volume: 500,
-                price: "50",
+                price: "50", price2: '49.60',
                 image: '../img/im-2.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
+                , promo: true
             },
             {
                 id: 11,
@@ -1172,9 +1229,10 @@ app.factory("UserService", function ($http) {
                 country: "Ірландія",
                 strength: 0.5,
                 volume: 330,
-                price: "40",
+                price: "40", price2: '39.60',
                 image: '../img/im-3.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
+                , promo: true
             },
             {
                 id: 12,
@@ -1184,9 +1242,10 @@ app.factory("UserService", function ($http) {
                 country: "Мексика",
                 strength: 0.5,
                 volume: 250,
-                price: "30",
+                price: "30", price2: '39.60',
                 image: '../img/im-4.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
+                , promo: true
             },
             {
                 id: 13,
@@ -1196,9 +1255,10 @@ app.factory("UserService", function ($http) {
                 country: "Німеччина",
                 strength: 3,
                 volume: 750,
-                price: "60",
+                price: "60", price2: '59.60',
                 image: '../img/im-1.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
+                , promo: true
             },
             {
                 id: 14,
@@ -1208,9 +1268,10 @@ app.factory("UserService", function ($http) {
                 country: "Чехія",
                 strength: 0,
                 volume: 500,
-                price: "50",
+                price: "50", price2: '49.60',
                 image: '../img/im-2.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
+                , promo: true
             },
             {
                 id: 15,
@@ -1220,9 +1281,10 @@ app.factory("UserService", function ($http) {
                 country: "Німеччина",
                 strength: 0.5,
                 volume: 330,
-                price: "40",
+                price: "40", price2: '39.60',
                 image: '../img/im-3.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
+                , promo: true
             },
             {
                 id: 16,
@@ -1232,9 +1294,10 @@ app.factory("UserService", function ($http) {
                 country: "Чехія",
                 strength: 0.5,
                 volume: 250,
-                price: "30",
+                price: "30", price2: '39.60',
                 image: '../img/im-4.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
+                , promo: true
             },
             {
                 id: 17,
@@ -1244,9 +1307,10 @@ app.factory("UserService", function ($http) {
                 country: "Бельгія",
                 strength: 3,
                 volume: 750,
-                price: "60",
+                price: "60", price2: '59.60',
                 image: '../img/im-1.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
+                , promo: true
             },
             {
                 id: 18,
@@ -1256,7 +1320,7 @@ app.factory("UserService", function ($http) {
                 country: "Великобританія",
                 strength: 0,
                 volume: 500,
-                price: "50",
+                price: "50", price2: '49.60',
                 image: '../img/im-2.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
             },
@@ -1268,7 +1332,7 @@ app.factory("UserService", function ($http) {
                 country: "Ірландія",
                 strength: 0.5,
                 volume: 330,
-                price: "40",
+                price: "40", price2: '39.60',
                 image: '../img/im-3.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
             },
@@ -1280,7 +1344,7 @@ app.factory("UserService", function ($http) {
                 country: "Мексика",
                 strength: 0.5,
                 volume: 250,
-                price: "30",
+                price: "30", price2: '39.60',
                 image: '../img/im-4.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
             },
@@ -1292,7 +1356,7 @@ app.factory("UserService", function ($http) {
                 country: "Німеччина",
                 strength: 3,
                 volume: 750,
-                price: "60",
+                price: "60", price2: '59.60',
                 image: '../img/im-1.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
             },
@@ -1304,7 +1368,7 @@ app.factory("UserService", function ($http) {
                 country: "Чехія",
                 strength: 0,
                 volume: 500,
-                price: "50",
+                price: "50", price2: '49.60',
                 image: '../img/im-2.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
             },
@@ -1316,7 +1380,7 @@ app.factory("UserService", function ($http) {
                 country: "Німеччина",
                 strength: 0.5,
                 volume: 330,
-                price: "40",
+                price: "40", price2: '39.60',
                 image: '../img/im-3.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
             },
@@ -1328,7 +1392,7 @@ app.factory("UserService", function ($http) {
                 country: "Чехія",
                 strength: 0.5,
                 volume: 250,
-                price: "30",
+                price: "30", price2: '39.60',
                 image: '../img/im-4.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
             },
@@ -1340,7 +1404,7 @@ app.factory("UserService", function ($http) {
                 country: "Чехія",
                 strength: 0.5,
                 volume: 250,
-                price: "30",
+                price: "30", price2: '39.60',
                 image: '../img/im-4.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
             }, {
@@ -1351,7 +1415,7 @@ app.factory("UserService", function ($http) {
                 country: "Чехія",
                 strength: 0.5,
                 volume: 250,
-                price: "30",
+                price: "30", price2: '39.60',
                 image: '../img/im-4.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
             }, {
@@ -1362,7 +1426,7 @@ app.factory("UserService", function ($http) {
                 country: "Чехія",
                 strength: 0.5,
                 volume: 250,
-                price: "30",
+                price: "30", price2: '39.60',
                 image: '../img/im-4.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
             }, {
@@ -1373,7 +1437,7 @@ app.factory("UserService", function ($http) {
                 country: "Чехія",
                 strength: 0.5,
                 volume: 250,
-                price: "30",
+                price: "30", price2: '39.60',
                 image: '../img/im-4.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
             }, {
@@ -1384,7 +1448,7 @@ app.factory("UserService", function ($http) {
                 country: "Чехія",
                 strength: 0.5,
                 volume: 250,
-                price: "30",
+                price: "30", price2: '39.60',
                 image: '../img/im-4.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
             },
@@ -1396,7 +1460,7 @@ app.factory("UserService", function ($http) {
                 country: "Чехія",
                 strength: 0.5,
                 volume: 250,
-                price: "30",
+                price: "30", price2: '39.60',
                 image: '../img/im-4.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
             },
@@ -1408,7 +1472,7 @@ app.factory("UserService", function ($http) {
                 country: "Чехія",
                 strength: 0.5,
                 volume: 250,
-                price: "30",
+                price: "30", price2: '39.60',
                 image: '../img/im-4.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
             },
@@ -1420,7 +1484,7 @@ app.factory("UserService", function ($http) {
                 country: "Чехія",
                 strength: 0.5,
                 volume: 250,
-                price: "30",
+                price: "30", price2: '39.60',
                 image: '../img/im-4.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
             },
@@ -1432,7 +1496,7 @@ app.factory("UserService", function ($http) {
                 country: "Чехія",
                 strength: 0.5,
                 volume: 250,
-                price: "30",
+                price: "30", price2: '39.60',
                 image: '../img/im-4.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
             },
@@ -1444,7 +1508,7 @@ app.factory("UserService", function ($http) {
                 country: "Чехія",
                 strength: 0.5,
                 volume: 250,
-                price: "30",
+                price: "30", price2: '39.60',
                 image: '../img/im-4.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
             },
@@ -1457,6 +1521,7 @@ app.factory("UserService", function ($http) {
                 strength: 0.5,
                 volume: 250,
                 price: "30",
+                price2: '39.60',
                 image: '../img/im-4.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
             }
@@ -1473,13 +1538,36 @@ app.factory("UserService", function ($http) {
                     year: 1986
                 },
                 email: "mail2@gmail.com",
-
                 address: {
                     street: 'zelena',
                     house: '123-a',
                     flat: 123,
                     stair: 4,
                     entrance: '5',
+                },
+                confirmed: false
+
+
+            },
+            {
+                id: 2,
+                name: '1ivan2',
+                sname: '1ivanov2',
+                phone: '+380123456789',
+
+                birthday: {
+                    day: 115,
+                    month: 210,
+                    year: 2986
+                },
+                email: "qmail2@gmail.com",
+
+                address: {
+                    street: '11zelena',
+                    house: '11123-a',
+                    flat: 11123,
+                    stair: 114,
+                    entrance: '115',
                 },
                 confirmed: true
 
@@ -1506,31 +1594,7 @@ app.factory("UserService", function ($http) {
                 confirmed: true
 
 
-            },
-            {
-                id: 2,
-                name: '1ivan2',
-                sname: '1ivanov2',
-                phone: '+380123456789',
-
-                birthday: {
-                    day: 115,
-                    month: 210,
-                    year: 2986
-                },
-                email: "qmail2@gmail.com",
-
-                address: {
-                    street: '11zelena',
-                    house: '11123-a',
-                    flat: 11123,
-                    stair: 114,
-                    entrance: '115',
-                },
-                confirmed: false
-
-
-            },
+            }
 
         ],
         orders: [
@@ -1640,21 +1704,19 @@ app.factory("UserService", function ($http) {
         getGoodsFromDB: function () {
             return this.goodsDB
         },
-
-
         getOrders: function () {
             return this.orders
         },
         addOrder: function (order) {
             this.orders.push(order)
         },
+
         getGoods: function () {
             return this.goodsDB
         }
-
         ,
         addGoods: function (newGoods) {
-            this.goods.push(newGoods)
+            this.goodsDB.push(newGoods)
         },
         addBanner: function (newBanners) {
             this.banners.push(newBanners)
@@ -1665,20 +1727,24 @@ app.factory("UserService", function ($http) {
         }
         ,
         getByCategory: function (x) {
+            goods = this.goodsDB
             if (x == 'others') {
                 sortedGoods = []
-                for (i in this.goods) {
-                    if (this.goods[i].category != 'beer' && this.goods[i].category != 'wine' && this.goods[i].category != 'vodka' && this.goods[i].category != 'whiskey' && this.goods[i].category != 'tequila') {
-                        sortedGoods.push(this.goods[i])
+                for (i in goods) {
+                    if (goods[i].category != 'beer' && goods[i].category != 'wine' && goods[i].category != 'vodka' && goods[i].category != 'whiskey' && goods[i].category != 'tequila') {
+                        sortedGoods.push(goods[i])
                     }
                     return sortedGoods
                 }
+            } else if (x == '') {
+                sortedGoods = goods
+                return sortedGoods
             } else {
 
                 sortedGoods = [];
-                for (i in this.goods) {
-                    if (this.goods[i].category == x) {
-                        sortedGoods.push(this.goods[i])
+                for (i in goods) {
+                    if (goods[i].category == x) {
+                        sortedGoods.push(goods[i])
                     }
 
                 }
@@ -1687,6 +1753,7 @@ app.factory("UserService", function ($http) {
         }
         ,
         getCategories: function () {
+            goods = this.goodsDB
             for (i in this.goods) {
                 this.category.push(this.goods[i].category)
             }
@@ -1706,14 +1773,14 @@ app.factory("UserService", function ($http) {
                 }
             }
         },
-        getBanners:function(){
+        getBanners: function () {
             return this.banners
         },
 
         deleteGoods: function (g) {
-            for (i in this.goods) {
-                if (g.id == this.goods[i].id) {
-                    this.goods.splice(i, 1)
+            for (i in this.goodsDB) {
+                if (g.id == this.goodsDB[i].id) {
+                    this.goodsDB.splice(i, 1)
 
 
                 }
@@ -1744,9 +1811,9 @@ app.factory("UserService", function ($http) {
         ,
 
         editGoods: function (g) {
-            for (i in this.goods) {
-                if (g.id == this.goods[i].id) {
-                    this.goods[i] = g
+            for (i in this.goodsDB) {
+                if (g.id == this.goodsDB[i].id) {
+                    this.goodsDB[i] = g
                 }
             }
         }
@@ -1758,7 +1825,183 @@ app.factory("UserService", function ($http) {
         },
         addCategory: function (cat) {
             this.category.push(cat)
-        }
+        },
+
+
+
+
+
+        //GET*******************************************************************************************************GET
+        // getGoodsFromDB:function(){
+        //     return $http({
+        //         method: 'get',
+        //         url: 'https://furniture123.herokuapp.com/api/commodity'
+        //     }).then(function (e) {
+        //         goodsDB = e.data;
+        //         callback(goodsDB);
+        //     });
+        // },
+        // getGoods: function () {
+        //     return $http({
+        //                 method: 'get',
+        //                 url: 'https://furniture123.herokuapp.com/api/commodity'
+        //             }).then(function (e) {
+        //                 goods = e.data;
+        //                 callback(goods);
+        //             });
+        // },
+
+        // getOrders: function () {
+        //     return $http({
+        //         method: 'get',
+        //         url: 'https://furniture123.herokuapp.com/api/orders'
+        //     }).then(function (e) {
+        //         orders = e.data;
+        //         callback(orders);
+        //     });
+        // },
+        //
+        // getCategories: function () {
+        //     return $http({
+        //                 method: 'get',
+        //                 url: 'https://furniture123.herokuapp.com/api/categories'
+        //             }).then(function (e) {
+        //                 categories = e.data;
+        //                 callback(categories);
+        //             });
+        // },
+        // getBanners: function () {
+        //     return $http({
+        //                 method: 'get',
+        //                 url: 'https://furniture123.herokuapp.com/api/banners'
+        //             }).then(function (e) {
+        //                 banners = e.data;
+        //                 callback(banners);
+        //             });
+        // },
+        // getUsers: function () {
+        //     return $http({
+        //         method: 'get',
+        //         url: 'https://furniture123.herokuapp.com/api/users'
+        //     }).then(function (e) {
+        //         users = e.data;
+        //         callback(users);
+        //     });
+        // },
+
+        //ADD*******************************************************************************************************ADD
+
+        // addGoods: function (newCommodity) {
+        //     var str = JSON.stringify(newCommodity);
+        //     $http.post('https://furniture123.herokuapp.com/api/commodity', str).then(function (e) {
+        //     })
+        // },
+        // addOrder: function (order) {
+        //     var str = JSON.stringify(order);
+        //     $http.post('https://furniture123.herokuapp.com/api/commodity', str).then(function (e) {
+        //     })
+        // },
+        // addBanner: function (newBanners) {
+        //     var str = JSON.stringify(newBanners);
+        //     $http.post('https://furniture123.herokuapp.com/api/commodity', str).then(function (e) {
+        //     })
+        // },
+        // addUser: function (newUser) {
+        //     var str = JSON.stringify(newUser);
+        //     $http.post('https://furniture123.herokuapp.com/api/commodity', str).then(function (e) {
+        //     })
+        // },
+        // addCategory: function (cat) {
+        //     var str = JSON.stringify(cat);
+        //     $http.post('https://furniture123.herokuapp.com/api/commodity', str).then(function (e) {
+        //     })
+        // },
+
+        //EDIT*****************************************************************************************************EDIT
+
+        // editUser: function (eu) {
+        //     var str = JSON.stringify(eu);
+        //     $http.put('https://furniture123.herokuapp.com/api/category', str)
+        // },
+        // editGoods: function (editedCommodity) {
+        //     var str = JSON.stringify(editedCommodity);
+        //     $http.put('https://furniture123.herokuapp.com/api/category', str)
+        // },
+        // editCategory:function(editedCategory){
+        //     var str=JSON.stringify(editdCategory);
+        //     $http.put('https://furniture123.herokuapp.com/api/category',str)
+        // },
+        // editOrder:function(editedOrder){
+        //     var str=JSON.stringify(editedOrder);
+        //     $http.put("'https://furniture123.herokuapp.com/api/category",str)
+        //
+        // }
+        //DELETE*************************************************************************************************DELETE
+
+        // deleteUser:function(id) {
+        //     $http.delete('https://furniture123.herokuapp.com/api/commodity/' + id)
+        //         .then(function (e) {
+        //             users.map(function (el, index) {
+        //                 if (el.id === id) {
+        //                     users.splice(index, 1)
+        //                 }
+        //             })
+        //         }).catch(function (err) {
+        //         console.log(err)
+        //     })
+        // },
+        // deleteOrder:function(id) {
+        //     $http.delete('https://furniture123.herokuapp.com/api/commodity/' + id)
+        //         .then(function (e) {
+        //             orders.map(function (el, index) {
+        //                 if (el.id === id) {
+        //                     orders.splice(index, 1)
+        //                 }
+        //             })
+        //         }).catch(function (err) {
+        //         console.log(err)
+        //     })
+        // },
+        // deleteGoodsDB:function(id) {
+        //     $http.delete('https://furniture123.herokuapp.com/api/commodity/' + id)
+        //         .then(function (e) {
+        //             goodsDB.map(function (el, index) {
+        //                 if (el.id === id) {
+        //                     goodsDB.splice(index, 1)
+        //                 }
+        //             })
+        //         }).catch(function (err) {
+        //         console.log(err)
+        //     })
+        // },
+        // deleteCategory:function(id) {
+        //     $http.delete('https://furniture123.herokuapp.com/api/commodity/' + id)
+        //         .then(function (e) {
+        //             goodsDB.map(function (el, index) {
+        //                 if (el.id === id) {
+        //                     goodsDB.splice(index, 1)
+        //                 }
+        //             })
+        //         }).catch(function (err) {
+        //         console.log(err)
+        //     })
+        // },
+        // deleteBanners:function(id) {
+        //     $http.delete('https://furniture123.herokuapp.com/api/commodity/' + id)
+        //         .then(function (e) {
+        //             banners.map(function (el, index) {
+        //                 if (el.id === id) {
+        //                     banners.splice(index, 1)
+        //                 }
+        //             })
+        //         }).catch(function (err) {
+        //         console.log(err)
+        //     })
+        // },
+
+
+
+
 
 
     }
@@ -1778,101 +2021,4 @@ window.location.href.split('#')[0];
 function getE(id) {
     return document.getElementById(id);
 }
-// function showMainMenu(){}
-// getE('burger_menu').onclick = function () {
-//     if (getE("header_navbar_links").style.top == "35px") {
-//         var pos1 = 35;
-//         var id1 = setInterval(frame1, 5);
-//         function frame1() {
-//             if (pos1 == -435) {
-//                 clearInterval(id1);
-//             } else {
-//                 pos1 -= 5;
-//                 getE("header_navbar_links").style.top = pos1 + 'px';
-//             }
-//         }
-//     }
-//     else {
-//         var pos = -435;
-//         var id = setInterval(frame, 5);
-//         function frame() {
-//             if (pos == 35) {
-//                 clearInterval(id);
-//             } else {
-//                 pos += 5;
-//                 getE("header_navbar_links").style.top = pos + 'px';
-//             }
-//         }
-//     }
-// };
-//
-// getE('header_navbar_links').onclick = function () {
-//     if (getE("header_navbar_links").style.top == "35px") {
-//         var pos1 = 35;
-//         var id1 = setInterval(frame1, 1);
-//
-//         function frame1() {
-//             if (pos1 == -435) {
-//                 clearInterval(id1);
-//             } else {
-//                 pos1 -= 5;
-//                 getE("header_navbar_links").style.top = pos1 + 'px';
-//             }
-//         }
-//     }
-// };
-// getE('sidebar_button').onclick = function () {
-//     console.log('klick');
-//     if (getE("sbtabm").style.left == "0px") {
-//         console.log('if')
-//         var pos1 = 0;
-//         var id1 = setInterval(frame1, 5);
-//
-//         function frame1() {
-//             if (pos1 == -300) {
-//                 clearInterval(id1);
-//             } else {
-//                 pos1 -= 5;
-//                 getE("sbtabm").style.left = pos1 + 'px';
-//                 getE("sidebar_button").style.left = 300 + pos1 + 'px';
-//             }
-//
-//
-//         }
-//     }
-//     else {
-//         console.log('else')
-//         console.log(getE("sbtabm").style.left);
-//
-//         var pos = -300;
-//         var id = setInterval(frame, 5);
-//
-//         function frame() {
-//             if (pos == 0) {
-//                 clearInterval(id);
-//             } else {
-//                 pos += 5;
-//                 getE("sbtabm").style.left = pos + 'px';
-//             }
-//
-//
-//         }
-//     }
-// };
-// getE('sidebar_button').onclick = function () {
-//     if (getE("sbtabm").style.top == "35px") {
-//         var pos1 = 35;
-//         var id1 = setInterval(frame1, 1);
-//
-//         function frame1() {
-//             if (pos1 == -435) {
-//                 clearInterval(id1);
-//             } else {
-//                 pos1 -= 5;
-//                 getE("header_navbar_links").style.top = pos1 + 'px';
-//             }
-//         }
-//     }
-// };
 
-var q=222222;

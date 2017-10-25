@@ -3,22 +3,22 @@ app.factory("UserService", function ($http) {
         banners: [
             {
                 id: 1,
-                image:'../img/111.png',
+                image: '../img/111.png',
                 product_id: 2
 
-            },{
+            }, {
                 id: 3,
-                image:'../img/jameson.jpg',
+                image: '../img/jameson.jpg',
                 product_id: 14,
 
-            },{
+            }, {
                 id: 2,
-                image:'../img/about.png',
+                image: '../img/about.png',
                 product_id: 25
 
-            },{
+            }, {
                 id: 4,
-                image:'../img/111.jpg',
+                image: '../img/111.jpg',
                 product_id: 13
 
             }
@@ -32,8 +32,7 @@ app.factory("UserService", function ($http) {
                 country: "Бельгія",
                 strength: 3,
                 volume: 750,
-                price: "60",
-                priceReg:55,
+                price: "60", price2: '1',
                 image: '../img/im-1.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фаДуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фаДуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
                 , promo: false
@@ -46,46 +45,49 @@ app.factory("UserService", function ($http) {
                 country: "Великобританія",
                 strength: 0,
                 volume: 500,
-                price: "50",
+                price: "50", price2: '49.60',
                 image: '../img/im-2.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
                 , promo: true
             },
             {
                 id: 3,
-                category: 'beer',
+                category: 'whiskey',
                 brand: 'Leffe',
                 name: "3",
                 country: "Ірландія",
                 strength: 2.5,
                 volume: 330,
-                price: "40",
+                price: "40", price2: '39.60',
                 image: '../img/im-3.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
+                , promo: true
             },
             {
                 id: 4,
-                category: 'beer',
+                category: 'whiskey',
                 brand: 'Lowenbrau',
                 name: "4",
                 country: "Мексика",
                 strength: 0.5,
                 volume: 250,
-                price: "30",
+                price: "30", price2: '39.60',
                 image: '../img/im-4.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
+                , promo: true
             },
             {
                 id: 5,
-                category: 'beer',
+                category: 'whiskey',
                 brand: 'Hoegaarden',
                 name: "5",
                 country: "Німеччина",
                 strength: 3,
                 volume: 750,
-                price: "60",
+                price: "60", price2: '59.60',
                 image: '../img/im-1.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
+                , promo: true
             },
             {
                 id: 6,
@@ -95,9 +97,10 @@ app.factory("UserService", function ($http) {
                 country: "Чехія",
                 strength: 0,
                 volume: 500,
-                price: "50",
+                price: "50", price2: '49.60',
                 image: '../img/im-2.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
+                , promo: true
             },
             {
                 id: 7,
@@ -107,9 +110,10 @@ app.factory("UserService", function ($http) {
                 country: "Німеччина",
                 strength: 0.5,
                 volume: 330,
-                price: "40",
+                price: "40", price2: '39.60',
                 image: '../img/im-3.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
+                , promo: true
             },
             {
                 id: 8,
@@ -119,9 +123,10 @@ app.factory("UserService", function ($http) {
                 country: "Чехія",
                 strength: 0.5,
                 volume: 250,
-                price: "30",
+                price: "30", price2: '39.60',
                 image: '../img/im-4.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
+                , promo: true
             },
             {
                 id: 9,
@@ -131,9 +136,10 @@ app.factory("UserService", function ($http) {
                 country: "Бельгія",
                 strength: 3,
                 volume: 750,
-                price: "60",
+                price: "60", price2: '59.60',
                 image: '../img/im-1.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
+                , promo: true
             },
             {
                 id: 10,
@@ -143,9 +149,10 @@ app.factory("UserService", function ($http) {
                 country: "Великобританія",
                 strength: 0,
                 volume: 500,
-                price: "50",
+                price: "50", price2: '49.60',
                 image: '../img/im-2.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
+                , promo: true
             },
             {
                 id: 11,
@@ -155,9 +162,10 @@ app.factory("UserService", function ($http) {
                 country: "Ірландія",
                 strength: 0.5,
                 volume: 330,
-                price: "40",
+                price: "40", price2: '39.60',
                 image: '../img/im-3.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
+                , promo: true
             },
             {
                 id: 12,
@@ -167,9 +175,10 @@ app.factory("UserService", function ($http) {
                 country: "Мексика",
                 strength: 0.5,
                 volume: 250,
-                price: "30",
+                price: "30", price2: '39.60',
                 image: '../img/im-4.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
+                , promo: true
             },
             {
                 id: 13,
@@ -179,9 +188,10 @@ app.factory("UserService", function ($http) {
                 country: "Німеччина",
                 strength: 3,
                 volume: 750,
-                price: "60",
+                price: "60", price2: '59.60',
                 image: '../img/im-1.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
+                , promo: true
             },
             {
                 id: 14,
@@ -191,9 +201,10 @@ app.factory("UserService", function ($http) {
                 country: "Чехія",
                 strength: 0,
                 volume: 500,
-                price: "50",
+                price: "50", price2: '49.60',
                 image: '../img/im-2.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
+                , promo: true
             },
             {
                 id: 15,
@@ -203,9 +214,10 @@ app.factory("UserService", function ($http) {
                 country: "Німеччина",
                 strength: 0.5,
                 volume: 330,
-                price: "40",
+                price: "40", price2: '39.60',
                 image: '../img/im-3.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
+                , promo: true
             },
             {
                 id: 16,
@@ -215,9 +227,10 @@ app.factory("UserService", function ($http) {
                 country: "Чехія",
                 strength: 0.5,
                 volume: 250,
-                price: "30",
+                price: "30", price2: '39.60',
                 image: '../img/im-4.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
+                , promo: true
             },
             {
                 id: 17,
@@ -227,9 +240,10 @@ app.factory("UserService", function ($http) {
                 country: "Бельгія",
                 strength: 3,
                 volume: 750,
-                price: "60",
+                price: "60", price2: '59.60',
                 image: '../img/im-1.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
+                , promo: true
             },
             {
                 id: 18,
@@ -239,7 +253,7 @@ app.factory("UserService", function ($http) {
                 country: "Великобританія",
                 strength: 0,
                 volume: 500,
-                price: "50",
+                price: "50", price2: '49.60',
                 image: '../img/im-2.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
             },
@@ -251,7 +265,7 @@ app.factory("UserService", function ($http) {
                 country: "Ірландія",
                 strength: 0.5,
                 volume: 330,
-                price: "40",
+                price: "40", price2: '39.60',
                 image: '../img/im-3.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
             },
@@ -263,7 +277,7 @@ app.factory("UserService", function ($http) {
                 country: "Мексика",
                 strength: 0.5,
                 volume: 250,
-                price: "30",
+                price: "30", price2: '39.60',
                 image: '../img/im-4.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
             },
@@ -275,7 +289,7 @@ app.factory("UserService", function ($http) {
                 country: "Німеччина",
                 strength: 3,
                 volume: 750,
-                price: "60",
+                price: "60", price2: '59.60',
                 image: '../img/im-1.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
             },
@@ -287,7 +301,7 @@ app.factory("UserService", function ($http) {
                 country: "Чехія",
                 strength: 0,
                 volume: 500,
-                price: "50",
+                price: "50", price2: '49.60',
                 image: '../img/im-2.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
             },
@@ -299,7 +313,7 @@ app.factory("UserService", function ($http) {
                 country: "Німеччина",
                 strength: 0.5,
                 volume: 330,
-                price: "40",
+                price: "40", price2: '39.60',
                 image: '../img/im-3.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
             },
@@ -311,7 +325,7 @@ app.factory("UserService", function ($http) {
                 country: "Чехія",
                 strength: 0.5,
                 volume: 250,
-                price: "30",
+                price: "30", price2: '39.60',
                 image: '../img/im-4.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
             },
@@ -323,7 +337,7 @@ app.factory("UserService", function ($http) {
                 country: "Чехія",
                 strength: 0.5,
                 volume: 250,
-                price: "30",
+                price: "30", price2: '39.60',
                 image: '../img/im-4.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
             }, {
@@ -334,7 +348,7 @@ app.factory("UserService", function ($http) {
                 country: "Чехія",
                 strength: 0.5,
                 volume: 250,
-                price: "30",
+                price: "30", price2: '39.60',
                 image: '../img/im-4.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
             }, {
@@ -345,7 +359,7 @@ app.factory("UserService", function ($http) {
                 country: "Чехія",
                 strength: 0.5,
                 volume: 250,
-                price: "30",
+                price: "30", price2: '39.60',
                 image: '../img/im-4.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
             }, {
@@ -356,7 +370,7 @@ app.factory("UserService", function ($http) {
                 country: "Чехія",
                 strength: 0.5,
                 volume: 250,
-                price: "30",
+                price: "30", price2: '39.60',
                 image: '../img/im-4.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
             }, {
@@ -367,7 +381,7 @@ app.factory("UserService", function ($http) {
                 country: "Чехія",
                 strength: 0.5,
                 volume: 250,
-                price: "30",
+                price: "30", price2: '39.60',
                 image: '../img/im-4.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
             },
@@ -379,7 +393,7 @@ app.factory("UserService", function ($http) {
                 country: "Чехія",
                 strength: 0.5,
                 volume: 250,
-                price: "30",
+                price: "30", price2: '39.60',
                 image: '../img/im-4.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
             },
@@ -391,7 +405,7 @@ app.factory("UserService", function ($http) {
                 country: "Чехія",
                 strength: 0.5,
                 volume: 250,
-                price: "30",
+                price: "30", price2: '39.60',
                 image: '../img/im-4.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
             },
@@ -403,7 +417,7 @@ app.factory("UserService", function ($http) {
                 country: "Чехія",
                 strength: 0.5,
                 volume: 250,
-                price: "30",
+                price: "30", price2: '39.60',
                 image: '../img/im-4.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
             },
@@ -415,7 +429,7 @@ app.factory("UserService", function ($http) {
                 country: "Чехія",
                 strength: 0.5,
                 volume: 250,
-                price: "30",
+                price: "30", price2: '39.60',
                 image: '../img/im-4.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
             },
@@ -427,7 +441,7 @@ app.factory("UserService", function ($http) {
                 country: "Чехія",
                 strength: 0.5,
                 volume: 250,
-                price: "30",
+                price: "30", price2: '39.60',
                 image: '../img/im-4.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
             },
@@ -440,6 +454,7 @@ app.factory("UserService", function ($http) {
                 strength: 0.5,
                 volume: 250,
                 price: "30",
+                price2: '39.60',
                 image: '../img/im-4.png',
                 description: 'Дуис омнес детерруиссет но ест, те яуи тритани малуиссет реферрентур. Хис еи аеяуе феугаит. Ех тантас долорум евертитур ест, пробатус суавитате вулпутате вис ан. Цибо персиус ат меа, алиа мовет аетерно ид хас, фалли цаусае апеириан хис ут. Дуо ин нисл плацерат тхеопхрастус, яуас рецусабо мнесарчум вим еа.'
             }
@@ -456,13 +471,36 @@ app.factory("UserService", function ($http) {
                     year: 1986
                 },
                 email: "mail2@gmail.com",
-
                 address: {
                     street: 'zelena',
                     house: '123-a',
                     flat: 123,
                     stair: 4,
                     entrance: '5',
+                },
+                confirmed: false
+
+
+            },
+            {
+                id: 2,
+                name: '1ivan2',
+                sname: '1ivanov2',
+                phone: '+380123456789',
+
+                birthday: {
+                    day: 115,
+                    month: 210,
+                    year: 2986
+                },
+                email: "qmail2@gmail.com",
+
+                address: {
+                    street: '11zelena',
+                    house: '11123-a',
+                    flat: 11123,
+                    stair: 114,
+                    entrance: '115',
                 },
                 confirmed: true
 
@@ -489,31 +527,7 @@ app.factory("UserService", function ($http) {
                 confirmed: true
 
 
-            },
-            {
-                id: 2,
-                name: '1ivan2',
-                sname: '1ivanov2',
-                phone: '+380123456789',
-
-                birthday: {
-                    day: 115,
-                    month: 210,
-                    year: 2986
-                },
-                email: "qmail2@gmail.com",
-
-                address: {
-                    street: '11zelena',
-                    house: '11123-a',
-                    flat: 11123,
-                    stair: 114,
-                    entrance: '115',
-                },
-                confirmed: false
-
-
-            },
+            }
 
         ],
         orders: [
@@ -623,21 +637,19 @@ app.factory("UserService", function ($http) {
         getGoodsFromDB: function () {
             return this.goodsDB
         },
-
-
         getOrders: function () {
             return this.orders
         },
         addOrder: function (order) {
             this.orders.push(order)
         },
+
         getGoods: function () {
             return this.goodsDB
         }
-
         ,
         addGoods: function (newGoods) {
-            this.goods.push(newGoods)
+            this.goodsDB.push(newGoods)
         },
         addBanner: function (newBanners) {
             this.banners.push(newBanners)
@@ -648,20 +660,24 @@ app.factory("UserService", function ($http) {
         }
         ,
         getByCategory: function (x) {
+            goods = this.goodsDB
             if (x == 'others') {
                 sortedGoods = []
-                for (i in this.goods) {
-                    if (this.goods[i].category != 'beer' && this.goods[i].category != 'wine' && this.goods[i].category != 'vodka' && this.goods[i].category != 'whiskey' && this.goods[i].category != 'tequila') {
-                        sortedGoods.push(this.goods[i])
+                for (i in goods) {
+                    if (goods[i].category != 'beer' && goods[i].category != 'wine' && goods[i].category != 'vodka' && goods[i].category != 'whiskey' && goods[i].category != 'tequila') {
+                        sortedGoods.push(goods[i])
                     }
                     return sortedGoods
                 }
+            } else if (x == '') {
+                sortedGoods = goods
+                return sortedGoods
             } else {
 
                 sortedGoods = [];
-                for (i in this.goods) {
-                    if (this.goods[i].category == x) {
-                        sortedGoods.push(this.goods[i])
+                for (i in goods) {
+                    if (goods[i].category == x) {
+                        sortedGoods.push(goods[i])
                     }
 
                 }
@@ -670,6 +686,7 @@ app.factory("UserService", function ($http) {
         }
         ,
         getCategories: function () {
+            goods = this.goodsDB
             for (i in this.goods) {
                 this.category.push(this.goods[i].category)
             }
@@ -689,14 +706,14 @@ app.factory("UserService", function ($http) {
                 }
             }
         },
-        getBanners:function(){
+        getBanners: function () {
             return this.banners
         },
 
         deleteGoods: function (g) {
-            for (i in this.goods) {
-                if (g.id == this.goods[i].id) {
-                    this.goods.splice(i, 1)
+            for (i in this.goodsDB) {
+                if (g.id == this.goodsDB[i].id) {
+                    this.goodsDB.splice(i, 1)
 
 
                 }
@@ -727,9 +744,9 @@ app.factory("UserService", function ($http) {
         ,
 
         editGoods: function (g) {
-            for (i in this.goods) {
-                if (g.id == this.goods[i].id) {
-                    this.goods[i] = g
+            for (i in this.goodsDB) {
+                if (g.id == this.goodsDB[i].id) {
+                    this.goodsDB[i] = g
                 }
             }
         }
@@ -741,7 +758,183 @@ app.factory("UserService", function ($http) {
         },
         addCategory: function (cat) {
             this.category.push(cat)
-        }
+        },
+
+
+
+
+
+        //GET*******************************************************************************************************GET
+        // getGoodsFromDB:function(){
+        //     return $http({
+        //         method: 'get',
+        //         url: 'https://furniture123.herokuapp.com/api/commodity'
+        //     }).then(function (e) {
+        //         goodsDB = e.data;
+        //         callback(goodsDB);
+        //     });
+        // },
+        // getGoods: function () {
+        //     return $http({
+        //                 method: 'get',
+        //                 url: 'https://furniture123.herokuapp.com/api/commodity'
+        //             }).then(function (e) {
+        //                 goods = e.data;
+        //                 callback(goods);
+        //             });
+        // },
+
+        // getOrders: function () {
+        //     return $http({
+        //         method: 'get',
+        //         url: 'https://furniture123.herokuapp.com/api/orders'
+        //     }).then(function (e) {
+        //         orders = e.data;
+        //         callback(orders);
+        //     });
+        // },
+        //
+        // getCategories: function () {
+        //     return $http({
+        //                 method: 'get',
+        //                 url: 'https://furniture123.herokuapp.com/api/categories'
+        //             }).then(function (e) {
+        //                 categories = e.data;
+        //                 callback(categories);
+        //             });
+        // },
+        // getBanners: function () {
+        //     return $http({
+        //                 method: 'get',
+        //                 url: 'https://furniture123.herokuapp.com/api/banners'
+        //             }).then(function (e) {
+        //                 banners = e.data;
+        //                 callback(banners);
+        //             });
+        // },
+        // getUsers: function () {
+        //     return $http({
+        //         method: 'get',
+        //         url: 'https://furniture123.herokuapp.com/api/users'
+        //     }).then(function (e) {
+        //         users = e.data;
+        //         callback(users);
+        //     });
+        // },
+
+        //ADD*******************************************************************************************************ADD
+
+        // addGoods: function (newCommodity) {
+        //     var str = JSON.stringify(newCommodity);
+        //     $http.post('https://furniture123.herokuapp.com/api/commodity', str).then(function (e) {
+        //     })
+        // },
+        // addOrder: function (order) {
+        //     var str = JSON.stringify(order);
+        //     $http.post('https://furniture123.herokuapp.com/api/commodity', str).then(function (e) {
+        //     })
+        // },
+        // addBanner: function (newBanners) {
+        //     var str = JSON.stringify(newBanners);
+        //     $http.post('https://furniture123.herokuapp.com/api/commodity', str).then(function (e) {
+        //     })
+        // },
+        // addUser: function (newUser) {
+        //     var str = JSON.stringify(newUser);
+        //     $http.post('https://furniture123.herokuapp.com/api/commodity', str).then(function (e) {
+        //     })
+        // },
+        // addCategory: function (cat) {
+        //     var str = JSON.stringify(cat);
+        //     $http.post('https://furniture123.herokuapp.com/api/commodity', str).then(function (e) {
+        //     })
+        // },
+
+        //EDIT*****************************************************************************************************EDIT
+
+        // editUser: function (eu) {
+        //     var str = JSON.stringify(eu);
+        //     $http.put('https://furniture123.herokuapp.com/api/category', str)
+        // },
+        // editGoods: function (editedCommodity) {
+        //     var str = JSON.stringify(editedCommodity);
+        //     $http.put('https://furniture123.herokuapp.com/api/category', str)
+        // },
+        // editCategory:function(editedCategory){
+        //     var str=JSON.stringify(editdCategory);
+        //     $http.put('https://furniture123.herokuapp.com/api/category',str)
+        // },
+        // editOrder:function(editedOrder){
+        //     var str=JSON.stringify(editedOrder);
+        //     $http.put("'https://furniture123.herokuapp.com/api/category",str)
+        //
+        // }
+        //DELETE*************************************************************************************************DELETE
+
+        // deleteUser:function(id) {
+        //     $http.delete('https://furniture123.herokuapp.com/api/commodity/' + id)
+        //         .then(function (e) {
+        //             users.map(function (el, index) {
+        //                 if (el.id === id) {
+        //                     users.splice(index, 1)
+        //                 }
+        //             })
+        //         }).catch(function (err) {
+        //         console.log(err)
+        //     })
+        // },
+        // deleteOrder:function(id) {
+        //     $http.delete('https://furniture123.herokuapp.com/api/commodity/' + id)
+        //         .then(function (e) {
+        //             orders.map(function (el, index) {
+        //                 if (el.id === id) {
+        //                     orders.splice(index, 1)
+        //                 }
+        //             })
+        //         }).catch(function (err) {
+        //         console.log(err)
+        //     })
+        // },
+        // deleteGoodsDB:function(id) {
+        //     $http.delete('https://furniture123.herokuapp.com/api/commodity/' + id)
+        //         .then(function (e) {
+        //             goodsDB.map(function (el, index) {
+        //                 if (el.id === id) {
+        //                     goodsDB.splice(index, 1)
+        //                 }
+        //             })
+        //         }).catch(function (err) {
+        //         console.log(err)
+        //     })
+        // },
+        // deleteCategory:function(id) {
+        //     $http.delete('https://furniture123.herokuapp.com/api/commodity/' + id)
+        //         .then(function (e) {
+        //             goodsDB.map(function (el, index) {
+        //                 if (el.id === id) {
+        //                     goodsDB.splice(index, 1)
+        //                 }
+        //             })
+        //         }).catch(function (err) {
+        //         console.log(err)
+        //     })
+        // },
+        // deleteBanners:function(id) {
+        //     $http.delete('https://furniture123.herokuapp.com/api/commodity/' + id)
+        //         .then(function (e) {
+        //             banners.map(function (el, index) {
+        //                 if (el.id === id) {
+        //                     banners.splice(index, 1)
+        //                 }
+        //             })
+        //         }).catch(function (err) {
+        //         console.log(err)
+        //     })
+        // },
+
+
+
+
 
 
     }

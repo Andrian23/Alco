@@ -68,8 +68,9 @@ div#main_conteiner
                 div.slider-element(ng-click='my.detail_of_goods(i)')
                     a(href='#/details')
                         img(ng-src='{{i.image}}' ng-click='my.detail_of_goods(i)')
-                        h4
-                        p
+                    h4 {{i.price*my.discount}} грн
+                    p
+                    span.caruosele_footer {{i.name}}
 
 
             slick.slider#slick_slider(settings='my.slickConfig', ng-if='my.slickConfigLoaded')
@@ -126,8 +127,9 @@ div#main_conteiner
                 | nostrud exercitation ullamco laboris
                 | nisi ut aliquip ex
             img.mint(src='../img/mint-png33.png')
+    a(name='delivery')
     div#conteiner_section5
-        a(name='delivery')
+
         h1 Lorem ipsum dolor sit amet
         div#conteiner_section5_box
             div.conteiner_section5_box1

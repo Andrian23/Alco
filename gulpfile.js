@@ -20,7 +20,7 @@ gulp.task('browser-sync', ['styles', 'scripts','jsLibs','image', 'jade'], functi
 });
 gulp.task('image', function () {
     gulp.src('./app/img/*')
-        // .pipe(image())
+        .pipe(image())
         .pipe(gulp.dest('build/img'));
 });
 gulp.task('jsLibs', function () {

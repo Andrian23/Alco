@@ -71,7 +71,7 @@ img {
   #bottle {
     width: 23%;
     max-width: 350px;
-    height: 500px;
+    height: 400px;
     position: absolute;
     z-index: 9999;
 
@@ -82,19 +82,23 @@ img {
       display: none;
       height: 450px;
     }
-    padding-top: 50px;
+
+    margin-top: 50px;
     padding-bottom: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     //width: 285px;
+
+
+
     img {
       max-width: 65%;
       margin-top: 25px;
       height: auto;
     }
     @include pc_s {
-      padding-top: 150px;
+      margin-top: 150px;
       padding-bottom: 150px;
       img {
         max-width: 70%;

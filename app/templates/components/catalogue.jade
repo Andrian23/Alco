@@ -110,7 +110,7 @@ div.catalogue_conteiner
                     img.image(src='{{goods.image}}' ng-click='my.detail_of_goods(goods)')
                 h4 {{goods.name}}
                 p {{goods.volume}}ml
-                p.price_goods {{goods.price}} грн
+                p.price_goods {{goods.price*my.discount}} грн
                 input.to_basket(type='button' value='В корзину' ng-click='my.ByGoods(goods)' ng-model='my.CountGood')
 
     div.catalogue_goods_paginnation

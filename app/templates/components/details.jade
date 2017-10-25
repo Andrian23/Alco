@@ -30,15 +30,16 @@ div.conteiner_details
                     p.part_text {{my.goodsDetails.strength}} &deg
                 div.details_description_part
                     p ціна
-                    p.part_text {{my.goodsDetails.price}} грн
+                    p.part_text {{my.goodsDetails.price*my.discount}} грн
 
             div.details_input
                 div.details_input-left
-                    //input.minus(type='button' ng-click='my.minus2(my.detorder)')
+
                     input.minus(type='button' ng-click='my.minus2()')
                     p.text_butt {{my.goodsDetails.count}}
                     //input.plus(type='button' ng-click='my.plus2(my.detorder)')
                     input.plus(type='button' ng-click='my.plus2()')
-                p.price {{my.goodsDetails.price*my.goodsDetails.count}} грн
+                    span.messageDiscount(ng-show='my.messageDiscount=true') при покупці бульше {{my.wholeSaleNumb}} одиниць, діє оптова ціна
+                p.price {{my.goodsDetails.price*my.goodsDetails.count*my.discount}} грн
             input.details_button(type='button' value='в корзину' ng-click='my.ByGoods2(my.goodsDetails)')
 

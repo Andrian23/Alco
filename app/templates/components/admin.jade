@@ -194,7 +194,7 @@ div.admin_container
                 br
                 select(ng-model='ad.newCommodity.category' required)
                     option(value='' disabled selected) категорія
-                    option(ng-repeat='cat in ad.category') {{cat}}
+                    option(ng-repeat='cat in ad.category track by $index') {{cat}}
             label назва
                 input(type='text' placeholder='назва товару' ng-model='ad.newCommodity.name')
             label бренд
@@ -264,14 +264,14 @@ div.admin_container
         'admRequests=false;' +
         'admBanners=false' +
         'admGoods=false')
-        input.categories_input_buttons(type='button' value='ЗАМОВЛЕННЯ' ng-click=
+        input.categories_input_buttons#newOrdersB(type='button' value='ЗАМОВЛЕННЯ' ng-click=
         'ad.admOrders=true;' +
         'admCategories=false;' +
         'admRequests=false;' +
         'admGoods=false;' +
         'admBanners=false' +
         'ad.checkOrders()')
-        input.categories_input_buttons(type='button' value='користувачі' ng-click=
+        input.categories_input_buttons#newUsersB(type='button' value='користувачі' ng-click=
         'admRequests=true;' +
         'admCategories=false;' +
         'ad.admOrders=false;' +
@@ -295,7 +295,7 @@ div.admin_container
                 th зображення
                 th id товару
                 th дії
-            tr.table_banner(ng-repeat='b in ad.banners')
+            tr.table_banner(ng-repeat='b in ad.banners track by $index')
                 td
                     img(src='{{b.image}}')
                 td {{b.product_id}}
@@ -312,9 +312,9 @@ div.admin_container
         div.edit_modal.banner_add
             label товар
                 br
-                select(ng-model='ad.newBanner.goods_id' required)
+                select(ng-model='ad.newBanner.product_id' required)
                     option(value='' disabled selected) товар
-                    option(ng-repeat='commodity in ad.goods track by commodity.id') {{commodity.name}}
+                    option(ng-repeat='commodity in ad.goods track by $index' ) {{commodity.id}}_{{commodity.name}}
             br
             label зображення()
                 input(type='file' ng-model='ad.newBanner.image' base-sixty-four-input )
@@ -335,7 +335,7 @@ div.admin_container
         div.buttons_line
             input.categories_input_search(type='text' placeholder='пошук' ng-model='ad.admSearch')
             input.categories_input_buttons(type='button' value='все' ng-click="ad.admSearch='';ad.filter( )")
-            input.categories_input_buttons(ng-repeat='cat in ad.category' type='button' value='{{cat}}' ng-click="ad.admSearch=''; ad.filter(cat)")
+            input.categories_input_buttons(ng-repeat='cat in ad.category track by $index' type='button' value='{{cat}}' ng-click="ad.admSearch=''; ad.filter(cat)")
 
 
         table
@@ -353,7 +353,7 @@ div.admin_container
                 th() дії
                 th() опис
 
-            tr(ng-repeat='g in ad.goods|orderBy:sort:rev|filter:ad.categoryFilter|filter:ad.admSearch' )
+            tr(ng-repeat='g in ad.goods|orderBy:sort:rev|filter:ad.categoryFilter|filter:ad.admSearch track by $index' )
                 td() {{g.category}}
                 td() {{g.name}}
                 td() {{g.volume/1000}} л
@@ -388,7 +388,7 @@ div.admin_container
                 th категорія
                 th
                     input.categories_input_buttons(type='button' value='додати категорію' ng-click='ad.addCat=!ad.addCat')
-            tr(ng-repeat='c in ad.category')
+            tr(ng-repeat='c in ad.category track by $index')
                 td() {{c}}
                 td
                     input.categories_input_buttons(type='button' value='редагувати'  ng-click='ad.preEditCategory(c)')
@@ -407,7 +407,7 @@ div.admin_container
             input.categories_input_buttons(type='button' value='підтвердженні' ng-click='ad.orderConfirmation="true"')
         div.tablesOrder
 
-            table.ordersTable(ng-repeat='order in ad.orders| filter:ad.orderConfirmation')
+            table.ordersTable(ng-repeat='order in ad.orders| filter:ad.orderConfirmation track by $index')
                 tr
                     th(id='{{order.archive}}order') {{order.totalOrderSum}} грн
                     th(colspan=3) {{order.name}} {{order.sname}}
@@ -425,7 +425,7 @@ div.admin_container
                     th кількість
                     th вартість
 
-                tr(ng-repeat='og in order.goodsOrdered')
+                tr(ng-repeat='og in order.goodsOrdered track by $index')
                     td {{og.id}}
                     td {{og.name}}
                     td {{og.count}}
@@ -446,7 +446,7 @@ div.admin_container
         input.categories_input_buttons.user_button(type='button' value="добавити нового користувача" ng-click='ad.addUser=!ad.addUser')
         div.ordersNav
             input.categories_input_buttons(type='button' value='всі' ng-click='ad.userConfirmed=""')
-            input.categories_input_buttons#newUsers(type='button' value='нові'  ng-click='ad.userConfirmed="false"')
+            input.categories_input_buttons#newUsers(type='button' value='нові'   ng-click='ad.userConfirmed="false"')
             input.categories_input_buttons(type='button' value='підтвердженні' ng-click='ad.userConfirmed="true"')
         table
             tr
@@ -458,7 +458,7 @@ div.admin_container
                 th адреса
                 th коментарі
                 th підтвердження
-            tr(ng-repeat="u in ad.users| filter:ad.userConfirmed" id='user_conf {{u.id}}')
+            tr(ng-repeat="u in ad.users| filter:ad.userConfirmed track by $index" id='user_conf {{u.id}}')
                 td {{u.name}}
                 td {{u.sname}}
                 td {{u.phone}}
