@@ -3,19 +3,22 @@ div#header_container
         div#header_logo
         ul.header_list
             li
-                a(href="#/" target="_self") Головна
+                a(ui-sref="home") Головна
             li
-                a(href="#/catalogue" target="_self") Каталог
+                a(ui-sref="catalogue") Каталог
             li
                 a(href="#/main.html#Shares" target="_self") Акції
             li
                 a(href="#/main.html#delivery" target="_self") Доставка
             li
+                a(href="#/main.html#delivery" target="_self") Про нас
+            li
                 a(href="#footer.html#contacts" target="_self") Контакти
-        div.phone
-            span +38 (093)888 23 23
+
+        //div.phone
+        //    span +38 (093)888 23 23
         div#nav_log
-            a.humburger(href='#' ng-click='my.openNav()')
+            a.humburger( ng-click='my.openNav()')
                 img(src='../img/burger.png')
 
         input.log(ng-show='my.logInButton' type='button' value='Увійти' ng-click='my.ShowSignIn=!my.ShowSignIn')
@@ -36,7 +39,7 @@ div#header_container
             div#basketcont
                 a(href='#/basket' ng-click='my.basket()')
                     div#basketimg
-                p.sub_nav_text(ng-click='open_basket=!open_basket; my.trayCheck()')  в корзині {{my.tray.length}} товарів
+                p.sub_nav_text(ng-click='open_basket=!open_basket; trayCheck()')  в корзині {{tray.length}} товарів
                 input.triangleimg(type='button' ng-click='open_basket=!open_basket')
 
 
@@ -44,8 +47,8 @@ div#header_container
     //бургер
 div#mySidenav.sidenav
     img.closebtn(src='../img/cancel.png' ng-click='my.closeNav()')
-    a(href='#/' ng-click='my.closeNav()') Головна
-    a(href='#/catalogue' ng-click='my.closeNav()') Каталог
+    a(ui-sref="home" ng-click='my.closeNav()') Головна
+    a(ui-sref="catalogue" ng-click='my.closeNav()') Каталог
     a(href='#/main.html#Shares' ng-click='my.closeNav()') Акції
     a(href='#main.html#delivery' ng-click='my.closeNav()') Доставка
     a(href='#footer.html#contacts' ng-click='my.closeNav()') Контакти
@@ -97,7 +100,7 @@ div.signin_box(ng-show='my.ShowSignIn')
 
 //пошук
 div.search(ng-hide='my.searchResults')
-    div.search_part1(ng-repeat='goods in my.goods| filter:my.search |filter:my.search1' ng-click='my.detailsOfSearch(goods) ')
+    div.search_part1(ng-repeat='goods in my.goods | filter:my.search |filter:my.search1' ng-click='my.detailsOfSearch(goods) track by $index ')
         img(ng-src='{{goods.image}}')
         div.search_part1_1(ng-click='my.searchResults=!my.searchResults')
             h4 {{goods.name}}
@@ -110,25 +113,25 @@ div.basket2(ng-show='open_basket')
     div.img_basket_block
         img.img_basket(src='../img/shopping-purse-icon.png')
         h3 Корзина
-    div.basket_order(ng-repeat='unit in my.tray')
+    div.basket_order(ng-repeat='unit in tray')
         div.orders
             img.basket2_img(ng-src='{{unit.image}}')
             div.basket_order_section
                 h4 {{unit.name}}
                 p {{unit.volume}}
                 div.basket2_button
-                    input.minus2( value='-' type='button' ng-click='my.minus1(unit.id)' )
+                    input.minus2( value='-' type='button' ng-click='minus1(unit.id)' )
                     p.text_butt2 {{unit.count}}
-                    input.plus2(type='button' value='+'  ng-click='my.plus1(unit.id)' )
+                    input.plus2(type='button' value='+'  ng-click='plus1(unit.id)' )
             div.basket2price
-                img.basket_cancel2(src='../img/cancel2.png' ng-click='my.delete_order(unit.id)')
+                img.basket_cancel2(src='../img/cancel2.png' ng-click='delete_order(unit.id)')
                 p.price2 {{unit.price}} грн
         img.img_basket_line(src='../img/shape-7-copy.png')
     div.basket2_togefer
         p.together2 Разом
-        P.price22 {{my.totalSum}} грн
+        P.price22 {{totalSum}} грн
     div.img-butt
-        a(href='#/basket#orderForm' ng-click='my.basket()')
+        a(ui-sref="basket" ng-click='my.open_basket=!my.open_basket')
             input.basket2_button_2(type='button' value='Оформити Замовлення' ng-click='my.basket(); open_basket=!open_basket')
 
 //карта

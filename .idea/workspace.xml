@@ -2,75 +2,723 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/app/templates/components/admin.jade" line="97" />
+    <bookmark url="file://$PROJECT_DIR$/app/style/modules/_catButtons.scss" line="158" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a68784a-bce4-4455-9d14-3e58667043cc" name="Default" comment="Artur start">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/img/111.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/img/111.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/img/_1_.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/css/modules/banner.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/js/libs/angular-to-base64.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/views/delivery.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/img/0d4fa2551.png" afterPath="$PROJECT_DIR$/build/img/0d4fa2551.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/img/1.png" afterPath="$PROJECT_DIR$/build/img/1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/img/1234.png" afterPath="$PROJECT_DIR$/build/img/1234.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/img/1495466736-printer.png" afterPath="$PROJECT_DIR$/build/img/1495466736-printer.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/img/1495466776-post.png" afterPath="$PROJECT_DIR$/build/img/1495466776-post.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/img/2-layers.png" afterPath="$PROJECT_DIR$/build/img/2-layers.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/img/2-layers2.png" afterPath="$PROJECT_DIR$/build/img/2-layers2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/img/4.png" afterPath="$PROJECT_DIR$/build/img/4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/img/5-layers.png" afterPath="$PROJECT_DIR$/build/img/5-layers.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/img/about.png" afterPath="$PROJECT_DIR$/build/img/about.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/img/about2.png" afterPath="$PROJECT_DIR$/build/img/about2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/img/about3-m.png" afterPath="$PROJECT_DIR$/build/img/about3-m.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/img/about3.png" afterPath="$PROJECT_DIR$/build/img/about3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/img/b9d84c5b8b0.png" afterPath="$PROJECT_DIR$/build/img/b9d84c5b8b0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/img/basket-martini.png" afterPath="$PROJECT_DIR$/build/img/basket-martini.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/img/beer.png" afterPath="$PROJECT_DIR$/build/img/beer.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/img/bg-2.jpg" afterPath="$PROJECT_DIR$/build/img/bg-2.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/img/bg-planshet.png" afterPath="$PROJECT_DIR$/build/img/bg-planshet.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/img/bg.png" afterPath="$PROJECT_DIR$/build/img/bg.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/img/bg2.png" afterPath="$PROJECT_DIR$/build/img/bg2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/img/bottle.png" afterPath="$PROJECT_DIR$/build/img/bottle.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/img/breezer.jpg" afterPath="$PROJECT_DIR$/build/img/breezer.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/img/burger.png" afterPath="$PROJECT_DIR$/build/img/burger.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/img/call.png" afterPath="$PROJECT_DIR$/build/img/call.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/img/cancel.png" afterPath="$PROJECT_DIR$/build/img/cancel.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/img/cancel2.png" afterPath="$PROJECT_DIR$/build/img/cancel2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/alco Documentation.docx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/img/0d4fa2551.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/img/_1_.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/img/champamge.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/img/miate.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/img/tequila.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/img/vodka.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/style/fonts/NotoSans-Bold.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/style/fonts/NotoSans-BoldItalic.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/style/fonts/NotoSans-Italic.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/style/fonts/NotoSans-Regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/style/fonts/XXIICentarExtraThin.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/fonts/NotoSans-Bold.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/fonts/NotoSans-BoldItalic.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/fonts/NotoSans-Italic.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/fonts/NotoSans-Regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/img/champamge.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/img/miate.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/img/tequila.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml___jb_tmp___" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/js/controllers/basketCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/js/controllers/catalogCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/js/controllers/detailCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/js/controllers/registrationCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/js/libs/angular-base64-upload.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/js/libs/angular-route.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/js/libs/angular-slider.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/js/services/adminServices.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/fonts/SIL Open Font License.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/js/libs/angular-base64-upload.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/js/libs/angular-route.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/js/libs/angular-slider.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/CHANGELOG.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/CONTRIBUTING.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/DOCS.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/ISSUE_TEMPLATE.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/artifacts.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/angular.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/angular.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/angular.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/directives/stateDirectives.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/directives/stateDirectives.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/directives/stateDirectives.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/directives/viewDirective.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/directives/viewDirective.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/directives/viewDirective.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/index.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/index.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/injectables.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/injectables.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/injectables.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/interface.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/interface.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/interface.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/legacy/resolveService.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/legacy/resolveService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/legacy/resolveService.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/legacy/stateEvents.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/legacy/stateEvents.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/legacy/stateEvents.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/locationServices.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/locationServices.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/locationServices.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/services.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/services.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/services.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/stateFilters.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/stateFilters.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/stateFilters.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/stateProvider.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/stateProvider.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/stateProvider.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/statebuilders/onEnterExitRetain.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/statebuilders/onEnterExitRetain.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/statebuilders/onEnterExitRetain.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/statebuilders/views.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/statebuilders/views.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/statebuilders/views.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/templateFactory.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/templateFactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/templateFactory.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/urlRouterProvider.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/urlRouterProvider.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/urlRouterProvider.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/viewScroll.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/viewScroll.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib-esm/viewScroll.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/angular.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/angular.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/angular.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/directives/stateDirectives.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/directives/stateDirectives.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/directives/stateDirectives.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/directives/viewDirective.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/directives/viewDirective.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/directives/viewDirective.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/index.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/index.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/injectables.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/injectables.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/injectables.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/interface.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/interface.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/interface.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/legacy/resolveService.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/legacy/resolveService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/legacy/resolveService.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/legacy/stateEvents.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/legacy/stateEvents.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/legacy/stateEvents.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/locationServices.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/locationServices.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/locationServices.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/services.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/services.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/services.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/stateFilters.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/stateFilters.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/stateFilters.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/stateProvider.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/stateProvider.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/stateProvider.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/statebuilders/onEnterExitRetain.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/statebuilders/onEnterExitRetain.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/statebuilders/onEnterExitRetain.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/statebuilders/views.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/statebuilders/views.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/statebuilders/views.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/templateFactory.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/templateFactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/templateFactory.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/urlRouterProvider.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/urlRouterProvider.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/urlRouterProvider.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/viewScroll.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/viewScroll.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/lib/viewScroll.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/release/angular-ui-router.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/release/angular-ui-router.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/release/angular-ui-router.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/release/angular-ui-router.min.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/release/resolveService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/release/resolveService.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/release/resolveService.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/release/resolveService.min.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/release/stateEvents.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/release/stateEvents.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/release/stateEvents.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/release/stateEvents.min.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/release/ui-router-angularjs.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/release/ui-router-angularjs.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/release/ui-router-angularjs.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/release/ui-router-angularjs.min.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/rollup.config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/stats.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/angularjs/yarn.lock" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/CHANGELOG.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/CONTRIBUTING.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/_bundles/ui-router-core.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/_bundles/ui-router-core.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/_bundles/ui-router-core.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/_bundles/ui-router-core.min.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/artifacts.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/common/common.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/common/common.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/common/common.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/common/coreservices.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/common/coreservices.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/common/coreservices.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/common/glob.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/common/glob.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/common/glob.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/common/hof.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/common/hof.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/common/hof.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/common/index.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/common/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/common/index.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/common/predicates.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/common/predicates.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/common/predicates.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/common/queue.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/common/queue.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/common/queue.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/common/strings.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/common/strings.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/common/strings.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/common/trace.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/common/trace.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/common/trace.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/globals.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/globals.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/globals.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/hooks/coreResolvables.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/hooks/coreResolvables.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/hooks/coreResolvables.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/hooks/ignoredTransition.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/hooks/ignoredTransition.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/hooks/ignoredTransition.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/hooks/invalidTransition.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/hooks/invalidTransition.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/hooks/invalidTransition.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/hooks/lazyLoad.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/hooks/lazyLoad.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/hooks/lazyLoad.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/hooks/onEnterExitRetain.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/hooks/onEnterExitRetain.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/hooks/onEnterExitRetain.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/hooks/redirectTo.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/hooks/redirectTo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/hooks/redirectTo.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/hooks/resolve.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/hooks/resolve.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/hooks/resolve.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/hooks/updateGlobals.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/hooks/updateGlobals.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/hooks/updateGlobals.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/hooks/url.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/hooks/url.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/hooks/url.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/hooks/views.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/hooks/views.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/hooks/views.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/index.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/index.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/interface.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/interface.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/interface.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/params/index.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/params/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/params/index.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/params/interface.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/params/interface.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/params/interface.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/params/param.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/params/param.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/params/param.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/params/paramType.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/params/paramType.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/params/paramType.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/params/paramTypes.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/params/paramTypes.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/params/paramTypes.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/params/stateParams.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/params/stateParams.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/params/stateParams.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/path/index.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/path/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/path/index.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/path/pathFactory.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/path/pathFactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/path/pathFactory.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/path/pathNode.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/path/pathNode.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/path/pathNode.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/resolve/index.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/resolve/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/resolve/index.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/resolve/interface.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/resolve/interface.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/resolve/interface.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/resolve/resolvable.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/resolve/resolvable.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/resolve/resolvable.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/resolve/resolveContext.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/resolve/resolveContext.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/resolve/resolveContext.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/router.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/router.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/router.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/state/index.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/state/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/state/index.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/state/interface.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/state/interface.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/state/interface.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/state/stateBuilder.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/state/stateBuilder.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/state/stateBuilder.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/state/stateMatcher.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/state/stateMatcher.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/state/stateMatcher.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/state/stateObject.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/state/stateObject.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/state/stateObject.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/state/stateQueueManager.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/state/stateQueueManager.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/state/stateQueueManager.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/state/stateRegistry.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/state/stateRegistry.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/state/stateRegistry.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/state/stateService.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/state/stateService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/state/stateService.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/state/targetState.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/state/targetState.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/state/targetState.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/transition/hookBuilder.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/transition/hookBuilder.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/transition/hookBuilder.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/transition/hookRegistry.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/transition/hookRegistry.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/transition/hookRegistry.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/transition/index.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/transition/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/transition/index.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/transition/interface.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/transition/interface.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/transition/interface.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/transition/rejectFactory.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/transition/rejectFactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/transition/rejectFactory.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/transition/transition.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/transition/transition.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/transition/transition.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/transition/transitionEventType.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/transition/transitionEventType.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/transition/transitionEventType.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/transition/transitionHook.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/transition/transitionHook.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/transition/transitionHook.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/transition/transitionService.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/transition/transitionService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/transition/transitionService.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/url/index.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/url/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/url/index.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/url/interface.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/url/interface.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/url/interface.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/url/urlMatcher.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/url/urlMatcher.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/url/urlMatcher.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/url/urlMatcherFactory.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/url/urlMatcherFactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/url/urlMatcherFactory.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/url/urlRouter.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/url/urlRouter.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/url/urlRouter.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/url/urlRule.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/url/urlRule.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/url/urlRule.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/url/urlService.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/url/urlService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/url/urlService.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla/baseLocationService.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla/baseLocationService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla/baseLocationService.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla/browserLocationConfig.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla/browserLocationConfig.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla/browserLocationConfig.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla/hashLocationService.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla/hashLocationService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla/hashLocationService.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla/index.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla/index.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla/injector.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla/injector.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla/injector.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla/interface.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla/interface.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla/interface.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla/memoryLocationConfig.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla/memoryLocationConfig.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla/memoryLocationConfig.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla/memoryLocationService.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla/memoryLocationService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla/memoryLocationService.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla/plugins.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla/plugins.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla/plugins.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla/pushStateLocationService.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla/pushStateLocationService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla/pushStateLocationService.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla/q.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla/q.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla/q.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla/utils.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla/utils.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/vanilla/utils.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/view/index.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/view/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/view/index.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/view/interface.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/view/interface.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/view/interface.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/view/view.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/view/view.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib-esm/view/view.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/common/common.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/common/common.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/common/common.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/common/coreservices.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/common/coreservices.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/common/coreservices.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/common/glob.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/common/glob.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/common/glob.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/common/hof.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/common/hof.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/common/hof.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/common/index.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/common/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/common/index.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/common/predicates.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/common/predicates.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/common/predicates.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/common/queue.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/common/queue.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/common/queue.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/common/strings.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/common/strings.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/common/strings.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/common/trace.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/common/trace.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/common/trace.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/globals.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/globals.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/globals.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/hooks/coreResolvables.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/hooks/coreResolvables.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/hooks/coreResolvables.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/hooks/ignoredTransition.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/hooks/ignoredTransition.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/hooks/ignoredTransition.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/hooks/invalidTransition.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/hooks/invalidTransition.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/hooks/invalidTransition.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/hooks/lazyLoad.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/hooks/lazyLoad.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/hooks/lazyLoad.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/hooks/onEnterExitRetain.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/hooks/onEnterExitRetain.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/hooks/onEnterExitRetain.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/hooks/redirectTo.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/hooks/redirectTo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/hooks/redirectTo.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/hooks/resolve.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/hooks/resolve.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/hooks/resolve.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/hooks/updateGlobals.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/hooks/updateGlobals.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/hooks/updateGlobals.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/hooks/url.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/hooks/url.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/hooks/url.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/hooks/views.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/hooks/views.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/hooks/views.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/index.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/index.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/interface.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/interface.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/interface.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/params/index.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/params/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/params/index.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/params/interface.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/params/interface.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/params/interface.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/params/param.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/params/param.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/params/param.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/params/paramType.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/params/paramType.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/params/paramType.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/params/paramTypes.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/params/paramTypes.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/params/paramTypes.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/params/stateParams.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/params/stateParams.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/params/stateParams.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/path/index.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/path/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/path/index.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/path/pathFactory.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/path/pathFactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/path/pathFactory.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/path/pathNode.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/path/pathNode.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/path/pathNode.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/resolve/index.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/resolve/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/resolve/index.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/resolve/interface.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/resolve/interface.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/resolve/interface.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/resolve/resolvable.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/resolve/resolvable.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/resolve/resolvable.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/resolve/resolveContext.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/resolve/resolveContext.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/resolve/resolveContext.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/router.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/router.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/router.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/state/index.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/state/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/state/index.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/state/interface.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/state/interface.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/state/interface.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/state/stateBuilder.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/state/stateBuilder.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/state/stateBuilder.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/state/stateMatcher.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/state/stateMatcher.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/state/stateMatcher.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/state/stateObject.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/state/stateObject.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/state/stateObject.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/state/stateQueueManager.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/state/stateQueueManager.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/state/stateQueueManager.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/state/stateRegistry.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/state/stateRegistry.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/state/stateRegistry.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/state/stateService.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/state/stateService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/state/stateService.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/state/targetState.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/state/targetState.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/state/targetState.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/transition/hookBuilder.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/transition/hookBuilder.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/transition/hookBuilder.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/transition/hookRegistry.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/transition/hookRegistry.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/transition/hookRegistry.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/transition/index.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/transition/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/transition/index.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/transition/interface.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/transition/interface.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/transition/interface.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/transition/rejectFactory.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/transition/rejectFactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/transition/rejectFactory.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/transition/transition.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/transition/transition.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/transition/transition.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/transition/transitionEventType.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/transition/transitionEventType.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/transition/transitionEventType.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/transition/transitionHook.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/transition/transitionHook.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/transition/transitionHook.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/transition/transitionService.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/transition/transitionService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/transition/transitionService.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/url/index.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/url/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/url/index.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/url/interface.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/url/interface.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/url/interface.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/url/urlMatcher.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/url/urlMatcher.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/url/urlMatcher.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/url/urlMatcherFactory.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/url/urlMatcherFactory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/url/urlMatcherFactory.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/url/urlRouter.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/url/urlRouter.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/url/urlRouter.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/url/urlRule.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/url/urlRule.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/url/urlRule.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/url/urlService.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/url/urlService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/url/urlService.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla/baseLocationService.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla/baseLocationService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla/baseLocationService.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla/browserLocationConfig.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla/browserLocationConfig.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla/browserLocationConfig.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla/hashLocationService.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla/hashLocationService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla/hashLocationService.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla/index.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla/index.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla/injector.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla/injector.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla/injector.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla/interface.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla/interface.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla/interface.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla/memoryLocationConfig.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla/memoryLocationConfig.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla/memoryLocationConfig.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla/memoryLocationService.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla/memoryLocationService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla/memoryLocationService.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla/plugins.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla/plugins.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla/plugins.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla/pushStateLocationService.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla/pushStateLocationService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla/pushStateLocationService.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla/q.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla/q.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla/q.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla/utils.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla/utils.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/vanilla/utils.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/view/index.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/view/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/view/index.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/view/interface.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/view/interface.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/view/interface.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/view/view.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/view/view.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/lib/view/view.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/migrate/migrate.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/migrate/migratewarn.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/@uirouter/core/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/angular-base64-upload/.editorconfig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/angular-base64-upload/.npmignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/angular-base64-upload/.travis.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/angular-base64-upload/CHANGELOG.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/angular-base64-upload/Gulpfile.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/angular-base64-upload/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/angular-base64-upload/banner.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/angular-base64-upload/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/angular-base64-upload/dist/angular-base64-upload.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/angular-base64-upload/dist/angular-base64-upload.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/angular-base64-upload/dist/angular-base64-upload.min.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/angular-base64-upload/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/angular-base64-upload/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/angular-base64-upload/src/angular-base64-upload.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/angular-base64-upload/test/base.spec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/angular-base64-upload/test/clear-input.spec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/angular-base64-upload/test/config/file_loader.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/angular-base64-upload/test/config/karma.conf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/angular-base64-upload/test/config/test_runner.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/angular-base64-upload/test/custom-parser.spec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/angular-base64-upload/test/events.spec.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/angular-base64-upload/test/helpers/compiler.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/angular-base64-upload/test/helpers/globals.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/angular-base64-upload/test/helpers/mocks.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/angular-base64-upload/test/validations.spec.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/img/4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/img/4.png" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/js/userServices/userServices.js" afterPath="$PROJECT_DIR$/app/js/services/userServices.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/img/champane.png" afterPath="$PROJECT_DIR$/app/img/champane.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/img/champane.png" afterPath="$PROJECT_DIR$/build/img/champane.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/img/controine.png" afterPath="$PROJECT_DIR$/build/img/controine.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/img/controls.png" afterPath="$PROJECT_DIR$/build/img/controls.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/img/delivery-truck.png" afterPath="$PROJECT_DIR$/build/img/delivery-truck.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/img/dotedline.png" afterPath="$PROJECT_DIR$/build/img/dotedline.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/img/dotted2.png" afterPath="$PROJECT_DIR$/build/img/dotted2.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/app.js" afterPath="$PROJECT_DIR$/app/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/config.js" afterPath="$PROJECT_DIR$/app/js/config.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/controllers/adminCtrl.js" afterPath="$PROJECT_DIR$/app/js/controllers/adminCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/controllers/myCtrl.js" afterPath="$PROJECT_DIR$/app/js/controllers/myCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/main.js" afterPath="$PROJECT_DIR$/app/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/second.js" afterPath="$PROJECT_DIR$/app/js/second.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/slick.js" afterPath="$PROJECT_DIR$/app/js/slick.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/userServices/userServices.js" afterPath="$PROJECT_DIR$/app/js/userServices/userServices.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/libs/angular-animate.min.js" afterPath="$PROJECT_DIR$/app/js/libs/angular-animate.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/libs/angular-route.min.js" afterPath="$PROJECT_DIR$/app/js/libs/angular-route.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/style/base/_fonts.scss" afterPath="$PROJECT_DIR$/app/style/base/_fonts.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/style/base/_mixins.scss" afterPath="$PROJECT_DIR$/app/style/base/_mixins.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/style/base/_variables.scss" afterPath="$PROJECT_DIR$/app/style/base/_variables.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/style/modules/_banner.scss" afterPath="$PROJECT_DIR$/app/style/modules/_banner.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/style/modules/_basket.scss" afterPath="$PROJECT_DIR$/app/style/modules/_basket.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/style/modules/_carousele.scss" afterPath="$PROJECT_DIR$/app/style/modules/_carousele.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/style/modules/_catButtons.scss" afterPath="$PROJECT_DIR$/app/style/modules/_catButtons.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/style/modules/_catalogue.scss" afterPath="$PROJECT_DIR$/app/style/modules/_catalogue.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/style/modules/_details.scss" afterPath="$PROJECT_DIR$/app/style/modules/_details.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/style/modules/_footer.scss" afterPath="$PROJECT_DIR$/app/style/modules/_footer.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/style/modules/_header.scss" afterPath="$PROJECT_DIR$/app/style/modules/_header.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/style/modules/_main_home.scss" afterPath="$PROJECT_DIR$/app/style/modules/_main_home.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/components/admin.jade" afterPath="$PROJECT_DIR$/app/templates/components/admin.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/style/modules/_modals.scss" afterPath="$PROJECT_DIR$/app/style/modules/_modals.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/style/modules/_slider.scss" afterPath="$PROJECT_DIR$/app/style/modules/_slider.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/components/basket.jade" afterPath="$PROJECT_DIR$/app/templates/components/basket.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/components/catalogue.jade" afterPath="$PROJECT_DIR$/app/templates/components/catalogue.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/components/details.jade" afterPath="$PROJECT_DIR$/app/templates/components/details.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/components/footer.jade" afterPath="$PROJECT_DIR$/app/templates/components/footer.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/components/header.jade" afterPath="$PROJECT_DIR$/app/templates/components/header.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/components/links.jade" afterPath="$PROJECT_DIR$/app/templates/components/links.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/components/main.jade" afterPath="$PROJECT_DIR$/app/templates/components/main.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/components/admin.html" afterPath="$PROJECT_DIR$/build/components/admin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/index.jade" afterPath="$PROJECT_DIR$/app/templates/index.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/components/basket.html" afterPath="$PROJECT_DIR$/build/components/basket.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/components/catalogue.html" afterPath="$PROJECT_DIR$/build/components/catalogue.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/components/details.html" afterPath="$PROJECT_DIR$/build/components/details.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/components/footer.html" afterPath="$PROJECT_DIR$/build/components/footer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/components/header.html" afterPath="$PROJECT_DIR$/build/components/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/components/links.html" afterPath="$PROJECT_DIR$/build/components/links.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/components/main.html" afterPath="$PROJECT_DIR$/build/components/main.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/css/main.min.css" afterPath="$PROJECT_DIR$/build/css/main.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/index.html" afterPath="$PROJECT_DIR$/build/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/js/libs/angular-animate.min.js" afterPath="$PROJECT_DIR$/build/js/libs/angular-animate.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/js/libs/angular-route.min.js" afterPath="$PROJECT_DIR$/build/js/libs/angular-route.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/js/main.js" afterPath="$PROJECT_DIR$/build/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/views/basket.html" afterPath="$PROJECT_DIR$/build/views/basket.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/views/catalogue.html" afterPath="$PROJECT_DIR$/build/views/catalogue.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/views/details.html" afterPath="$PROJECT_DIR$/build/views/details.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/views/home.html" afterPath="$PROJECT_DIR$/build/views/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dependencies.json" afterPath="$PROJECT_DIR$/dependencies.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -91,81 +739,91 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="_main_home.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/style/modules/_main_home.scss">
+      <file leaf-file-name="_basket.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/style/modules/_basket.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="18" column="22" lean-forward="false" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="22" />
+            <state relative-caret-position="1921">
+              <caret line="113" column="28" lean-forward="false" selection-start-line="113" selection-start-column="28" selection-end-line="113" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="myCtrl.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/js/controllers/myCtrl.js">
+      <file leaf-file-name="_catalogue.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/style/modules/_catalogue.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-10185">
-              <caret line="30" column="25" lean-forward="false" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+            <state relative-caret-position="1581">
+              <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/js/app.js">
+      <file leaf-file-name="_fonts.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/style/base/_fonts.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+            <state relative-caret-position="238">
+              <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/js/config.js">
+      <file leaf-file-name="_footer.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/style/modules/_footer.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="28" lean-forward="false" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+            <state relative-caret-position="17">
+              <caret line="132" column="18" lean-forward="false" selection-start-line="132" selection-start-column="18" selection-end-line="132" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adminCtrl.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/js/controllers/adminCtrl.js">
+      <file leaf-file-name="links.jade" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/templates/components/links.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2749">
-              <caret line="160" column="6" lean-forward="false" selection-start-line="160" selection-start-column="6" selection-end-line="160" selection-end-column="6" />
+            <state relative-caret-position="51">
+              <caret line="3" column="80" lean-forward="true" selection-start-line="3" selection-start-column="80" selection-end-line="3" selection-end-column="80" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="slick.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/build/js/libs/slick.js">
+      <file leaf-file-name="_details.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/style/modules/_details.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="253" column="21" lean-forward="true" selection-start-line="253" selection-start-column="21" selection-end-line="253" selection-end-column="21" />
+            <state relative-caret-position="238">
+              <caret line="14" column="15" lean-forward="false" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_variables.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/style/base/_variables.scss">
+      <file leaf-file-name="_catButtons.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/style/modules/_catButtons.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="731">
+              <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="css_to_suite.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/style/layout/css_to_suite.scss">
+      <file leaf-file-name="catalogue.jade" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/components/catalogue.jade">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="0" column="4" lean-forward="false" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_base.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/style/base/_base.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="1" lean-forward="false" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -174,18 +832,8 @@
       <file leaf-file-name="_mixins.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/style/base/_mixins.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="1" lean-forward="false" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="slick-theme.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/style/layout/slick-theme.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="138" column="20" lean-forward="false" selection-start-line="138" selection-start-column="20" selection-end-line="138" selection-end-column="20" />
+            <state relative-caret-position="561">
+              <caret line="33" column="26" lean-forward="false" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -197,43 +845,43 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="SCSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>bottl</find>
-      <find>-150</find>
-      <find>.price</find>
-      <find>vm.discount</find>
-      <find>vm.localStore</find>
-      <find>DB</find>
-      <find>dots</find>
-      <find>(min-width: #{720px})</find>
-      <find>.sub_nav_text</find>
-      <find>list</find>
-      <find>autoplay: true</find>
-      <find>goodsDB</find>
-      <find>GoodsDB</find>
-      <find>.price*</find>
-      <find>goods[i].price</find>
-      <find>price*</find>
-      <find>log</find>
-      <find>detailsOfOrder</find>
-      <find>lus2</find>
-      <find>price: &quot;30&quot;,</find>
-      <find>console</find>
-      <find>0.5</find>
-      <find>price1</find>
-      <find>vm.loggedUserCheck()</find>
-      <find>getByCategory</find>
-      <find>bottle</find>
-      <find>Categ</find>
-      <find>id:</find>
-      <find>anner</find>
-      <find>ng-repeat</find>
+      <find>@fo</find>
+      <find>@fon</find>
+      <find>@font</find>
+      <find>n</find>
+      <find>N</find>
+      <find>No</find>
+      <find>Not</find>
+      <find>Noto s</find>
+      <find>Noto sa</find>
+      <find>Noto san</find>
+      <find>Noto sans</find>
+      <find>font\-weight\: 400\;\n</find>
+      <find>.catalogue_filter</find>
+      <find>basket__total</find>
+      <find>catalogue.box</find>
+      <find>category</find>
+      <find>price_goods</find>
+      <find>catalogue_goods_object</find>
+      <find>catalogue_goods</find>
+      <find>catalogue_filter</find>
+      <find>catalogu</find>
+      <find>catalog_img1</find>
+      <find>catalogue_conteiner</find>
+      <find>details</find>
+      <find>conteiner_details</find>
+      <find>.category</find>
+      <find>#footer #footer_section2</find>
+      <find>#footer_section2</find>
+      <find>#footer_section2</find>
+      <find>footer_section1_logo</find>
     </findStrings>
     <replaceStrings>
       <replace>count</replace>
@@ -246,7 +894,18 @@
       <replace>price: &quot;30&quot;,                 price2:'39.60',</replace>
       <replace>vm.discountSize</replace>
       <replace>price2</replace>
+      <replace>pc_1000-1024</replace>
+      <replace>pc_1024-1200</replace>
+      <replace>pc_1200-1550</replace>
+      <replace>notoSans</replace>
     </replaceStrings>
+    <dirStrings>
+      <dir>C:\Users\Andrian\Desktop\alcoholDelivery-master</dir>
+      <dir>C:\Users\Andrian\Desktop\alcoholDelivery-master/a</dir>
+      <dir>C:\Users\Andrian\Desktop\alcoholDelivery-master/app</dir>
+      <dir>C:\Users\Andrian\Desktop\alcoholDelivery-master\app\templates</dir>
+      <dir>C:\Users\Andrian\Desktop\alcoholDelivery-master\app</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -259,55 +918,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/templates/components/admin.jade.html" />
-        <option value="$PROJECT_DIR$/app/js/config.js" />
-        <option value="$PROJECT_DIR$/app/js/controllers/admCtrl.js" />
-        <option value="$PROJECT_DIR$/app/style/modules/_pagination.scss" />
-        <option value="$PROJECT_DIR$/app/js/libs/angular-route.mini.js" />
-        <option value="$PROJECT_DIR$/app/templates/components/subnav.jade" />
-        <option value="$PROJECT_DIR$/app/templates/views/home.jade" />
-        <option value="$PROJECT_DIR$/app/templates/views/details.jade" />
-        <option value="$PROJECT_DIR$/app/templates/views/catalogue.jade" />
-        <option value="$PROJECT_DIR$/app/templates/views/basket.jade" />
-        <option value="$PROJECT_DIR$/app/style/modules/_footer.scss" />
-        <option value="$PROJECT_DIR$/app/style/layout/slick.scss" />
-        <option value="$PROJECT_DIR$/app/js/libs/angular-slick.js" />
-        <option value="$PROJECT_DIR$/build/components/catalogue.html" />
-        <option value="$PROJECT_DIR$/app/style/modules/_catalogue.scss" />
-        <option value="$PROJECT_DIR$/app/style/modules/_catButtons.scss" />
-        <option value="$PROJECT_DIR$/app/js/app.js" />
-        <option value="$PROJECT_DIR$/app/style/modules/_modals.scss" />
-        <option value="$PROJECT_DIR$/app/js/libs/angular-to-base64.js" />
-        <option value="$PROJECT_DIR$/dependencies.json" />
-        <option value="$PROJECT_DIR$/app/templates/index.jade" />
-        <option value="$PROJECT_DIR$/app/templates/components/links.jade" />
-        <option value="$PROJECT_DIR$/app/style/modules/_basket.scss" />
-        <option value="$PROJECT_DIR$/build/css/main.min.css" />
         <option value="$PROJECT_DIR$/app/style/modules/_admin.scss" />
         <option value="$PROJECT_DIR$/app/style/modules/banner.scss" />
         <option value="$PROJECT_DIR$/app/style/main.scss" />
         <option value="$PROJECT_DIR$/app/style/layout/slick-theme.scss" />
-        <option value="$PROJECT_DIR$/app/style/modules/_carousele.scss" />
         <option value="$PROJECT_DIR$/app/js/slick.js" />
         <option value="$PROJECT_DIR$/app/js/libs/slick.js" />
-        <option value="$PROJECT_DIR$/app/style/base/_mixins.scss" />
-        <option value="$PROJECT_DIR$/app/style/modules/_header.scss" />
-        <option value="$PROJECT_DIR$/app/templates/components/header.jade" />
-        <option value="$PROJECT_DIR$/app/templates/components/catalogue.jade" />
-        <option value="$PROJECT_DIR$/app/templates/components/main.jade" />
-        <option value="$PROJECT_DIR$/app/templates/components/basket.jade" />
-        <option value="$PROJECT_DIR$/app/templates/components/details.jade" />
-        <option value="$PROJECT_DIR$/app/style/modules/_details.scss" />
-        <option value="$PROJECT_DIR$/app/js/controllers/myCtrl.js" />
-        <option value="$PROJECT_DIR$/app/style/modules/_main_home.scss" />
-        <option value="$PROJECT_DIR$/app/style/modules/_banner.scss" />
-        <option value="$PROJECT_DIR$/app/templates/components/admin.jade" />
-        <option value="$PROJECT_DIR$/app/js/controllers/adminCtrl.js" />
-        <option value="$PROJECT_DIR$/app/js/userServices/userServices.js" />
         <option value="$PROJECT_DIR$/app/js/main.js" />
         <option value="$PROJECT_DIR$/app/js/second.js" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
+        <option value="$PROJECT_DIR$/app/js/libs/angular-slider.js" />
+        <option value="$PROJECT_DIR$/app/js/libs/angular-base64-upload.js" />
+        <option value="$PROJECT_DIR$/app/js/libs/angular-animate.min.js" />
+        <option value="$PROJECT_DIR$/app/js/libs/angular-route.min.js" />
+        <option value="$PROJECT_DIR$/app/js/libs/angular-routr.js" />
+        <option value="$PROJECT_DIR$/app/js/libs/angular-route.js" />
+        <option value="$PROJECT_DIR$/app/templates/components/footer.jade" />
+        <option value="$PROJECT_DIR$/build/js/main.js" />
+        <option value="$PROJECT_DIR$/app/templates/index.jade" />
+        <option value="$PROJECT_DIR$/app/style/modules/_carousele.scss" />
+        <option value="$PROJECT_DIR$/app/js/userServices/userServices.js" />
+        <option value="$PROJECT_DIR$/app/style/modules/_banner.scss" />
+        <option value="$PROJECT_DIR$/app/style/modules/_header.scss" />
+        <option value="$PROJECT_DIR$/app/templates/components/main.jade" />
+        <option value="$PROJECT_DIR$/app/style/modules/_main_home.scss" />
+        <option value="$PROJECT_DIR$/dependencies.json" />
+        <option value="$PROJECT_DIR$/app/js/controllers/adminCtrl.js" />
+        <option value="$PROJECT_DIR$/app/js/services/adminServices.js" />
+        <option value="$PROJECT_DIR$/app/style/modules/_modals.scss" />
+        <option value="$PROJECT_DIR$/app/js/app.js" />
+        <option value="$PROJECT_DIR$/app/js/services/userServices.js" />
+        <option value="$PROJECT_DIR$/app/js/controllers/detailCtrl.js" />
+        <option value="$PROJECT_DIR$/app/js/controllers/registrationCtrl.js" />
+        <option value="$PROJECT_DIR$/app/js/controllers/basketCtrl.js" />
+        <option value="$PROJECT_DIR$/app/js/controllers/myCtrl.js" />
+        <option value="$PROJECT_DIR$/app/js/config.js" />
+        <option value="$PROJECT_DIR$/app/js/controllers/catalogCtrl.js" />
+        <option value="$PROJECT_DIR$/app/templates/components/admin.jade" />
+        <option value="$PROJECT_DIR$/app/templates/components/header.jade" />
+        <option value="$PROJECT_DIR$/app/templates/components/details.jade" />
+        <option value="$PROJECT_DIR$/app/templates/components/basket.jade" />
+        <option value="$PROJECT_DIR$/app/style/modules/_basket.scss" />
         <option value="$PROJECT_DIR$/app/style/base/_variables.scss" />
+        <option value="$PROJECT_DIR$/app/style/base/_mixins.scss" />
+        <option value="$PROJECT_DIR$/app/templates/components/catalogue.jade" />
+        <option value="$PROJECT_DIR$/app/style/base/_base.scss" />
+        <option value="$PROJECT_DIR$/app/style/modules/_catButtons.scss" />
+        <option value="$PROJECT_DIR$/app/style/modules/_catalogue.scss" />
+        <option value="$PROJECT_DIR$/app/style/modules/_details.scss" />
+        <option value="$PROJECT_DIR$/app/style/base/_fonts.scss" />
+        <option value="$PROJECT_DIR$/app/style/modules/_footer.scss" />
+        <option value="$PROJECT_DIR$/app/templates/components/links.jade" />
       </list>
     </option>
   </component>
@@ -330,9 +991,8 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1924" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -350,6 +1010,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -363,14 +1024,67 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="alcoholDelivery-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="alcoholDelivery-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="alcoholDelivery-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="alcoholDelivery-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="alcoholDelivery-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="alcoholDelivery-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../geekApps-landing-chinese" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="D:\Alcohol  delivery\node_modules\gulp" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
@@ -385,13 +1099,16 @@
     <key name="OPEN_URL_DIALOG">
       <recent name="http://demy.in.ua" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Andrian\Desktop\alcoholDelivery-master\app\js\controllers" />
+      <recent name="C:\Users\Andrian\Desktop\alcoholDelivery-master\build\img" />
+      <recent name="C:\Users\Andrian\Desktop\alcoholDelivery-master\app\img" />
+      <recent name="C:\Users\Andrian\Desktop\alcoholDelivery-master\build" />
+      <recent name="C:\Users\Andrian\Desktop\alcoholDelivery-master" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="Z:\AlcoDelivery\alcoholDelivery-master\app\templates\views" />
       <recent name="Z:\AlcoDelivery\alcoholDelivery-master\app\js\libs" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Andrian\Desktop\alcoholDelivery-master" />
-      <recent name="Z:\AlcoDelivery\alcoholDelivery-master\app\js\controllers" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -546,7 +1263,34 @@
       <workItem from="1504102955751" duration="1285000" />
       <workItem from="1505973398823" duration="642000" />
       <workItem from="1508577815103" duration="620000" />
-      <workItem from="1508961748208" duration="2566000" />
+      <workItem from="1508961748208" duration="3038000" />
+      <workItem from="1509381961265" duration="2386000" />
+      <workItem from="1509387259103" duration="5719000" />
+      <workItem from="1509739847505" duration="1378000" />
+      <workItem from="1509748814232" duration="3343000" />
+      <workItem from="1509794843349" duration="3261000" />
+      <workItem from="1509800510824" duration="833000" />
+      <workItem from="1509805541419" duration="9259000" />
+      <workItem from="1509816515843" duration="21259000" />
+      <workItem from="1509888028940" duration="8964000" />
+      <workItem from="1509958223794" duration="34350000" />
+      <workItem from="1510155846641" duration="851000" />
+      <workItem from="1510161776351" duration="2016000" />
+      <workItem from="1510305261093" duration="2308000" />
+      <workItem from="1510413038997" duration="11123000" />
+      <workItem from="1510430782025" duration="637000" />
+      <workItem from="1510432029074" duration="531000" />
+      <workItem from="1510434366018" duration="1769000" />
+      <workItem from="1510485755692" duration="5130000" />
+      <workItem from="1510503261410" duration="13289000" />
+      <workItem from="1510565033480" duration="21531000" />
+      <workItem from="1510660287233" duration="7087000" />
+      <workItem from="1510670580891" duration="8227000" />
+      <workItem from="1510736187070" duration="7522000" />
+      <workItem from="1510833834943" duration="125000" />
+      <workItem from="1510843301699" duration="11412000" />
+      <workItem from="1510938572671" duration="235000" />
+      <workItem from="1510947438771" duration="95000" />
     </task>
     <task id="LOCAL-00001" summary="full.1.1">
       <created>1500298090366</created>
@@ -576,11 +1320,25 @@
       <option name="project" value="LOCAL" />
       <updated>1502183493365</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Artur start">
+      <created>1508965868791</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1508965868791</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Artur start">
+      <created>1508966208448</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1508966208448</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="258630000" />
+    <option name="totallyTimeSpent" value="443742000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -592,33 +1350,42 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="0" width="1924" height="1047" extended-state="0" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2470238" sideWeight="0.5057283" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15416667" sideWeight="0.4804878" order="0" side_tool="false" content_ui="combo" x="558" y="58" width="249" height="611" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1542948" sideWeight="0.4804878" order="0" side_tool="false" content_ui="combo" x="558" y="58" width="249" height="611" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5025707" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24250682" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5025707" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24160346" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2470238" sideWeight="0.5195122" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22198732" sideWeight="0.4974293" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15536106" sideWeight="0.4974293" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -651,125 +1418,36 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="16" />
+      <option name="time" value="18" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/style/modules/_catalogue.scss">
+    <entry file="file://$PROJECT_DIR$/app/js/libs/angular-slick.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="10" column="14" lean-forward="false" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+        <state relative-caret-position="-102">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/js/libs/angular-route.min.js">
+    <entry file="file://$PROJECT_DIR$/app/js/libs/angular-slider.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="5" column="404" lean-forward="false" selection-start-line="5" selection-start-column="404" selection-end-line="5" selection-end-column="404" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/style/modules/_catButtons.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="28" column="10" lean-forward="false" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/css/main.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="200" column="36" lean-forward="true" selection-start-line="200" selection-start-column="36" selection-end-line="200" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/style/modules/_modals.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="162" column="12" lean-forward="true" selection-start-line="162" selection-start-column="12" selection-end-line="162" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/style/modules/_basket.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="446" column="18" lean-forward="false" selection-start-line="446" selection-start-column="18" selection-end-line="446" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/style/modules/_admin.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="293" column="10" lean-forward="false" selection-start-line="293" selection-start-column="10" selection-end-line="293" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/style/modules/_carousele.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="220" column="15" lean-forward="false" selection-start-line="220" selection-start-column="15" selection-end-line="220" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/js/libs/slick.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="3973">
+          <caret line="340" column="14" lean-forward="false" selection-start-line="340" selection-start-column="14" selection-end-line="340" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/js/libs/slick-carousel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="14" lean-forward="false" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/style/modules/_details.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="823">
-          <caret line="264" column="9" lean-forward="false" selection-start-line="264" selection-start-column="9" selection-end-line="264" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="http://demy.in.ua">
-      <provider selected="true" editor-type-id="httpFileEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/style/modules/_banner.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/style/modules/_header.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="658" column="15" lean-forward="false" selection-start-line="658" selection-start-column="15" selection-end-line="658" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/js/slick.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="292" column="22" lean-forward="false" selection-start-line="292" selection-start-column="22" selection-end-line="292" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/js/second.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-561">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/style/layout/slick.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -780,42 +1458,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+    <entry file="file://$PROJECT_DIR$/app/js/second.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="22" lean-forward="false" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/js/userServices/userServices.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12240">
-          <caret line="720" column="85" lean-forward="false" selection-start-line="720" selection-start-column="15" selection-end-line="720" selection-end-column="85" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/style/modules/_slider.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="51" column="13" lean-forward="true" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/views/basket.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/views/catalogue.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -823,30 +1469,310 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/views/home.jade">
+    <entry file="file://$PROJECT_DIR$/build/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="4199">
+          <caret line="282" column="6" lean-forward="false" selection-start-line="282" selection-start-column="6" selection-end-line="282" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/components/main.jade">
+    <entry file="file://$PROJECT_DIR$/app/style/modules/_header.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1632">
-          <caret line="96" column="44" lean-forward="false" selection-start-line="96" selection-start-column="44" selection-end-line="96" selection-end-column="44" />
-          <folding />
+        <state relative-caret-position="244">
+          <caret line="302" column="2" lean-forward="false" selection-start-line="302" selection-start-column="2" selection-end-line="302" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/style/modules/_carousele.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="35" column="11" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/style/modules/_banner.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="58" column="3" lean-forward="true" selection-start-line="58" selection-start-column="3" selection-end-line="58" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/userServices/userService.js" />
+    <entry file="file://$PROJECT_DIR$/build/css/main.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="0" column="39527" lean-forward="false" selection-start-line="0" selection-start-column="39527" selection-end-line="0" selection-end-column="39527" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/style/modules/_modals.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="103" column="18" lean-forward="false" selection-start-line="103" selection-start-column="18" selection-end-line="103" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/services/adminServices.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="699" column="9" lean-forward="false" selection-start-line="699" selection-start-column="8" selection-end-line="699" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/index.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="15" lean-forward="true" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+        <state relative-caret-position="136">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dependencies.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="29" lean-forward="false" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/libs/angular.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="5" column="35" lean-forward="false" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/components/details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="1767" lean-forward="false" selection-start-line="0" selection-start-column="1767" selection-end-line="0" selection-end-column="1767" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/controllers/registrationCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="19" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/controllers/detailCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/views/basket.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="848" lean-forward="false" selection-start-line="0" selection-start-column="848" selection-end-line="0" selection-end-column="848" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/components/footer.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="31" column="5" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/img/sandeman.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/components/main.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="125" column="38" lean-forward="false" selection-start-line="125" selection-start-column="38" selection-end-line="125" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="38" lean-forward="false" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/controllers/myCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2431">
+          <caret line="143" column="36" lean-forward="false" selection-start-line="143" selection-start-column="36" selection-end-line="143" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/controllers/catalogCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="28" lean-forward="false" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/components/admin.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7106">
+          <caret line="418" column="48" lean-forward="false" selection-start-line="418" selection-start-column="48" selection-end-line="418" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/services/userServices.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="538" column="24" lean-forward="false" selection-start-line="538" selection-start-column="24" selection-end-line="538" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/style/modules/_slider.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="36" column="1" lean-forward="true" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/components/header.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="20" column="24" lean-forward="false" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/components/details.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="44" column="87" lean-forward="true" selection-start-line="44" selection-start-column="87" selection-end-line="44" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/components/basket.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="20" lean-forward="false" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/style/modules/_main_home.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/components/catalogue.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="535">
+          <caret line="0" column="9225" lean-forward="false" selection-start-line="0" selection-start-column="9225" selection-end-line="0" selection-end-column="9225" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/controllers/basketCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="43" lean-forward="false" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/style/base/_variables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/style/base/_mixins.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="26" lean-forward="false" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/components/catalogue.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="4" lean-forward="false" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/style/base/_base.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="1" lean-forward="false" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/controllers/adminCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="9" lean-forward="false" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/style/modules/_basket.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1921">
+          <caret line="113" column="28" lean-forward="false" selection-start-line="113" selection-start-column="28" selection-end-line="113" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/style/modules/_catButtons.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/style/modules/_catalogue.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1581">
+          <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/style/modules/_details.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="15" lean-forward="false" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/style/base/_fonts.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/style/modules/_footer.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="132" column="18" lean-forward="false" selection-start-line="132" selection-start-column="18" selection-end-line="132" selection-end-column="18" />
           <folding />
         </state>
       </provider>
@@ -854,309 +1780,7 @@
     <entry file="file://$PROJECT_DIR$/app/templates/components/links.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="49" lean-forward="false" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/components/scripts.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/components/header.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="113" column="18" lean-forward="true" selection-start-line="113" selection-start-column="18" selection-end-line="113" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/components/details.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="73" lean-forward="false" selection-start-line="41" selection-start-column="73" selection-end-line="41" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/components/catalogue.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="112" column="55" lean-forward="false" selection-start-line="112" selection-start-column="55" selection-end-line="112" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/components/basket.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="31" column="39" lean-forward="false" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/components/admin.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#3;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#4;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#input#1;n#div#0;n#div#4;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#5;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#5;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#input#1;n#div#0;n#div#5;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#6;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#label#0;n#div#6;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#label#1;n#div#6;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#label#2;n#div#6;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#label#3;n#div#6;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#label#4;n#div#6;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#6;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#select#0;n#div#0;n#div#6;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#select#1;n#div#0;n#div#6;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#select#2;n#div#0;n#div#6;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#label#6;n#div#6;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#6;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#6;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#input#1;n#div#2;n#div#6;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#7;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#label#0;n#div#7;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#label#1;n#div#7;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#label#2;n#div#7;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#label#3;n#div#7;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#label#4;n#div#7;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#7;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#label#6;n#div#7;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#7;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#7;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#input#1;n#div#2;n#div#7;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#8;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#8;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#label#0;n#div#0;n#div#8;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#select#0;n#label#0;n#div#0;n#div#8;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#label#1;n#div#0;n#div#8;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#label#2;n#div#0;n#div#8;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#label#3;n#div#0;n#div#8;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#label#4;n#div#0;n#div#8;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#label#5;n#div#0;n#div#8;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#label#6;n#div#0;n#div#8;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#label#7;n#div#0;n#div#8;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#label#8;n#div#0;n#div#8;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#8;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#input#1;n#div#1;n#div#8;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#9;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#9;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#label#0;n#div#0;n#div#9;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#select#0;n#label#0;n#div#0;n#div#9;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#label#1;n#div#0;n#div#9;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#label#2;n#div#0;n#div#9;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#label#3;n#div#0;n#div#9;n#div#0;n#!!top" expanded="false" />
-            <element signature="e#9172#9356#0" expanded="false" />
-            <element signature="n#label#4;n#div#0;n#div#9;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#label#5;n#div#0;n#div#9;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#label#6;n#div#0;n#div#9;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#label#7;n#div#0;n#div#9;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#label#8;n#div#0;n#div#9;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#9;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#input#2;n#div#1;n#div#9;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#10;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#10;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#input#1;n#div#0;n#div#10;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#11;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#11;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#12;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#input#0;n#div#12;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#input#1;n#div#12;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#input#2;n#div#12;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#input#3;n#div#12;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#input#4;n#div#12;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#13;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#table#0;n#div#13;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#tr#0;n#table#0;n#div#13;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#tr#1;n#table#0;n#div#13;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#td#0;n#tr#1;n#table#0;n#div#13;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#td#2;n#tr#1;n#table#0;n#div#13;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#13;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#input#2;n#div#1;n#div#14;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#15;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#input#2;n#div#0;n#div#15;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#td#4;n#tr#1;n#table#0;n#div#15;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#td#8;n#tr#1;n#table#0;n#div#15;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#td#9;n#tr#1;n#table#0;n#div#15;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#td#10;n#tr#1;n#table#0;n#div#15;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#tr#0;n#table#0;n#div#16;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#th#1;n#tr#0;n#table#0;n#div#16;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#17;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#17;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#17;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#table#0;n#div#1;n#div#17;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#tr#0;n#table#0;n#div#1;n#div#17;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#tr#1;n#table#0;n#div#1;n#div#17;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#tr#2;n#table#0;n#div#1;n#div#17;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#tr#3;n#table#0;n#div#1;n#div#17;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#tr#4;n#table#0;n#div#1;n#div#17;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#tr#5;n#table#0;n#div#1;n#div#17;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#tr#6;n#table#0;n#div#1;n#div#17;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#tr#7;n#table#0;n#div#1;n#div#17;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#tr#8;n#table#0;n#div#1;n#div#17;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#td#0;n#tr#8;n#table#0;n#div#1;n#div#17;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#input#0;n#td#0;n#tr#8;n#table#0;n#div#1;n#div#17;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#input#1;n#td#0;n#tr#8;n#table#0;n#div#1;n#div#17;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#input#2;n#td#0;n#tr#8;n#table#0;n#div#1;n#div#17;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#18;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#18;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#table#0;n#div#18;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#tr#0;n#table#0;n#div#18;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#tr#1;n#table#0;n#div#18;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#td#7;n#tr#1;n#table#0;n#div#18;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/style/base/_base.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/style/base/_fonts.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/style/base/_keyframes.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/style/layout/_abouteUs.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/style/layout/_home.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/style/layout/slick.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="41" column="11" lean-forward="false" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/style/main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="18" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/style/layout/slick-theme.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="138" column="20" lean-forward="false" selection-start-line="138" selection-start-column="20" selection-end-line="138" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/style/layout/css_to_suite.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/style/base/_variables.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/style/base/_mixins.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="1" lean-forward="false" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/style/modules/_main_home.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="18" column="22" lean-forward="false" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/js/controllers/myCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10185">
-          <caret line="30" column="25" lean-forward="false" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/js/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="28" lean-forward="false" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/js/controllers/adminCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2749">
-          <caret line="160" column="6" lean-forward="false" selection-start-line="160" selection-start-column="6" selection-end-line="160" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/js/libs/slick.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="253" column="21" lean-forward="true" selection-start-line="253" selection-start-column="21" selection-end-line="253" selection-end-column="21" />
+          <caret line="3" column="80" lean-forward="true" selection-start-line="3" selection-start-column="80" selection-end-line="3" selection-end-column="80" />
           <folding />
         </state>
       </provider>

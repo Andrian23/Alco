@@ -10,7 +10,12 @@
 
     "./app/js/controllers/myCtrl.js",
     "./app/js/controllers/adminCtrl.js",
-    "./app/js/userServices/userServices.js",
+    "./app/js/controllers/catalogCtrl.js",
+    "./app/js/controllers/basketCtrl.js",
+    "./app/js/controllers/detailCtrl.js",
+    "./app/js/controllers/registrationCtrl.js",
+    "./app/js/services/userServices.js",
+    "./app/js/services/adminServices.js",
     "./app/js/main.js",
     "./app/js/second.js"
   ],

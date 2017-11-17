@@ -7,42 +7,49 @@
   color: white;
   box-sizing: border-box !important;
   cursor: pointer;
-@include pc_1024{
+@include pc_1024-1200{
   margin-top: 60px;
 }
+  @include pc_1000-1024{
+    display: none;
+  }
   @include tablet{
     height:300px;
+    display: none;
     margin:0;
     padding:0;
+  }
+  @include mobile{
+    display: none;
   }
 
   .main_banner {
     @include tablet{
-      height:300px;
+      height:600px;
     }
-    @include pc_s{
-      height:460px;
+    @include pc_1000-1024{
+      height:600px;
     }
-    @include pc_1024{
+    @include pc_1024-1200{
       height:460px;
     }
     @include mobile {
-      height: 300px;
+      height: 550px;
 
     }
     height: 560px;
   }
   .slick-list {
 
-    height: 550px;
+    height: 700px;
     background-repeat: no-repeat !important;
-    @include pc_l{
+    @include pc_1200-1550{
       height: 460px
     }
-    @include pc_s{
+    @include pc_1000-1024{
       height:460px;
     }
-    @include pc_1024{
+    @include pc_1024-1200{
       height:460px;
     }
     @include tablet{
@@ -59,9 +66,9 @@
     background-repeat: no-repeat !important;
     background-size: cover !important;
     background-position: right !important;
-    //background-position: top;
-  ;@include pc_l{
-    height: 460px;}
+    height: 700px;
+  @include pc_1200-1550{
+    height: 700px;}
   }
 
 

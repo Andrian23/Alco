@@ -1,8 +1,8 @@
 div.basket_conteiner
     h3 Твоя корзина
-    div.modal_alert(ng-show='my.alert')
-        h2 {{my.alertMessage}}
-        input.log( type='button' value='ОК' ng-click='my.alert=!my.alert')
+    div.modal_alert(ng-show='basket.alert')
+        h2 {{basket.alertMessage}}
+        input.log( type='button' value='ОК' ng-click='basket.alert=!basket.alert')
 
     div.modal_alert(ng-show='alertConfirmation')
         h2 Ваше замовлення успішно відправлене, очікуйте на підтвердження
@@ -18,74 +18,94 @@ div.basket_conteiner
     div.basket_part1
         div.basket_part1_section_left
             div.basket_part1_section_left_s
-                table.basket_table.notInMobile
-                    tr.basket_table_head
-                        th товар
-                        th опис
-                        th ціна за одиницю
-                        th кількість
-                        th вартість
-                        th видалити
-
-                    tr.basket_table_body(ng-repeat='unit in my.tray')
-                        td
-                            img.basket_img(ng-src='{{unit.image}}')
-                        td {{unit.name}} {{unit.volume/1000}}л
-                        td {{unit.price}} грн
-                        td.basket_buttons_field
-                        
-                            input.basket_minus(type='button' ng-click='my.minus1(unit.id)' value='-')
-                            p.basket_text_butt {{unit.count}}
-                            input.basket_plus(type='button' ng-click='my.plus1(unit.id)' value='+')
-
-                        td {{unit.count*unit.price}} грн
-                        td
-                            img.basket_cancel(src='../img/cancel.png' ng-click='my.delete_order(unit.id)' alt='видалити товар')
-
-
-                    tr.basket_footer
-                        td(colspan=4) загальна вартість
-                        td(colspan=2) {{my.totalSum}} грн
-
-                table.basket_table.mobileOnly
-                    tr.basket_table_head
-                        th товар
-                        th опис
-                        th кількість
-                        th вартість
-
-
-                    tr.basket_table_body(ng-repeat='unit in my.tray')
-                        td
-                            img.basket_img(ng-src='{{unit.image}}')
-                        td {{unit.name}} {{unit.volume/1000}} ({{unit.price}} грн}})
-                        td.basket_buttons_field
-                            input.basket_minus(type='button' ng-click='my.minus1(unit.id)' value='-')
-                            p.basket_text_butt {{unit.count}}
-                            input.basket_plus(type='button' ng-click='my.plus1(unit.id)' value='+')
-                            img.basket_cancel(src='../img/cancel.png' ng-click='my.delete_order(unit.id)' alt='видалити товар')
-
-                        td {{unit.count*unit.price}}
-
-
-                    tr.basket_footer
-                        td(colspan=3) загальна вартість
-                        td() {{my.totalSum}} грн
+                div.basket__repeat-block(ng-repeat='unit in tray')
+                    img.basket_img(ng-src='{{unit.image}}')
+                    div.basket__conteiner-in
+                      p.basket__conteiner-text {{unit.name}}
+                      p {{unit.volume/1000}} л
+                    div.basket__conteiner-in2
+                      input.basket_minus(type='button' ng-click='minus1(unit.id)' value='-')
+                      p.basket_text_butt {{unit.count}}
+                      input.basket_plus(type='button' ng-click='plus1(unit.id)' value='+')
+                    p {{unit.count*unit.price}} грн
+                    div.basket__conteiner-img
+                      img.basket_cancel(src='../img/cancel.png' ng-click='delete_order(unit.id)' alt='видалити товар')
+                div.basket__total-conteiner
+                    div.basket__total-sum
+                      span.span Разом
+                      p {{totalSum}} грн
+                //table.basket_table.notInMobile
+                //    tr.basket_table_head
+                //        th товар
+                //        th опис
+                //        th ціна за одиницю
+                //        th кількість
+                //        th вартість
+                //        th видалити
+                //
+                //    tr.basket_table_body(ng-repeat='unit in tray')
+                //        td
+                //            img.basket_img(ng-src='{{unit.image}}')
+                //        td {{unit.name}} {{unit.volume/1000}}л
+                //        td {{unit.price}} грн
+                //        td.basket_buttons_field
+                //
+                //            input.basket_minus(type='button' ng-click='minus1(unit.id)' value='-')
+                //            p.basket_text_butt {{unit.count}}
+                //            input.basket_plus(type='button' ng-click='plus1(unit.id)' value='+')
+                //
+                //        td {{unit.count*unit.price}} грн
+                //        td
+                //            img.basket_cancel(src='../img/cancel.png' ng-click='delete_order(unit.id)' alt='видалити товар')
+                //
+                //
+                //    tr.basket_footer
+                //        td(colspan=4) загальна вартість
+                //        td(colspan=2) {{totalSum}} грн
 
 
 
-                //div.basket_part1_section_left_order(ng-repeat='unit in my.tray')
+
+
+                //table.basket_table.mobileOnly
+                //    tr.basket_table_head
+                //        th товар
+                //        th опис
+                //        th кількість
+                //        th вартість
+                //
+                //
+                //    tr.basket_table_body(ng-repeat='unit in tray')
+                //        td
+                //            img.basket_img(ng-src='{{unit.image}}')
+                //        td {{unit.name}} {{unit.volume/1000}} ({{unit.price}} грн}})
+                //        td.basket_buttons_field
+                //            input.basket_minus(type='button' ng-click='minus1(unit.id)' value='-')
+                //            p.basket_text_butt {{unit.count}}
+                //            input.basket_plus(type='button' ng-click='plus1(unit.id)' value='+')
+                //            img.basket_cancel(src='../img/cancel.png' ng-click='delete_order(unit.id)' alt='видалити товар')
+                //
+                //        td {{unit.count*unit.price}}
+                //
+                //
+                //    tr.basket_footer
+                //        td(colspan=3) загальна вартість
+                //        td() {{totalOrderSum} грн
+
+
+
+                //div.basket_part1_section_left_order(ng-repeat='unit in basket.tray')
                 //    img.basket_img(ng-src='{{unit.image}}')
                 //    h4 {{unit.name}}
                 //        p {{unit.volume}}
-                //    input.minus(type='button' ng-click='my.minus1(unit.id)')
+                //    input.minus(type='button' ng-click='basket.minus1(unit.id)')
                 //    p.text_butt {{unit.count}}
-                //    input.plus(type='button' ng-click='my.plus1(unit.id)')
+                //    input.plus(type='button' ng-click='basket.plus1(unit.id)')
                 //    p.price {{unit.price}} грн
-                //    img.basket_cancel(src='../img/cancel.png' ng-click='my.delete_order(unit.id)' alt='видалити товар')
+                //    img.basket_cancel(src='../img/cancel.png' ng-click='basket.delete_order(unit.id)' alt='видалити товар')
             //div.basket_part1_section_left_e
             //    p.together Разом
-            //    P.price2 {{my.totalSum}} грн
+            //    P.price2 {{basket.totalSum}} грн
         div.basket_part1_section_delyvery
             .basket_part1_section_delyvery_header
                 img(src='../img/delivery-truck.png')
@@ -111,32 +131,24 @@ div.basket_conteiner
                     |ante, dapibus in, viverra quis, feugiat
                     |a, tellus. Phasellus viverra nulla ut
                     |metus varius laoreet. Quisque rutrum.
-                    |Aenean imperdiet. Etiam ultricies nisi
-                    |vel augue. Curabitur ullamcorper
-                    |ultricies nisi.Lorem ipsum dolor sit amet,
-                    |consectetuer adipiscing elit.
-                    |Aenean commodo ligula eget dolor. Aenean massa.
-                    |Cum sociis natoque penatibus et magnis
-                    |dis parturient montes, nascetur
-                    |ridiculus mus. Donec quam felis,
-                    |ultricies nec, pellentesque eu,
-                    |pretium quis, sem. Nulla consequat
-                    |massa quis enim. Donec pede justo,
-                    |fringilla vel, aliquet nec, vulputate
-                    |eget, arcu. In enim justo, rhoncus ut.
+                    |Aenean imperdiet.
     a(name='orderForm')
 
     h3 Деталі оплати
     img.basket_img2(src='../img/shape-2.png')
     div.basket_details
-        input.basket_input(type='text' placeholder='Ім’я' ng-model='my.order.name')
-        input.basket_input(type='text' placeholder='Прізвище' ng-model='my.order.sname')
-        input.basket_input(type='text' placeholder='+380 999 99 99 99' ng-model='my.order.phone')
-        input.basket_input(type='text' placeholder='E-mail' ng-model='my.order.email')
-        input.basket_input(type='text' placeholder='Вулиця' ng-model='my.order.address.street')
-        input.basket_input.small(type='text' placeholder='Будинок' ng-model='my.order.address.house')
-        input.basket_input.small(type='text' placeholder='Квартира' ng-model='my.order.address.flat')
-        input.basket_input.small(type='text' placeholder='Під’їзд' ng-model='my.order.address.entrance')
-        input.basket_input.small(type='text' placeholder='Поверх' ng-model='my.order.address.stair')
-        textarea.basket_input.textarea(type='textarea' placeholder='Додаткові побажання' ng-model='my.order.comments')
-        input.basket_button(type='button' value='підтвердити замовлення' ng-click='my.confirmOrder();my.init(); alertConfirmation=true')
+        div.basket__input-conteiner
+          input.basket_input.basket__input2(type='text' placeholder='Ім’я' ng-model='order.name')
+          input.basket_input(type='text' placeholder='Прізвище' ng-model='order.sname')
+        div.basket__input-conteiner
+          input.basket_input.basket__input2(type='text' placeholder='+380 999 99 99 99' ng-model='order.phone')
+          input.basket_input(type='text' placeholder='E-mail' ng-model='order.email')
+        div.basket__input-conteiner
+          input.basket_input.basket__input2(type='text' placeholder='Вулиця' ng-model='order.address.street')
+          input.basket_input.small(type='text' placeholder='Будинок' ng-model='order.address.house')
+          input.basket_input.small(type='text' placeholder='Квартира' ng-model='order.address.flat')
+          input.basket_input.small(type='text' placeholder='Під’їзд' ng-model='order.address.entrance')
+          input.basket_input.small.small2(type='text' placeholder='Поверх' ng-model='order.address.stair')
+        div.basket__input-conteiner
+          textarea.basket_input.textarea(type='textarea' placeholder='Додаткові побажання' ng-model='order.comments')
+        input.basket_button(type='button' value='підтвердити замовлення' ng-click='basket.confirmOrder();alertConfirmation=true')

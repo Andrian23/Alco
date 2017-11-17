@@ -1,4 +1,4 @@
-app.controller('adminCtrl', ['UserService', function (UserService) {
+app.controller('adminCtrl', ['AdminService', function (AdminService) {
     var vm = this;
     vm.category = ['somecat1', 'somecat2'];
     vm.orders = [];
@@ -22,7 +22,7 @@ app.controller('adminCtrl', ['UserService', function (UserService) {
 // }
 //USERS************************************************************************************************************USERS
     vm.getUsers = function () {
-        vm.users = UserService.getUsers()
+        vm.users = AdminService.getUsers()
         vm.checkUsers()
     }
     vm.checkUsers = function () {
@@ -45,7 +45,7 @@ app.controller('adminCtrl', ['UserService', function (UserService) {
 
     vm.addNewUser = function () {
         vm.newUser.confirmed = false
-        UserService.addUser(vm.newUser)
+        AdminService.addUser(vm.newUser)
         vm.newUser = {}
         vm.getUsers()
 
@@ -55,7 +55,7 @@ app.controller('adminCtrl', ['UserService', function (UserService) {
         vm.edUser = true
     }
     vm.editUser = function () {
-        UserService.editUser(vm.userEdited)
+        AdminService.editUser(vm.userEdited)
         vm.getUsers()
         vm.userEdited = {}
         console.log(vm.userEdited);
@@ -86,7 +86,7 @@ app.controller('adminCtrl', ['UserService', function (UserService) {
     };
     vm.deleteUser = function () {
         vm.delUser = false;
-        UserService.deleteUser(vm.userToDel);
+        AdminService.deleteUser(vm.userToDel);
         vm.getUsers()
         vm.checkUsers()
 
@@ -95,7 +95,7 @@ app.controller('adminCtrl', ['UserService', function (UserService) {
 
 //ORDERS**********************************************************************************************************ORDERS
     vm.getOrders = function () {
-        vm.orders = UserService.getOrders()
+        vm.orders = AdminService.getOrders()
         for (i in vm.orders) {
             vm.orders[i].totalOrderSum = 0
             for (j in vm.orders[i].goodsOrdered) {
@@ -202,7 +202,7 @@ app.controller('adminCtrl', ['UserService', function (UserService) {
 
 //CATEGORY*****************************************************************************************************CATEGORY
     vm.getCategories = function () {
-        vm.category = UserService.getCategories()
+        vm.category = AdminService.getCategories()
     }
     vm.preDeleteCategory = function (c) {
         vm.orderToDel = c;
@@ -232,7 +232,7 @@ app.controller('adminCtrl', ['UserService', function (UserService) {
 
 
     vm.renameCategory = function () {
-        UserService.editCategory(vm.newCategoryName)
+        AdminService.editCategory(vm.newCategoryName)
         vm.newCategoryName = '';
     };
 
@@ -244,7 +244,7 @@ app.controller('adminCtrl', ['UserService', function (UserService) {
 
     vm.addCategory = function () {
 
-        UserService.addCategory(vm.newCategory.name)
+        AdminService.addCategory(vm.newCategory.name)
         vm.getCategories()
     }
 
@@ -253,9 +253,9 @@ app.controller('adminCtrl', ['UserService', function (UserService) {
     //get goods
 
     vm.getGoods = function () {
-        vm.banners = UserService.getBanners()
+        vm.banners = AdminService.getBanners()
 
-        vm.goods = UserService.getGoods();
+        vm.goods = AdminService.getGoods();
 
 
         // vm.onlyUnique = function (value, index, self) {
@@ -288,8 +288,8 @@ app.controller('adminCtrl', ['UserService', function (UserService) {
     };
     vm.deleteCommodity = function () {
         vm.delCommodity = false;
-        // UserService.deleteCommodity(vm.commodityToDel)
-        UserService.deleteGoods(vm.commodityToDel);
+        // AdminService.deleteCommodity(vm.commodityToDel)
+        AdminService.deleteGoods(vm.commodityToDel);
         vm.getGoods()
 
     };
@@ -309,7 +309,7 @@ app.controller('adminCtrl', ['UserService', function (UserService) {
     vm.newGood = {};
     vm.editCommodity = function () {
         vm.editCom = false;
-        UserService.editGoods(vm.commodityToE);
+        AdminService.editGoods(vm.commodityToE);
         vm.commodityToE = {}
 
     };
@@ -334,7 +334,7 @@ app.controller('adminCtrl', ['UserService', function (UserService) {
     //add commodity
     vm.addCommodity = function () {
         // console.log(vm.newCommodity);
-        UserService.addGoods(vm.newCommodity)
+        AdminService.addGoods(vm.newCommodity)
         console.log(vm.newCommodity);
         vm.newCommodity = {}
         vm.getGoods()
@@ -346,7 +346,7 @@ app.controller('adminCtrl', ['UserService', function (UserService) {
     vm.addBanner = function () {
         vm.newBanner.product_id=+vm.newBanner.product_id.split('_')[0]
 
-        UserService.addBanner(vm.newBanner)
+        AdminService.addBanner(vm.newBanner)
         console.log(vm.newBanner);
         vm.newBanner = {}
         vm.getGoods()

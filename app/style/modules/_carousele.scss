@@ -100,6 +100,7 @@
     }
     img {
       height: 200px;
+      width: auto;
       @include mobile {
         height: 125px;
       }
@@ -239,11 +240,16 @@
 
 .slick-list {
   @include mobile {
-    height: 200px !important;
+    height: 170px !important;
     margin-bottom: 5px !important;
   }
+  @include pc_1000-1024{
+    height: 400px !important;
+    //display: none !important;
+    margin-bottom: 5px;
+  }
   @include tablet {
-    height: 300px !important;
+    height: 400px !important;
     margin-bottom: 5px !important;
   }
 }

@@ -9,17 +9,20 @@ body(ng-app="myapp" ng-controller="myCtrl as my")
 
         include components/header
     main
-        ng-view
+        ui-view
     footer
         include components/footer
 
 
+
+
     script(src='../js/libs/jquery-3.2.1.min.js')
     //script(src='../js/libs/angular.min.js')
-    script( src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js")
+    script( src="../js/libs/angular.min.js")
+    script( src="//unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js")
 
     //script(src='../js/libs/angular-animate.min.js')
-    script( src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js")
+    script( src="../js/libs/angular-animate.min.js")
 
 
     //slick-slider
@@ -32,12 +35,12 @@ body(ng-app="myapp" ng-controller="myCtrl as my")
 
 
         //slider-range
-    script(type="text/javascript" src='//rawgithub.com/prajwalkman/angular-slider/master/angular-slider.js'  charset="utf-8")
+    script(type="text/javascript" src='../js/libs/angular-slider.js'  charset="utf-8")
     //angular JS
     //script(src='../js/libs/angular-route.min.js')
 
-    script( src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js")
-    script( type="text/javascript" src="https://cdn.rawgit.com/adonespitogo/angular-base64-upload/master/src/angular-base64-upload.js")
+    script( src="../js/libs/angular-route.js")
+    script( type="text/javascript" src="../js/libs/angular-base64-upload.js")
     script(src='../js/libs/angular-to-base64.js')
 
     script( src='../js/main.js')

@@ -1,16 +1,18 @@
 div#main_conteiner
     div#conteiner_section1
         div#bottle
-            a(href='#/admin' ng-click='my.catFromMain("vodka")')
-                img(src='../img/vodka.png')
-
-            a(href='#/catalogue' ng-click=' my.catFromMain("wine")')
-                img(src='../img/vine2.png')
-
-            a(href='#/catalogue' ng-click=' my.catFromMain("beer")')
-                img(src='../img/beer.png')
-            a(href='#/catalogue')
-                img(src='../img/whiskey.png' ng-click=' my.catFromMain("whiskey")')
+            div#bottle_vodka
+               a(href='#/admin' ng-click='my.catFromMain("vodka")')
+                  img(src='../img/vodka.png')
+            div#bottle_wine
+               a(href='#/catalogue' ng-click=' my.catFromMain("wine")')
+                  img(src='../img/vine2.png')
+            div#bottle_berr
+               a(href='#/catalogue' ng-click=' my.catFromMain("beer")')
+                  img(src='../img/beer.png')
+            div#bottle_whiskey
+                a(href='#/catalogue')
+                  img(src='../img/whiskey.png' ng-click=' my.catFromMain("whiskey")')
 
         div.content.banner
             script(type='text/ng-template', id='tpl2.html').
@@ -27,32 +29,18 @@ div#main_conteiner
 
 
 
-        //div#par1
-        //    h1#paragraph lorem ipsum dolor
-        //    a.butt_lorem(href='#/catalogue') каталог
-
     div#conteiner_section2
-
-        div#section2_aside1
-            div#section2_aside1_part1
-                img.fast-del-img.mobileandtablet(src='../img/breezer.jpg')
-                h2.fst-del.mobileandtablet Fast Delivery
-
-            div#section2_aside1_part2
-                h2 Fast Delivery
-                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta nihil reprehenderit explicabo magni quaerat asperiores
-                input#fast_delivery(type='button' value='Lorem ipsum')
-        div#section2_aside2
-            div#section2_aside2_part1
-                h2.notInMobile Hign Quality and low price
-                h2.hgh-qual-heat Hign Quality
-                h2.hgh-qual-mid and low price
-                img#hig-qual-img(src='../img/wisky.jpg')
-                p.notInMobile Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis eos explicabo tenetur facilis qui earum, autem voluptatum voluptatibus soluta pariatur. Iste tempora dolorem ducimus possimus. Sapiente nostrum cum eveniet voluptatibus
-                p.hgh-qual-text.mobile.notInPc Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis eos explicabo tenetur facilis qui earum
-            div#section2_aside2_part2
+        div.section2__container-flex
+            div.container2__flex1
+                img(src='../img/breezer.jpg')
+                div.block2__tablet-flex
+                  p.container2__flex1-top Fast delieveri
+                  p.container2__flex1-top2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis eos explicabo tenetur facilis qui earum, autem voluptatum voluptatibus soluta pariatur.
+            div.container2__flex2
+                div.block2__tablet-flex2
+                  p.container2__flex2-top High quality and low price
+                  p.container2__flex2-top2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis eos explicabo tenetur facilis qui earum, autem voluptatum voluptatibus soluta pariatur.
                 img(src='../img/wisky.jpg')
-
 
     div#conteiner_section3
         div.section3_header.part2
@@ -89,23 +77,40 @@ div#main_conteiner
         a(name='Shares')
             //p.down Lorem ipsum dolor
         div.section3_content.slick-container
+
             script( type="text/ng-template" id="tpl.html")
 
-                div.slider-element(ng-click='my.detail_of_goods(i.product_id)')
+                div.slider-element(ng-click='my.detail_of_goods(i)')
                     a(href='#/details')
                         img(ng-src='{{i.image}}' ng-click='my.detail_of_goods(i)')
                     h4 {{i.price*my.discount}} грн
                     p
                     span.caruosele_footer {{i.name}}
-            slick.slider.slick_slider(settings='my.slickConfig2', ng-if='my.slickConfigLoaded2')
-                div(ng-repeat='i in my.number2  track by $index|limitTo:15')
+
+
+            slick.slider#slick_slider(settings='my.slickConfig', ng-if='my.slickConfigLoaded')
+                div(ng-repeat='i in my.number  track by $index|limitTo:15')
                     div(ng-include="'tpl.html'")
+
+            //script( type="text/ng-template" id="tpl.html")
+            //
+            //    div.slider-element(ng-click='my.detail_of_goods(i.product_id)')
+            //        a(href='#/details')
+            //            img(ng-src='{{i.image}}' ng-click='my.detail_of_goods(i)')
+            //        h4 {{i.price*my.discount}} грн
+            //        p
+            //        span.caruosele_footer {{i.name}}
+            //slick.slider.slick_slider(settings='my.slickConfig2', ng-if='my.slickConfigLoaded2')
+            //    div(ng-repeat='i in my.number2  track by $index|limitTo:15')
+            //        div(ng-include="'tpl.html'")
             div.secti.sectiL
             div.secti.sectiR
 
     div#conteiner_section4
         a(name='aboutus')
+        div.conteiner_section4_background
         div.backLine
+        img.mint(src='../img/miate.png')
         div#conteiner_section4_about
             h2 About Us
             p Lorem ipsum dolor sit amet, consectetur
@@ -120,13 +125,8 @@ div#main_conteiner
                 | Excepteur sint occaecat cupidatat non
                 | proident, sunt in culpa qui officia
                 | deserunt mollit anim id est laborum
-            p.hide Lorem ipsum dolor sit amet, consectetur
-                | adipiscing elit, sed do eiusmod tempor
-                | incididunt ut labore et dolore magna
-                | aliqua. Ut enim ad minim veniam, quis
-                | nostrud exercitation ullamco laboris
-                | nisi ut aliquip ex
-            img.mint(src='../img/mint-png33.png')
+
+
     a(name='delivery')
     div#conteiner_section5
 

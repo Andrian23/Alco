@@ -12,8 +12,8 @@
 
 
   h3{
-    padding: 70px 0px 70px 100px;
-    font-size: 18px;
+    padding: 40px 0px 70px 100px;
+    font-size: 14px;
     font-weight: 400;
     line-height: 24px;
     text-transform: uppercase;
@@ -29,48 +29,92 @@
       line-height: 24px;
     }
   }
-  img{
-    max-width: 100%;
-    height: auto;
-
-  }
+  //img{
+  //  max-width: 100%;
+  //  height: auto;
+  //
+  //}
 
   .details{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 
 
   }
   .details_img{
     //
-    width: 30%;
+     width: 30%;
+    margin: 0 auto;
     @include mobile{
       flex-basis: 40%;
     }
     img{
-      max-width: 100%;
-      height: 80%;
+      width: auto;
+      display: block;
+      margin: auto;
+      height: 535px;
       @include mobile{
         margin-left: 20px;
-        max-width: 100%;
-        height: 30%;
+        max-width: 67%;
+        display: none;
+        //height: 30%;
       }
       @include tablet{
-        max-width: 70%;
+        //max-width: 70%;
 
       }
     }
+    @include mobile{
+      display: none;
+    }
 
   }
+  ////////////////////////////////////////////////////////////////////////////detail hide blocks
+  .detail__hide-block{
+
+   display: none;
+    @include mobile{
+      display: flex;
+    }
+    img{
+      height: 400px;
+      width: auto;
+    }
+    p{
+      max-width: 360px;
+      margin: auto auto auto 18px;
+      font-weight: 400 !important;
+      font-size: 13px !important;
+      line-height: 17px !important;
+
+    }
+  }
+  .detail__hide-p{
+
+    @include mobile{
+      display: none;
+    }
+  }
+
   .details_content{
     display: flex;
     justify-content: flex-start;
     padding-bottom: 100px;
     flex-direction: column;
-    width: 60%;
+    width: 50%;
+    margin: auto;
     //flex-basis: 35%;
+    @include pc_1200-1550{
+      width: 50%;
+    }
+    @include pc_1024-1200{
+      width: 60%;
+    }
+    @include pc_1000-1024{
+      width: 60%;
+    }
     @include mobile{
-      padding-right: 5px;
+      width: 85%;
     }
 
     h1{
@@ -90,15 +134,15 @@
 
     }
     p{
-      font-size: 19px;
+      font-size: 18px;
       font-weight: 400;
       line-height: 26px;
       padding-bottom: 20px;
       @include mobile{
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 26px;
-        padding-bottom: 10px;
+        font-size: 17px;
+        font-weight: 600;
+        line-height: 24px;
+        padding-bottom: 5px;
       }
       @include tablet{
         font-size: 14px;
@@ -111,7 +155,10 @@
     .details_input{
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: baseline;
+      @include mobile{
+        justify-content: flex-end;
+      }
       .details_input-left{
         display: flex;
         width: 150px;
@@ -136,7 +183,7 @@
       width: 22%;
       flex-basis: 20%;
       @include mobile{
-        font-size: 16px;
+        font-size: 20px;
         font-weight: bold;
         line-height: 30px;
         flex-basis: 50%;
@@ -144,7 +191,7 @@
         padding-top: 10px;
       }
       @include tablet{
-        font-size: 16px;
+        font-size: 20px;
         font-weight: bold;
         line-height: 50px;
         padding-right: 130px;
@@ -231,9 +278,20 @@
         margin-right: 150px;
       }
     }
+    h2{
+      font-size: 30px;
+
+      @include mobile{
+        text-align: center;
+      }
+    }
   }
   .details_description{
     padding-top: 20px;
+    @include mobile{
+      text-align: right;
+
+    }
   }
   .details_description_part{
     @include mobile{

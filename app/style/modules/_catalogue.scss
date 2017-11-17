@@ -1,49 +1,88 @@
+.catalogue__wrap{
+  background-color:#0b1013;
+
+}
 .catalogue_conteiner{
   color: #f6f6f6;
   font-family:$font_family;
-  background-color:#0b1013;
-  max-width: 1920px;
   padding-bottom: 50px;
+  max-width: 1690px;
+  margin: 0 auto;
+  @include pc_1550-1800{
+   max-width: 1400px;
+  }
+  @include pc_1200-1550{
+    max-width: 1125px;
+  }
+  @include pc_1024-1200{
+    max-width: 940px;
+  }
+  @include pc_1000-1024{
+    max-width: 622px;
+  }
+
+  @include  tablet{
+    //padding-top: 30px;
+    max-width: 622px;
+  }
 
   //position: absolute;
   //z-index:5;
   //height: 3145px;
   .catalog_img1{
-    padding-left: 100px;
+    padding: 0;
     max-width: 1718px;
+    @include pc_1000-1024{
+      width: 90%;
+      height: 1px;
+    }
+    @include tablet{
+      width: 90%;
+      height: 1px;
+    }
     @include mobile{
       display: none;
     }
-    @include tablet{
-      padding-left: 30px;
-    }
+
   }
   img{
     max-width: 100%;
     height: auto;
     @include mobile{
-      max-width: 20%;
-      padding-left: 45px;
+      //max-width: 20%;
+      //padding-left: 45px;
       padding-top: -50px;
     }
     @include tablet{
-      max-width: 40%;
-      padding-left: 30px;
+      max-width: 100%;
+      //padding-left: 30px;
     }
   }
   .image{
-    height: 275px;
+    height: 240px;
+    width: auto;
+    @include pc_1000-1024{
+      height: 190px;
+    }
     @include tablet{
-      height:auto;
+      height: 190px;
     }
     @include mobile{
-      height:auto;
+      height: 90px;
+
+    }
+  }
+  .image:hover{
+    @include tablet{
+      height: 150px;
+    }
+    @include mobile{
+      height: 90px;
 
     }
   }
   h2{
     padding-top: 50px;
-    padding-left: 100px;
     padding-bottom: 30px;
     font-size: 24px;
     font-weight: 400;
@@ -52,11 +91,7 @@
       display: none;
     }
     @include tablet{
-      padding-left: 30px;
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 24px;
-      padding-bottom: 0px;
+
     }
   }
   ul{
@@ -107,32 +142,53 @@
     display: flex;
     justify-content: flex-start;
     padding-top: 60px;
+    @include pc_1550-1800{
+
+    }
+    @include pc_1000-1024{
+      padding-top: 30px;
+    }
     @include  tablet{
       padding-top: 30px;
     }
+    @include mobile{
+      max-width: 90%;
+      margin: auto;
+    }
   }
+
+
+
+
   .catalogue_filter{
     @include mobile{
       display: none;
     }
-    @include  pc_1024{
+    @include  pc_1024-1200{
       font-size: 18px;
       line-height: 20px;
+    }
+    @include pc_1000-1024{
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 30px;
+      width: 300px;
+      margin: 10px 20px 0 0;
+
     }
     @include tablet{
       font-size: 16px;
       font-weight: 400;
       line-height: 30px;
       width: 300px;
-      padding-left: 30px;
+      margin: 10px 20px 0 0;
     }
-    margin: 10px 20px 0px 60px;;;
+    margin: 10px 20px 0px 0px;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
-    width: 500px;
+    width: 440px;
     padding-top: 6px;
-    padding-left:15px;
 
     img{
       width:20px;
@@ -164,6 +220,9 @@
       p {
         padding-left: 20px;
       }
+      @include mobile{
+        display: none;
+      }
     }
 
     .catalogue_filter_sort{
@@ -173,6 +232,9 @@
       border-right: 1px solid #3c3c3c;
       border-bottom: 1px solid #3c3c3c;
       padding-bottom: 10px;
+      @include mobile{
+        border-right: none;
+      }
 
       .catalogue_filter_sort_part1{
         display: flex;
@@ -197,6 +259,9 @@
       border-right: 1px solid #3c3c3c;
       border-bottom: 1px solid #3c3c3c;
       padding-bottom:10px;
+      @include mobile{
+        border-right: none;
+      }
 
     }
     .catalogue_filter_price_part1{
@@ -206,6 +271,9 @@
       p{
         flex-basis: 70%;
       }
+      @include mobile{
+        border-right: none;
+      }
     }
 
 
@@ -213,6 +281,9 @@
       border-right: 1px solid #3c3c3c;
       border-bottom: 1px solid #3c3c3c;
       padding-bottom: 10px;
+      @include mobile{
+        border-right: none;
+      }
     }
     .catalogue_filter_volume_part1{
       display: flex;
@@ -226,13 +297,33 @@
       padding-left: 30px;
       padding-top: 30px;
     }
-    .radiobox{
-      transform:scale(1.5);
-      opacity:0.9;
-      cursor:pointer;
+    .radiobox {
+      transform: scale(1.5);
+      opacity: 0.9;
+      cursor: pointer;
       padding-top: 45px;
+      margin: 10px 10px 10px 0;
+      background: red;
+      display: inline-block;
     }
-
+    input[type="checkbox"]{
+    border-radius: 10px;
+    margin: 10px 10px 10px 0;
+   }
+    //// скрываем radiobutton
+    //input[type="radio"]{display: none;}
+    //
+    //// кастомизируем label
+    //label{
+    //  width: 20px;
+    //  height: 20px;
+    //}
+    //label{background-color: blue;}
+    //
+    //// Для выбранного объекта
+    //input[type="radio"]:checked+label{
+    //  border: black solid 2px;
+    //}
 
   }
 
@@ -253,6 +344,9 @@
       max-width: 100%;
       //padding-left: 10px;
     }
+    @include pc_1000-1024{
+      max-width: 850px;
+    }
     @include tablet{
       max-width: 850px;
     }
@@ -260,28 +354,72 @@
 
 
     .catalogue_goods_object{
-      @include pc_1024{
-        width: 255px;
+      @include pc_1024-1200{
+        width: 300px;
+      }
+      @include pc_1000-1024{
+        height: 280px;
+        width: 190px;
+        .to_basket{
+          visibility: visible;
+          margin-top: 5px;
+          height: 25px;
+          font-size: 15px;
+          width: 80%;
+          background: black;
+        }
+        .to_basket:active{
+          color: red;
+
+        }
+        img{
+          height: 150px;
+          width:auto;
+        }
+        p{
+          line-height: 18px;
+        }
+        p.price_goods{
+          margin-top: 0px;
+          font-size: 16px;
+        }
+      }
+      @include tablet{
+        height: 280px;
+        width: 190px;
+        .to_basket{
+          visibility: visible;
+          margin-top: 5px;
+          height: 25px;
+          font-size: 15px;
+          width: 80%;
+          background: black;
+        }
+        .to_basket:active{
+          color: red;
+
+        }
+        img{
+          height: 150px;
+          width:auto;
+        }
+        p{
+          line-height: 18px;
+        }
+        p.price_goods{
+          margin-top: 0px;
+          font-size: 16px;
+        }
       }
       @include mobile{
         display: flex;
         justify-content: flex-start;
-        width: 122px;
-        height: 160px;
+        width: 130px;
+        height: 180px;
         padding-top: 5px;
-
-        //padding-bottom:10px;
       }
-      @include tablet{
-        width: 29%;
-        height: 282px;
-        padding-top: 20px;
-        margin-right: 20px;
-
-      }
-
-      width: 260px;
-      height: 433px;
+      width: 250px;
+      height: 360px;
       border: 1px solid #f6f6f6;
       display: flex;
       flex-direction: column;
@@ -289,7 +427,7 @@
       align-items: center;
       margin-right: 10px;
       margin-bottom: 30px;
-      padding-top: 30px;
+      padding-top: 10px;
 
       h4{
         font-size: 19px;
@@ -298,13 +436,16 @@
         text-transform: uppercase;
         padding-top:20px;
         text-align: center;
+        @include pc_1024-1200{
+          font-size: 17px;
+        }
         @include mobile{
-          font-size: 12px;
+          font-size: 14px;
           padding-top: 5px;
           line-height: 14px;
         }
         @include tablet{
-          font-size: 12px;
+          font-size: 15px;
           font-weight: 400;
           line-height: 20px;
         }
@@ -313,8 +454,14 @@
         font-size: 13px;
         font-weight: 400;
         line-height: 24px;
+        color: grey;
         @include mobile{
           font-size: 10px;
+          line-height: 11px;
+        }
+        @include pc_1000-1024{
+          font-size: 10px;
+          font-weight: 400;
           line-height: 11px;
         }
         @include tablet{
@@ -328,12 +475,18 @@
         font-weight: 400;
         line-height: 24px;
         text-transform: uppercase;
-        font-size: 16px;
-        padding-top: 15px;
+        font-size: 19px;
+        margin-top: 10px;
+        color: grey;
         @include mobile{
           font-size: 12px;
           padding-top: 1px;
-          line-height: 16px;
+          line-height: 11px;
+        }
+        @include pc_1000-1024{
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 11px;
         }
         @include tablet{
           font-size: 12px;
@@ -344,24 +497,18 @@
     }
     .to_basket{
       @include tablet{
-        margin-top: 10px;
-        font-size: 12px;
-        font-weight: 400;
-        line-height: 24px;
-        width: 116px;
-        height: 22px;
       }
       @include mobile{
-        //margin-top: 10px;
-        //font-size: 14px;
-        //font-weight: 400;
-        //line-height: 22px;
-        //width: 105px;
-        //height: 30px;
-        display: none;
+        visibility: visible;
+        margin-top: 7px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: normal;
+        width: 105px;
+        height: 20px;
       }
       visibility: hidden;
-      width: 248px;
+      width: 100%;
       height: 36px;
       border-bottom: 1px solid #30f4ab;
       border-top: 1px solid #30f4ab;
@@ -376,16 +523,169 @@
       z-index: 100;
     }
     .catalogue_goods_object:hover{
-      border: 2px solid #f6f6f6;
       background-color: #303030;
-      //@include mobile{
-      //  height: 180px;
-      //}
       .to_basket{
         visibility: visible;
+        margin-top: 10px;
+        background: #303030;
+        width: 90%;
+      }
+      .to_basket:active{
+        color: red;
+
+      }
+      img{
+        height: 185px;
+        width:auto;
+      }
+      p{
+        line-height: 30px;
+      };
+      p.price_goods{
+        margin-top: 0px;
+        font-size: 16px;
+      }
+      @include pc_1200-1550{
+        background-color: #303030;
+        //@include mobile{
+        //  height: 180px;
+        //}
+        .to_basket{
+          visibility: visible;
+          margin-top: 10px;
+          background: #303030;
+          width: 90%;
+        }
+        .to_basket:active{
+          color: red;
+
+        }
+        img{
+          height: 185px;
+          width:auto;
+        }
+        p{
+          line-height: 30px;
+        };
+        p.price_goods{
+          margin-top: 0px;
+          font-size: 16px;
+        }
+      }
+      @include pc_1024-1200 {
+        background-color: #303030;
+        //@include mobile{
+        //  height: 180px;
+        //}
+        .to_basket {
+          visibility: visible;
+          margin-top: 10px;
+          background: #303030;
+          width: 90%;
+        }
+        .to_basket:active {
+          color: red;
+
+        }
+        img {
+          height: 185px;
+          width: auto;
+        }
+        p {
+          line-height: 30px;
+        }
+      ;
+        p.price_goods {
+          margin-top: 0px;
+          font-size: 16px;
+        }
+      }
+      @include pc_1000-1024{
+        background-color: #303030;
+        .to_basket{
+          visibility: visible;
+          margin-top: 5px;
+          background: #303030;
+          height: 25px;
+          font-size: 15px;
+          width: 90%;
+        }
+        .to_basket:active{
+          color: red;
+
+        }
+        img{
+          height: 150px;
+          width:auto;
+        }
+        p{
+          line-height: 18px;
+        };
+        p.price_goods{
+          margin-top: 0px;
+          font-size: 16px;
+        }
+      }@include tablet{
+          background-color: #303030;
+          //@include mobile{
+          //  height: 180px;
+          //}
+          .to_basket{
+            visibility: visible;
+            margin-top: 5px;
+            background: #303030;
+            height: 25px;
+            font-size: 15px;
+            width: 90%;
+          }
+          .to_basket:active{
+            color: red;
+
+          }
+          img{
+            height: 150px;
+            width:auto;
+          }
+          p{
+            line-height: 18px;
+          };
+          p.price_goods{
+            margin-top: 0px;
+            font-size: 16px;
+          }
+        }
+      @include mobile{
+        background-color: #303030;
+        .to_basket{
+          visibility: visible;
+          margin-top: 7px;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: normal;
+          width: 105px;
+          height: 20px;
+        }
+        .to_basket:active{
+          color: red;
+        }
+        img{
+          height: 90px;
+          width:auto;
+        }
+        p{
+          line-height: 11px;
+        };
+        p.price_goods{
+          margin-top: 1px;
+          font-size: 12px;
+          line-height: 11px;
+          margin-top: 10px;
+        }
       }
 
+
     }
+
 
 
   }
@@ -401,6 +701,17 @@
 
 }
 .filter{
+  @include pc_1000-1024{
+    min-height:50px;
+    padding-top:5px;
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:stretch ;
+    padding-right:10px;
+    box-sizing: border-box;
+    font-size: 12px !important;
+  }
   @include  tablet{
     min-height:50px;
     padding-top:5px;
